@@ -161,7 +161,7 @@ a.share-btn:hover{text-decoration:none}
     <article class="card" tabindex="0" role="button" onclick="openTool('unit')" onkeydown="if(event.key==='Enter')openTool('unit')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-ruler"/></svg></div><h3>Unit Converter</h3><p>Convert length, weight and temperature units.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('word')" onkeydown="if(event.key==='Enter')openTool('word')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-text"/></svg></div><h3>Word Counter</h3><p>Count words, characters, sentences and reading time.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('password')" onkeydown="if(event.key==='Enter')openTool('password')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-key"/></svg></div><h3>Password Generator</h3><p>Create strong, random passwords instantly.</p></article>
-    <article class="card" tabindex="0" role="button" onclick="openTool('qr')" onkeydown="if(event.key==='Enter')openTool('qr')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-qr"/></svg></div><h3>QR Code Generator</h3><p>Turn any text or link into a QR code.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('qr')" onkeydown="if(event.key==='Enter')openTool('qr')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-qr"/></svg></div><h3>QR Code Generator</h3><p>QR codes with the website's logo in the middle.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('stopwatch')" onkeydown="if(event.key==='Enter')openTool('stopwatch')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-timer"/></svg></div><h3>Stopwatch</h3><p>Time anything with laps and pause.</p></article>
   </div>
 
@@ -319,12 +319,13 @@ a.share-btn:hover{text-decoration:none}
 
   <section class="tool-panel" id="tool-qr" hidden>
     <h2>QR Code Generator</h2>
-    <p class="panel-desc">Enter any text or website link to create a QR code you can scan with your phone.</p>
+    <p class="panel-desc">Enter a website link and the QR code will include that site's logo in the middle. Plain text works too.</p>
     <label for="qr-text">Text or URL</label>
     <input type="text" id="qr-text" placeholder="e.g. https://example.com">
     <button class="btn" onclick="genQR()">Generate QR code</button>
     <div class="qr-box" id="qr-box"></div>
-    <p class="muted" id="qr-note" hidden>Tip: right-click (or long-press) the QR code to save it as an image.</p>
+    <button class="btn" id="qr-download" hidden onclick="downloadQR()">Download QR code</button>
+    <p class="muted" id="qr-note" hidden>Tip: use the Download button to save the QR code as a PNG image.</p>
   </section>
 
   <section class="tool-panel" id="tool-stopwatch" hidden>
@@ -658,18 +659,119 @@ function copyPassword(){
 }
 
 /* ---- 9. QR Code Generator ---- */
+var qrCanvas = null;      /* canvas currently shown (with logo if one was added) */
+var qrPlainCanvas = null; /* plain QR canvas, kept as a download fallback */
+
+function qrDomainFrom(text){
+  var url = text;
+  if(!/^https?:\/\//i.test(url)) url = 'https://' + url;
+  try {
+    var host = new URL(url).hostname;
+    /* Only treat it as a website when it has a dot (a real domain). */
+    return host.indexOf('.') > 0 ? host : null;
+  } catch(e){ return null; }
+}
+
+function qrLoadFavicon(domain, done){
+  /* Try favicon services in order; the first one that loads wins. */
+  var sources = [
+    'https://api.faviconkit.com/' + domain + '/144',
+    'https://www.google.com/s2/favicons?domain=' + domain + '&sz=128',
+    'https://icons.duckduckgo.com/ip3/' + domain + '.ico'
+  ];
+  var i = 0;
+  function tryNext(){
+    if(i >= sources.length){ done(null); return; }
+    var img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = function(){ done(img); };
+    img.onerror = function(){ i++; tryNext(); };
+    img.src = sources[i];
+  }
+  tryNext();
+}
+
+function qrWithLogo(base, logo){
+  var size = base.width;
+  var out = document.createElement('canvas');
+  out.width = size; out.height = size;
+  var ctx = out.getContext('2d');
+  ctx.drawImage(base, 0, 0);
+  var logoSize = Math.round(size * 0.22);
+  var pad = Math.round(size * 0.035);
+  var bgSize = logoSize + pad * 2;
+  var x = (size - bgSize) / 2, y = (size - bgSize) / 2;
+  /* White rounded background so the logo stays readable. */
+  ctx.fillStyle = '#ffffff';
+  ctx.beginPath();
+  var r = Math.round(size * 0.03);
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + bgSize, y, x + bgSize, y + bgSize, r);
+  ctx.arcTo(x + bgSize, y + bgSize, x, y + bgSize, r);
+  ctx.arcTo(x, y + bgSize, x, y, r);
+  ctx.arcTo(x, y, x + bgSize, y, r);
+  ctx.closePath();
+  ctx.fill();
+  ctx.drawImage(logo, x + pad, y + pad, logoSize, logoSize);
+  return out;
+}
+
 function genQR(){
   var text = $('qr-text').value.trim();
   var box = $('qr-box');
   box.innerHTML = '';
   $('qr-note').hidden = true;
+  $('qr-download').hidden = true;
+  qrCanvas = null; qrPlainCanvas = null;
   if(!text){ box.textContent = 'Please enter some text or a URL first.'; return; }
   if(typeof QRCode === 'undefined'){
     box.textContent = 'The QR code library could not load. Please check your internet connection and try again.';
     return;
   }
-  new QRCode(box, { text: text, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.M });
+  /* High error correction (H) so the code still scans with a logo in the middle. */
+  new QRCode(box, { text: text, width: 256, height: 256, correctLevel: QRCode.CorrectLevel.H });
+  var shown = box.querySelector('canvas');
+  if(!shown){
+    /* Very old browsers: qrcodejs renders an <img> instead — draw it onto a canvas. */
+    var img = box.querySelector('img');
+    if(!img) return;
+    shown = document.createElement('canvas');
+    shown.width = 256; shown.height = 256;
+    shown.getContext('2d').drawImage(img, 0, 0, 256, 256);
+    box.innerHTML = '';
+    box.appendChild(shown);
+  }
+  qrCanvas = shown;
+  qrPlainCanvas = shown;
   $('qr-note').hidden = false;
+  $('qr-download').hidden = false;
+  var domain = qrDomainFrom(text);
+  if(!domain) return; /* Plain text: no logo to add. */
+  qrLoadFavicon(domain, function(logo){
+    if(!logo) return; /* No logo found — keep the plain QR code. */
+    var withLogo = qrWithLogo(qrPlainCanvas, logo);
+    box.innerHTML = '';
+    box.appendChild(withLogo);
+    qrCanvas = withLogo;
+  });
+}
+
+function downloadQR(){
+  if(!qrCanvas) return;
+  var data;
+  try {
+    data = qrCanvas.toDataURL('image/png');
+  } catch(e) {
+    /* Should not happen (favicons load with CORS), but fall back to the plain QR. */
+    if(!qrPlainCanvas) return;
+    data = qrPlainCanvas.toDataURL('image/png');
+  }
+  var a = document.createElement('a');
+  a.href = data;
+  a.download = 'toolnest-qr-code.png';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
 }
 
 /* ---- 10. Stopwatch ---- */
@@ -863,7 +965,7 @@ var TOOL_INFO = {
   unit: { name: 'Unit Converter', desc: 'Convert length, weight and temperature units.' },
   word: { name: 'Word Counter', desc: 'Count words, characters, sentences and reading time.' },
   password: { name: 'Password Generator', desc: 'Create strong, random passwords instantly.' },
-  qr: { name: 'QR Code Generator', desc: 'Turn any text or link into a QR code.' },
+  qr: { name: 'QR Code Generator', desc: "QR codes with the website's logo in the middle." },
   stopwatch: { name: 'Stopwatch', desc: 'Time anything with laps and pause.' },
   love: { name: 'Love Calculator', desc: 'Check the fun match score between two names.' },
   coin: { name: 'Coin Flip', desc: 'Flip a virtual coin — heads or tails?' },
