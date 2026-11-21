@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToolNest – Free Online Tools & Calculators</title>
+<meta name="description" content="ToolNest offers 17 free online tools and calculators — age, BMI, loan, tip, unit converter, password generator, QR codes and fun tools. Fast, private, no sign-up.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8053367934389307" crossorigin="anonymous"></script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='70' font-size='58' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{
+  --accent:#4f46e5; --accent-dark:#4338ca; --accent-light:#eef2ff;
+  --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#64748b;
+  --border:#e2e8f0; --radius:14px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;color:var(--text)}
+.logo:hover{text-decoration:none}
+.logo-mark{width:36px;height:36px;border-radius:10px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;flex:none}
+nav.main a{margin-left:18px;color:var(--muted);font-weight:600;font-size:15px}
+nav.main a:hover{color:var(--accent)}
+.hero{text-align:center;padding:44px 0 8px}
+.hero h1{font-size:38px;margin:0 0 8px;line-height:1.2}
+.hero p{color:var(--muted);font-size:18px;margin:0 0 22px}
+.search{max-width:520px;margin:0 auto 8px}
+.search input{width:100%;padding:13px 16px;font-size:16px;border:1px solid var(--border);border-radius:999px;background:#fff;outline:none}
+.search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
+.section-title{font-size:22px;margin:34px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(15,23,42,.08);border-color:#c7d2fe}
+.card:focus{outline:2px solid var(--accent);outline-offset:2px}
+.card-icon{width:46px;height:46px;border-radius:12px;background:var(--accent-light);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.tool-panel{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;max-width:680px;margin:28px auto}
+.tool-panel h2{margin-top:0}
+.panel-desc{color:var(--muted);margin-top:-8px}
+label{display:block;font-weight:600;margin:14px 0 6px;font-size:14px}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:11px 12px;font-size:16px;border:1px solid var(--border);border-radius:10px;background:#fff;font-family:inherit}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
+.row{display:flex;gap:12px}
+.row>*{flex:1}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:none;padding:12px 22px;font-size:16px;font-weight:600;border-radius:10px;cursor:pointer;margin-top:16px}
+.btn:hover{background:var(--accent-dark)}
+.btn-secondary{background:#fff;color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{background:#f1f5f9}
+.result{margin-top:18px;background:var(--accent-light);border-radius:10px;padding:16px;font-size:16px}
+.result strong{font-size:18px}
+.muted{color:var(--muted);font-size:14px}
+.back-link{background:none;border:none;color:var(--accent);font-size:16px;font-weight:600;cursor:pointer;padding:8px 0;margin-top:18px}
+.checks label{display:flex;align-items:center;gap:8px;font-weight:400;margin:8px 0}
+.checks input{width:auto}
+.die{width:56px;height:56px;background:#fff;border:2px solid var(--border);border-radius:12px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);padding:8px}
+.pip{border-radius:50%}
+.pip.on{background:var(--text)}
+.dice-row{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+.coin{width:120px;height:120px;border-radius:50%;background:linear-gradient(145deg,#fbbf24,#f59e0b);color:#78350f;display:flex;align-items:center;justify-content:center;font-size:52px;font-weight:800;margin:18px auto;border:4px solid #d97706}
+.coin.flip{animation:coinflip .6s ease}
+@keyframes coinflip{0%{transform:rotateY(0)}100%{transform:rotateY(720deg)}}
+.sw-display{font-size:44px;font-weight:800;text-align:center;font-variant-numeric:tabular-nums;margin:10px 0}
+.laps{list-style:none;padding:0;margin-top:14px}
+.laps li{padding:6px 0;border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums}
+.rps-buttons{display:flex;gap:10px;flex-wrap:wrap}
+.rps-buttons .btn{flex:1;min-width:100px}
+footer.site{background:#fff;border-top:1px solid var(--border);margin-top:56px;padding:28px 0}
+.footer-inner{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:space-between}
+footer nav a{margin-right:18px;color:var(--muted);font-weight:600;font-size:14px}
+.copy{color:var(--muted);font-size:13px;margin-top:10px}
+.qr-box{margin-top:18px;display:flex;justify-content:center}
+.qr-box img,.qr-box canvas{border:1px solid var(--border);border-radius:10px;padding:10px;background:#fff}
+.pick-card{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border-radius:var(--radius);padding:22px 24px;margin:26px 0 8px;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.pick-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(79,70,229,.35)}
+.pick-card:focus{outline:2px solid var(--accent);outline-offset:2px}
+.pick-label{display:inline-block;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,255,255,.2);padding:4px 10px;border-radius:999px;margin-bottom:10px}
+.pick-card h3{margin:0 0 4px;font-size:21px;color:#fff}
+.pick-card p{margin:0;color:#e0e7ff;font-size:15px}
+.pick-card .pick-cta{margin-top:10px;font-weight:700;font-size:14px;color:#fff}
+.suggest{margin-top:28px;padding-top:18px;border-top:1px solid var(--border)}
+.suggest h3{margin:0 0 12px;font-size:16px}
+.suggest-row{display:flex;gap:10px;flex-wrap:wrap}
+.suggest-btn{background:var(--accent-light);color:var(--accent-dark);border:1px solid #c7d2fe;padding:9px 14px;font-size:14px;font-weight:600;border-radius:999px;cursor:pointer;font-family:inherit}
+.suggest-btn:hover{background:#e0e7ff}
+.share{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:18px}
+.share-home{justify-content:center;margin-top:16px}
+.share-label{font-size:14px;font-weight:600;color:var(--muted)}
+.share-btn{display:inline-block;background:#fff;color:var(--accent-dark);border:1px solid #c7d2fe;padding:7px 13px;font-size:13px;font-weight:600;border-radius:999px;cursor:pointer;font-family:inherit}
+.share-btn:hover{background:var(--accent-light);text-decoration:none}
+a.share-btn:hover{text-decoration:none}
+@media(max-width:640px){.hero h1{font-size:30px}.row{flex-direction:column}.tool-panel{padding:20px}nav.main{display:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></g></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7.5-4.6-9.8-9.2C.6 8.6 2.6 5 6 5c2 0 3.4 1.1 4.2 2.3h3.6C14.6 6.1 16 5 18 5c3.4 0 5.4 3.6 3.8 6.8C19.5 16.4 12 21 12 21z"/></symbol>
+    <symbol id="icon-percent" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></g></symbol>
+    <symbol id="icon-bank" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6"/><path d="M4 9v10M20 9v10M8 9v10M12 9v10M16 9v10M2 19h20"/></g></symbol>
+    <symbol id="icon-tip" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-2-1.5L14 22l-2-1.5L10 22l-2-1.5L6 22V2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/></g></symbol>
+    <symbol id="icon-ruler" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="20" height="8" rx="1" transform="rotate(-30 12 13)"/><line x1="8" y1="12" x2="9.5" y2="14.5"/><line x1="12" y1="10" x2="13.5" y2="12.5"/><line x1="16" y1="8" x2="17.5" y2="10.5"/></g></symbol>
+    <symbol id="icon-text" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="11" x2="16" y2="11"/><line x1="4" y1="16" x2="18" y2="16"/><line x1="4" y1="21" x2="12" y2="21"/></g></symbol>
+    <symbol id="icon-key" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="15" r="4.5"/><line x1="11.5" y1="11.5" x2="20" y2="3"/><line x1="16" y1="7" x2="19" y2="10"/></g></symbol>
+    <symbol id="icon-qr" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="3.5" height="3.5"/><rect x="17.5" y="17.5" width="3.5" height="3.5"/></g></symbol>
+    <symbol id="icon-timer" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="13" x2="15.5" y2="15"/><line x1="9" y1="2" x2="15" y2="2"/><line x1="12" y1="2" x2="12" y2="5"/></g></symbol>
+    <symbol id="icon-love" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11z"/></symbol>
+    <symbol id="icon-coin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/></g></symbol>
+    <symbol id="icon-dice" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="15.5" cy="8.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="8.5" cy="15.5" r="1.4" fill="currentColor" stroke="none"/></g></symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></g></symbol>
+    <symbol id="icon-hand" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12V5.5a1.5 1.5 0 0 1 3 0V11m0-6.5v-1a1.5 1.5 0 0 1 3 0V11m0-5a1.5 1.5 0 0 1 3 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-6-3.3L3 13a1.6 1.6 0 0 1 2.6-1.8L8 13"/></g></symbol>
+    <symbol id="icon-smile" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></g></symbol>
+    <symbol id="icon-bulb" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.8.6 1.1 1.2 1.1 2.2h5c0-1 .3-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="site">
+  <div class="container header-inner">
+    <a class="logo" href="#" onclick="showHome();return false;"><span class="logo-mark">T</span>ToolNest</a>
+    <nav class="main">
+      <a href="about.html">About</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+<div id="home-view">
+  <section class="hero">
+    <h1>Free online tools — fast, private, no sign-up</h1>
+    <p>17 handy tools and calculators that run entirely in your browser. Nothing is uploaded, nothing is stored.</p>
+    <div class="search"><input type="text" id="tool-search" placeholder="Search tools..." oninput="filterTools()"></div>
+    <div class="share share-home" id="home-share"></div>
+  </section>
+
+  <article class="pick-card" id="todays-pick" tabindex="0" role="button" aria-label="Today's featured tool">
+    <span class="pick-label">Today's Pick</span>
+    <h3 id="pick-name"></h3>
+    <p id="pick-desc"></p>
+    <p class="pick-cta">Try it now &rarr;</p>
+  </article>
+
+  <h2 class="section-title">Useful tools</h2>
+  <div class="grid" id="grid-useful">
+    <article class="card" tabindex="0" role="button" onclick="openTool('age')" onkeydown="if(event.key==='Enter')openTool('age')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-calendar"/></svg></div><h3>Age Calculator</h3><p>Find your exact age in years, months and days.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('bmi')" onkeydown="if(event.key==='Enter')openTool('bmi')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-heart"/></svg></div><h3>BMI Calculator</h3><p>Check your body mass index and category.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('percent')" onkeydown="if(event.key==='Enter')openTool('percent')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-percent"/></svg></div><h3>Percentage Calculator</h3><p>Percent of a number, percent change and more.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('loan')" onkeydown="if(event.key==='Enter')openTool('loan')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-bank"/></svg></div><h3>Loan Calculator</h3><p>Monthly payments, total interest and total cost.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('tip')" onkeydown="if(event.key==='Enter')openTool('tip')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-tip"/></svg></div><h3>Tip Calculator</h3><p>Split the bill and tip fairly between friends.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('unit')" onkeydown="if(event.key==='Enter')openTool('unit')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-ruler"/></svg></div><h3>Unit Converter</h3><p>Convert length, weight and temperature units.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('word')" onkeydown="if(event.key==='Enter')openTool('word')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-text"/></svg></div><h3>Word Counter</h3><p>Count words, characters, sentences and reading time.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('password')" onkeydown="if(event.key==='Enter')openTool('password')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-key"/></svg></div><h3>Password Generator</h3><p>Create strong, random passwords instantly.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('qr')" onkeydown="if(event.key==='Enter')openTool('qr')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-qr"/></svg></div><h3>QR Code Generator</h3><p>Turn any text or link into a QR code.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('stopwatch')" onkeydown="if(event.key==='Enter')openTool('stopwatch')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-timer"/></svg></div><h3>Stopwatch</h3><p>Time anything with laps and pause.</p></article>
+  </div>
+
+  <h2 class="section-title">Fun tools</h2>
+  <div class="grid" id="grid-fun">
+    <article class="card" tabindex="0" role="button" onclick="openTool('love')" onkeydown="if(event.key==='Enter')openTool('love')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-love"/></svg></div><h3>Love Calculator</h3><p>Check the fun match score between two names.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('coin')" onkeydown="if(event.key==='Enter')openTool('coin')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-coin"/></svg></div><h3>Coin Flip</h3><p>Flip a virtual coin — heads or tails?</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('dice')" onkeydown="if(event.key==='Enter')openTool('dice')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-dice"/></svg></div><h3>Dice Roller</h3><p>Roll one, two or three dice at once.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('name')" onkeydown="if(event.key==='Enter')openTool('name')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-user"/></svg></div><h3>Random Name Generator</h3><p>Fun usernames and baby-style names.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('rps')" onkeydown="if(event.key==='Enter')openTool('rps')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-hand"/></svg></div><h3>Rock Paper Scissors</h3><p>Play against the computer and keep score.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('joke')" onkeydown="if(event.key==='Enter')openTool('joke')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-smile"/></svg></div><h3>Random Joke Generator</h3><p>Clean jokes to brighten your day.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('facts')" onkeydown="if(event.key==='Enter')openTool('facts')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-bulb"/></svg></div><h3>Fun Fact Generator</h3><p>Discover surprising true facts about the world.</p></article>
+  </div>
+</div>
+
+<div id="tool-view" hidden>
+  <button class="back-link" onclick="showHome()">&larr; Back to all tools</button>
+
+  <section class="tool-panel" id="tool-age" hidden>
+    <h2>Age Calculator</h2>
+    <p class="panel-desc">Enter your date of birth to see your exact age.</p>
+    <label for="age-dob">Date of birth</label>
+    <input type="date" id="age-dob">
+    <button class="btn" onclick="calcAge()">Calculate age</button>
+    <div class="result" id="age-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-bmi" hidden>
+    <h2>BMI Calculator</h2>
+    <p class="panel-desc">Body mass index is a simple screening measure. It is not a medical diagnosis.</p>
+    <label for="bmi-hunit">Height unit</label>
+    <select id="bmi-hunit" onchange="toggleBmiHeight()">
+      <option value="cm">Centimetres (cm)</option>
+      <option value="ft">Feet &amp; inches</option>
+    </select>
+    <div id="bmi-h-cm">
+      <label for="bmi-hcm">Height (cm)</label>
+      <input type="number" id="bmi-hcm" min="1" placeholder="e.g. 175">
+    </div>
+    <div id="bmi-h-ft" hidden>
+      <div class="row">
+        <div><label for="bmi-ft">Feet</label><input type="number" id="bmi-ft" min="0" placeholder="e.g. 5"></div>
+        <div><label for="bmi-in">Inches</label><input type="number" id="bmi-in" min="0" max="11" placeholder="e.g. 9"></div>
+      </div>
+    </div>
+    <label for="bmi-wunit">Weight unit</label>
+    <select id="bmi-wunit">
+      <option value="kg">Kilograms (kg)</option>
+      <option value="lb">Pounds (lb)</option>
+    </select>
+    <label for="bmi-w">Weight</label>
+    <input type="number" id="bmi-w" min="1" placeholder="e.g. 70">
+    <button class="btn" onclick="calcBMI()">Calculate BMI</button>
+    <div class="result" id="bmi-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-percent" hidden>
+    <h2>Percentage Calculator</h2>
+    <p class="panel-desc">Three common percentage calculations in one place.</p>
+    <label for="pct-a1">What is</label>
+    <div class="row">
+      <input type="number" id="pct-a1" placeholder="X %">
+      <input type="number" id="pct-b1" placeholder="of Y">
+    </div>
+    <button class="btn" onclick="calcPct1()">Calculate</button>
+    <div class="result" id="pct-result1" hidden></div>
+    <hr style="border:none;border-top:1px solid var(--border);margin:24px 0">
+    <label for="pct-a2">X is what percent of Y?</label>
+    <div class="row">
+      <input type="number" id="pct-a2" placeholder="X">
+      <input type="number" id="pct-b2" placeholder="Y">
+    </div>
+    <button class="btn" onclick="calcPct2()">Calculate</button>
+    <div class="result" id="pct-result2" hidden></div>
+    <hr style="border:none;border-top:1px solid var(--border);margin:24px 0">
+    <label for="pct-a3">Percentage change from A to B</label>
+    <div class="row">
+      <input type="number" id="pct-a3" placeholder="From">
+      <input type="number" id="pct-b3" placeholder="To">
+    </div>
+    <button class="btn" onclick="calcPct3()">Calculate</button>
+    <div class="result" id="pct-result3" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-loan" hidden>
+    <h2>Loan Calculator</h2>
+    <p class="panel-desc">Estimate monthly payments for a fixed-rate loan. Results are estimates, not financial advice.</p>
+    <label for="loan-amount">Loan amount ($)</label>
+    <input type="number" id="loan-amount" min="0" placeholder="e.g. 10000">
+    <label for="loan-rate">Annual interest rate (%)</label>
+    <input type="number" id="loan-rate" min="0" step="0.01" placeholder="e.g. 5.5">
+    <label for="loan-years">Loan term (years)</label>
+    <input type="number" id="loan-years" min="0" step="0.5" placeholder="e.g. 5">
+    <button class="btn" onclick="calcLoan()">Calculate</button>
+    <div class="result" id="loan-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-tip" hidden>
+    <h2>Tip Calculator</h2>
+    <p class="panel-desc">Work out the tip and split the bill between everyone.</p>
+    <label for="tip-bill">Bill amount ($)</label>
+    <input type="number" id="tip-bill" min="0" step="0.01" placeholder="e.g. 85.50">
+    <label for="tip-pct">Tip percentage (%)</label>
+    <input type="number" id="tip-pct" min="0" value="15">
+    <label for="tip-people">Number of people</label>
+    <input type="number" id="tip-people" min="1" value="2">
+    <button class="btn" onclick="calcTip()">Calculate</button>
+    <div class="result" id="tip-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-unit" hidden>
+    <h2>Unit Converter</h2>
+    <p class="panel-desc">Convert length, weight and temperature between common units.</p>
+    <label for="unit-cat">Category</label>
+    <select id="unit-cat" onchange="buildUnitOptions()">
+      <option value="length">Length</option>
+      <option value="weight">Weight</option>
+      <option value="temperature">Temperature</option>
+    </select>
+    <label for="unit-value">Value</label>
+    <input type="number" id="unit-value" placeholder="e.g. 10">
+    <div class="row">
+      <div><label for="unit-from">From</label><select id="unit-from"></select></div>
+      <div><label for="unit-to">To</label><select id="unit-to"></select></div>
+    </div>
+    <button class="btn" onclick="convertUnit()">Convert</button>
+    <div class="result" id="unit-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-word" hidden>
+    <h2>Word Counter</h2>
+    <p class="panel-desc">Paste or type your text below. Counts update as you type. Your text never leaves your browser.</p>
+    <label for="wc-text">Your text</label>
+    <textarea id="wc-text" rows="8" placeholder="Type or paste your text here..." oninput="countWords()"></textarea>
+    <div class="result" id="wc-result">Words: 0 &nbsp;|&nbsp; Characters: 0 &nbsp;|&nbsp; Characters (no spaces): 0<br>Sentences: 0 &nbsp;|&nbsp; Paragraphs: 0 &nbsp;|&nbsp; Reading time: 0 min</div>
+  </section>
+
+  <section class="tool-panel" id="tool-password" hidden>
+    <h2>Password Generator</h2>
+    <p class="panel-desc">Strong random passwords generated on your device. Nothing is sent anywhere.</p>
+    <label for="pw-length">Length: <span id="pw-length-label">16</span> characters</label>
+    <input type="range" id="pw-length" min="8" max="64" value="16" oninput="document.getElementById('pw-length-label').textContent=this.value">
+    <div class="checks">
+      <label><input type="checkbox" id="pw-lower" checked> Lowercase letters (a-z)</label>
+      <label><input type="checkbox" id="pw-upper" checked> Uppercase letters (A-Z)</label>
+      <label><input type="checkbox" id="pw-num" checked> Numbers (0-9)</label>
+      <label><input type="checkbox" id="pw-sym" checked> Symbols (!@#$...)</label>
+    </div>
+    <button class="btn" onclick="genPassword()">Generate password</button>
+    <label for="pw-output">Your password</label>
+    <input type="text" id="pw-output" readonly placeholder="Click Generate to create one">
+    <button class="btn btn-secondary" onclick="copyPassword()">Copy password</button>
+    <div class="result" id="pw-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-qr" hidden>
+    <h2>QR Code Generator</h2>
+    <p class="panel-desc">Enter any text or website link to create a QR code you can scan with your phone.</p>
+    <label for="qr-text">Text or URL</label>
+    <input type="text" id="qr-text" placeholder="e.g. https://example.com">
+    <button class="btn" onclick="genQR()">Generate QR code</button>
+    <div class="qr-box" id="qr-box"></div>
+    <p class="muted" id="qr-note" hidden>Tip: right-click (or long-press) the QR code to save it as an image.</p>
+  </section>
+
+  <section class="tool-panel" id="tool-stopwatch" hidden>
+    <h2>Stopwatch</h2>
+    <p class="panel-desc">A simple stopwatch with lap times.</p>
+    <div class="sw-display" id="sw-display">00:00.00</div>
+    <div class="rps-buttons">
+      <button class="btn" id="sw-start-btn" onclick="swStart()">Start</button>
+      <button class="btn btn-secondary" onclick="swPause()">Pause</button>
+      <button class="btn btn-secondary" onclick="swReset()">Reset</button>
+      <button class="btn btn-secondary" onclick="swLap()">Lap</button>
+    </div>
+    <ul class="laps" id="sw-laps"></ul>
+  </section>
+
+  <section class="tool-panel" id="tool-love" hidden>
+    <h2>Love Calculator</h2>
+    <p class="panel-desc">Just for fun! Enter two names to see their playful match score. This is entertainment only — not real relationship advice.</p>
+    <label for="love-a">First name</label>
+    <input type="text" id="love-a" placeholder="e.g. Alex">
+    <label for="love-b">Second name</label>
+    <input type="text" id="love-b" placeholder="e.g. Sam">
+    <button class="btn" onclick="calcLove()">Calculate match</button>
+    <div class="result" id="love-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-coin" hidden>
+    <h2>Coin Flip</h2>
+    <p class="panel-desc">Can't decide? Let the coin choose.</p>
+    <div class="coin" id="coin">?</div>
+    <div style="text-align:center"><button class="btn" onclick="flipCoin()">Flip the coin</button></div>
+    <div class="result" id="coin-result">Flips: 0 &nbsp;|&nbsp; Heads: 0 &nbsp;|&nbsp; Tails: 0</div>
+  </section>
+
+  <section class="tool-panel" id="tool-dice" hidden>
+    <h2>Dice Roller</h2>
+    <p class="panel-desc">Roll virtual dice for your games.</p>
+    <label for="dice-count">Number of dice</label>
+    <select id="dice-count">
+      <option value="1">1 die</option>
+      <option value="2" selected>2 dice</option>
+      <option value="3">3 dice</option>
+    </select>
+    <button class="btn" onclick="rollDice()">Roll dice</button>
+    <div class="dice-row" id="dice-results"></div>
+    <div class="result" id="dice-total" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-name" hidden>
+    <h2>Random Name Generator</h2>
+    <p class="panel-desc">Generate a fun username or a baby-style name.</p>
+    <label for="name-mode">Type</label>
+    <select id="name-mode">
+      <option value="username">Fun username</option>
+      <option value="baby">Baby-style name</option>
+    </select>
+    <button class="btn" onclick="genName()">Generate name</button>
+    <div class="result" id="name-result" hidden></div>
+    <button class="btn btn-secondary" id="name-copy-btn" onclick="copyName()" hidden>Copy name</button>
+  </section>
+
+  <section class="tool-panel" id="tool-rps" hidden>
+    <h2>Rock Paper Scissors</h2>
+    <p class="panel-desc">Pick your move and play against the computer. Rock beats scissors, scissors beats paper, paper beats rock.</p>
+    <div class="rps-buttons">
+      <button class="btn" onclick="playRPS('rock')">Rock</button>
+      <button class="btn" onclick="playRPS('paper')">Paper</button>
+      <button class="btn" onclick="playRPS('scissors')">Scissors</button>
+    </div>
+    <div class="result" id="rps-result">Make your move!</div>
+    <p class="muted" id="rps-score">Wins: 0 &nbsp;|&nbsp; Losses: 0 &nbsp;|&nbsp; Draws: 0</p>
+    <button class="btn btn-secondary" onclick="resetRPS()">Reset score</button>
+  </section>
+
+  <section class="tool-panel" id="tool-joke" hidden>
+    <h2>Random Joke Generator</h2>
+    <p class="panel-desc">Clean, family-friendly jokes. Click the button for a new one.</p>
+    <button class="btn" onclick="showJoke()">Tell me a joke</button>
+    <div class="result" id="joke-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-facts" hidden>
+    <h2>Fun Fact Generator</h2>
+    <p class="panel-desc">Tap the button to discover a surprising true fact — every tap shows a new one.</p>
+    <button class="btn" onclick="showFact()">Show me a fact</button>
+    <div class="result" id="fact-result" hidden></div>
+  </section>
+</div>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <div class="footer-inner">
+      <strong>ToolNest</strong>
+      <nav>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <p class="copy">All tools run in your browser. No data is collected or stored. &copy; 2026 ToolNest.</p>
+  </div>
+</footer>
+<script>
+function $(id){ return document.getElementById(id); }
+function showResult(id, html){ var el = $(id); el.hidden = false; el.innerHTML = html; }
+function fmtMoney(n){ return '$' + n.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}); }
+
+/* ---- Navigation ---- */
+function openTool(id){
+  $('home-view').hidden = true;
+  $('tool-view').hidden = false;
+  document.querySelectorAll('.tool-panel').forEach(function(p){ p.hidden = true; });
+  var panel = $('tool-' + id);
+  if(panel){ panel.hidden = false; }
+  if(id === 'unit'){ buildUnitOptions(); }
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + id); }catch(e){}
+}
+function showHome(){
+  $('tool-view').hidden = true;
+  $('home-view').hidden = false;
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', location.pathname); }catch(e){}
+}
+function filterTools(){
+  var q = $('tool-search').value.trim().toLowerCase();
+  document.querySelectorAll('.card').forEach(function(card){
+    var text = card.textContent.toLowerCase();
+    card.style.display = (!q || text.indexOf(q) !== -1) ? '' : 'none';
+  });
+}
+(function(){
+  var h = location.hash.replace('#', '');
+  if(h && $('tool-' + h)){ openTool(h); }
+})();
+
+/* ---- 1. Age Calculator ---- */
+function calcAge(){
+  var dobVal = $('age-dob').value;
+  if(!dobVal){ showResult('age-result', 'Please choose your date of birth.'); return; }
+  var dob = new Date(dobVal + 'T00:00:00');
+  var now = new Date();
+  if(dob > now){ showResult('age-result', 'That date is in the future!'); return; }
+  var years = now.getFullYear() - dob.getFullYear();
+  var months = now.getMonth() - dob.getMonth();
+  var days = now.getDate() - dob.getDate();
+  if(days < 0){
+    months--;
+    var prev = new Date(now.getFullYear(), now.getMonth(), 0);
+    days += prev.getDate();
+  }
+  if(months < 0){ years--; months += 12; }
+  var totalDays = Math.floor((now - dob) / 86400000);
+  showResult('age-result', '<strong>' + years + ' years, ' + months + ' months, ' + days + ' days</strong><br>Total days lived: ' + totalDays.toLocaleString('en-US'));
+}
+
+/* ---- 2. BMI Calculator ---- */
+function toggleBmiHeight(){
+  var isCm = $('bmi-hunit').value === 'cm';
+  $('bmi-h-cm').hidden = !isCm;
+  $('bmi-h-ft').hidden = isCm;
+}
+function calcBMI(){
+  var hCm, wKg;
+  if($('bmi-hunit').value === 'cm'){
+    hCm = parseFloat($('bmi-hcm').value);
+  } else {
+    var ft = parseFloat($('bmi-ft').value) || 0;
+    var inch = parseFloat($('bmi-in').value) || 0;
+    hCm = (ft * 12 + inch) * 2.54;
+  }
+  var w = parseFloat($('bmi-w').value);
+  if(!hCm || hCm <= 0 || !w || w <= 0){
+    showResult('bmi-result', 'Please enter a valid height and weight.'); return;
+  }
+  wKg = $('bmi-wunit').value === 'kg' ? w : w * 0.45359237;
+  var m = hCm / 100;
+  var bmi = wKg / (m * m);
+  var cat;
+  if(bmi < 18.5){ cat = 'Underweight'; }
+  else if(bmi < 25){ cat = 'Normal weight'; }
+  else if(bmi < 30){ cat = 'Overweight'; }
+  else { cat = 'Obese'; }
+  showResult('bmi-result', '<strong>Your BMI: ' + bmi.toFixed(1) + '</strong><br>Category: ' + cat);
+}
+
+/* ---- 3. Percentage Calculator ---- */
+function calcPct1(){
+  var a = parseFloat($('pct-a1').value), b = parseFloat($('pct-b1').value);
+  if(isNaN(a) || isNaN(b)){ showResult('pct-result1', 'Please enter both numbers.'); return; }
+  showResult('pct-result1', '<strong>' + a + '% of ' + b + ' = ' + (a * b / 100).toLocaleString('en-US') + '</strong>');
+}
+function calcPct2(){
+  var a = parseFloat($('pct-a2').value), b = parseFloat($('pct-b2').value);
+  if(isNaN(a) || isNaN(b) || b === 0){ showResult('pct-result2', 'Please enter both numbers (Y cannot be 0).'); return; }
+  showResult('pct-result2', '<strong>' + a + ' is ' + (a / b * 100).toFixed(2) + '% of ' + b + '</strong>');
+}
+function calcPct3(){
+  var a = parseFloat($('pct-a3').value), b = parseFloat($('pct-b3').value);
+  if(isNaN(a) || isNaN(b) || a === 0){ showResult('pct-result3', 'Please enter both numbers (the starting value cannot be 0).'); return; }
+  var change = (b - a) / Math.abs(a) * 100;
+  var word = change >= 0 ? 'increase' : 'decrease';
+  showResult('pct-result3', '<strong>' + Math.abs(change).toFixed(2) + '% ' + word + '</strong> (from ' + a + ' to ' + b + ')');
+}
+
+/* ---- 4. Loan Calculator ---- */
+function calcLoan(){
+  var P = parseFloat($('loan-amount').value);
+  var annual = parseFloat($('loan-rate').value);
+  var years = parseFloat($('loan-years').value);
+  if(!P || P <= 0 || isNaN(annual) || annual < 0 || !years || years <= 0){
+    showResult('loan-result', 'Please enter a valid amount, rate and term.'); return;
+  }
+  var r = annual / 100 / 12;
+  var n = years * 12;
+  var m;
+  if(r === 0){ m = P / n; }
+  else { m = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1); }
+  var total = m * n;
+  var interest = total - P;
+  showResult('loan-result', '<strong>Monthly payment: ' + fmtMoney(m) + '</strong><br>Total interest: ' + fmtMoney(interest) + '<br>Total payment: ' + fmtMoney(total));
+}
+
+/* ---- 5. Tip Calculator ---- */
+function calcTip(){
+  var bill = parseFloat($('tip-bill').value);
+  var pct = parseFloat($('tip-pct').value);
+  var people = parseInt($('tip-people').value, 10);
+  if(isNaN(bill) || bill < 0 || isNaN(pct) || pct < 0 || !people || people < 1){
+    showResult('tip-result', 'Please enter a valid bill, tip % and number of people.'); return;
+  }
+  var tip = bill * pct / 100;
+  var total = bill + tip;
+  showResult('tip-result', '<strong>Tip: ' + fmtMoney(tip) + ' &nbsp;|&nbsp; Total: ' + fmtMoney(total) + '</strong><br>Tip per person: ' + fmtMoney(tip / people) + '<br>Total per person: ' + fmtMoney(total / people));
+}
+
+/* ---- 6. Unit Converter ---- */
+var UNITS = {
+  length: { units: { m: 1, km: 1000, mi: 1609.344, ft: 0.3048, in: 0.0254, cm: 0.01 },
+            labels: { m: 'Metres (m)', km: 'Kilometres (km)', mi: 'Miles (mi)', ft: 'Feet (ft)', in: 'Inches (in)', cm: 'Centimetres (cm)' } },
+  weight: { units: { kg: 1, lb: 0.45359237, g: 0.001, oz: 0.028349523125 },
+            labels: { kg: 'Kilograms (kg)', lb: 'Pounds (lb)', g: 'Grams (g)', oz: 'Ounces (oz)' } },
+  temperature: { units: ['C', 'F', 'K'],
+            labels: { C: 'Celsius (°C)', F: 'Fahrenheit (°F)', K: 'Kelvin (K)' } }
+};
+function buildUnitOptions(){
+  var cat = $('unit-cat').value;
+  var from = $('unit-from'), to = $('unit-to');
+  from.innerHTML = ''; to.innerHTML = '';
+  var keys = cat === 'temperature' ? UNITS.temperature.units : Object.keys(UNITS[cat].units);
+  keys.forEach(function(k, i){
+    var o1 = document.createElement('option'); o1.value = k; o1.textContent = UNITS[cat].labels[k]; from.appendChild(o1);
+    var o2 = document.createElement('option'); o2.value = k; o2.textContent = UNITS[cat].labels[k]; to.appendChild(o2);
+    if(i === 1){ to.value = k; }
+  });
+}
+function convertUnit(){
+  var cat = $('unit-cat').value;
+  var val = parseFloat($('unit-value').value);
+  if(isNaN(val)){ showResult('unit-result', 'Please enter a number to convert.'); return; }
+  var from = $('unit-from').value, to = $('unit-to').value;
+  var result;
+  if(cat === 'temperature'){
+    var c;
+    if(from === 'C'){ c = val; }
+    else if(from === 'F'){ c = (val - 32) * 5 / 9; }
+    else { c = val - 273.15; }
+    if(to === 'C'){ result = c; }
+    else if(to === 'F'){ result = c * 9 / 5 + 32; }
+    else { result = c + 273.15; }
+  } else {
+    var base = val * UNITS[cat].units[from];
+    result = base / UNITS[cat].units[to];
+  }
+  var out = result.toLocaleString('en-US', {maximumFractionDigits: 4});
+  showResult('unit-result', '<strong>' + val + ' ' + from + ' = ' + out + ' ' + to + '</strong>');
+}
+
+/* ---- 7. Word Counter ---- */
+function countWords(){
+  var text = $('wc-text').value;
+  var chars = text.length;
+  var noSpaces = text.replace(/\s/g, '').length;
+  var words = (text.trim().match(/\S+/g) || []).length;
+  var sentences = (text.match(/[^.!?]+[.!?]+/g) || []).length;
+  if(words > 0 && sentences === 0){ sentences = 1; }
+  var paragraphs = text.split(/\n\s*\n/).filter(function(p){ return p.trim().length > 0; }).length;
+  var minutes = words === 0 ? 0 : Math.max(1, Math.round(words / 200));
+  $('wc-result').innerHTML = 'Words: ' + words.toLocaleString('en-US') + ' &nbsp;|&nbsp; Characters: ' + chars.toLocaleString('en-US') + ' &nbsp;|&nbsp; Characters (no spaces): ' + noSpaces.toLocaleString('en-US') + '<br>Sentences: ' + sentences + ' &nbsp;|&nbsp; Paragraphs: ' + paragraphs + ' &nbsp;|&nbsp; Reading time: about ' + minutes + ' min';
+}
+
+/* ---- 8. Password Generator ---- */
+function genPassword(){
+  var len = parseInt($('pw-length').value, 10);
+  var chars = '';
+  if($('pw-lower').checked){ chars += 'abcdefghijklmnopqrstuvwxyz'; }
+  if($('pw-upper').checked){ chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; }
+  if($('pw-num').checked){ chars += '0123456789'; }
+  if($('pw-sym').checked){ chars += '!@#$%^&*()-_=+[]{};:,.<>?'; }
+  if(!chars){ showResult('pw-result', 'Please select at least one character type.'); return; }
+  var arr = new Uint32Array(len);
+  if(window.crypto && window.crypto.getRandomValues){ window.crypto.getRandomValues(arr); }
+  else { for(var i = 0; i < len; i++){ arr[i] = Math.floor(Math.random() * 4294967296); } }
+  var pw = '';
+  for(var j = 0; j < len; j++){ pw += chars.charAt(arr[j] % chars.length); }
+  $('pw-output').value = pw;
+  $('pw-result').hidden = true;
+}
+function copyTextFallback(text){
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try{ document.execCommand('copy'); }catch(e){}
+  document.body.removeChild(ta);
+}
+function copyPassword(){
+  var pw = $('pw-output').value;
+  if(!pw){ showResult('pw-result', 'Generate a password first.'); return; }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(pw).then(function(){
+      showResult('pw-result', 'Password copied to clipboard!');
+    }, function(){ copyTextFallback(pw); showResult('pw-result', 'Password copied to clipboard!'); });
+  } else {
+    copyTextFallback(pw);
+    showResult('pw-result', 'Password copied to clipboard!');
+  }
+}
+
+/* ---- 9. QR Code Generator ---- */
+function genQR(){
+  var text = $('qr-text').value.trim();
+  var box = $('qr-box');
+  box.innerHTML = '';
+  $('qr-note').hidden = true;
+  if(!text){ box.textContent = 'Please enter some text or a URL first.'; return; }
+  if(typeof QRCode === 'undefined'){
+    box.textContent = 'The QR code library could not load. Please check your internet connection and try again.';
+    return;
+  }
+  new QRCode(box, { text: text, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.M });
+  $('qr-note').hidden = false;
+}
+
+/* ---- 10. Stopwatch ---- */
+var swStartTime = 0, swElapsed = 0, swTimer = null, swLapCount = 0;
+function swFormat(ms){
+  var totalCs = Math.floor(ms / 10);
+  var cs = totalCs % 100;
+  var s = Math.floor(totalCs / 100) % 60;
+  var m = Math.floor(totalCs / 6000);
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  return pad(m) + ':' + pad(s) + '.' + pad(cs);
+}
+function swStart(){
+  if(swTimer !== null){ return; }
+  swStartTime = Date.now() - swElapsed;
+  swTimer = setInterval(function(){
+    swElapsed = Date.now() - swStartTime;
+    $('sw-display').textContent = swFormat(swElapsed);
+  }, 31);
+  $('sw-start-btn').textContent = 'Resume';
+}
+function swPause(){
+  if(swTimer !== null){ clearInterval(swTimer); swTimer = null; }
+}
+function swReset(){
+  swPause();
+  swElapsed = 0; swLapCount = 0;
+  $('sw-display').textContent = '00:00.00';
+  $('sw-laps').innerHTML = '';
+  $('sw-start-btn').textContent = 'Start';
+}
+function swLap(){
+  if(swTimer === null && swElapsed === 0){ return; }
+  swLapCount++;
+  var li = document.createElement('li');
+  li.textContent = 'Lap ' + swLapCount + ' — ' + swFormat(swElapsed);
+  $('sw-laps').appendChild(li);
+}
+
+/* ---- 11. Love Calculator (just for fun) ---- */
+function calcLove(){
+  var a = $('love-a').value.trim().toLowerCase();
+  var b = $('love-b').value.trim().toLowerCase();
+  if(!a || !b){ showResult('love-result', 'Please enter both names.'); return; }
+  var s = a + 'loves' + b;
+  var h = 0;
+  for(var i = 0; i < s.length; i++){ h = (h * 31 + s.charCodeAt(i)) >>> 0; }
+  var pct = 40 + (h % 60);
+  var msg;
+  if(pct >= 90){ msg = 'A match made in heaven!'; }
+  else if(pct >= 75){ msg = 'Strong sparks flying!'; }
+  else if(pct >= 60){ msg = 'Great chemistry — worth a chance!'; }
+  else if(pct >= 45){ msg = "There's something there — keep talking!"; }
+  else { msg = 'A slow burn — friendship first!'; }
+  showResult('love-result', '<strong>' + $('love-a').value.trim() + ' + ' + $('love-b').value.trim() + ' = ' + pct + '%</strong><br>' + msg + '<br><span class="muted">Just for fun — real love is not a number.</span>');
+}
+
+/* ---- 12. Coin Flip ---- */
+var flips = 0, headsCount = 0, tailsCount = 0, coinBusy = false;
+function flipCoin(){
+  if(coinBusy){ return; }
+  coinBusy = true;
+  var coin = $('coin');
+  coin.classList.remove('flip');
+  void coin.offsetWidth;
+  coin.classList.add('flip');
+  var result = Math.random() < 0.5 ? 'heads' : 'tails';
+  setTimeout(function(){
+    coin.textContent = result === 'heads' ? 'H' : 'T';
+    flips++;
+    if(result === 'heads'){ headsCount++; } else { tailsCount++; }
+    $('coin-result').innerHTML = '<strong>' + (result === 'heads' ? 'Heads!' : 'Tails!') + '</strong><br>Flips: ' + flips + ' &nbsp;|&nbsp; Heads: ' + headsCount + ' &nbsp;|&nbsp; Tails: ' + tailsCount;
+    coinBusy = false;
+  }, 300);
+}
+
+/* ---- 13. Dice Roller ---- */
+function diceFace(v){
+  var pips = { 1: [4], 2: [0, 8], 3: [0, 4, 8], 4: [0, 2, 6, 8], 5: [0, 2, 4, 6, 8], 6: [0, 2, 3, 5, 6, 8] };
+  var html = '<div class="die" role="img" aria-label="Die showing ' + v + '">';
+  for(var i = 0; i < 9; i++){
+    html += '<span class="pip' + (pips[v].indexOf(i) !== -1 ? ' on' : '') + '"></span>';
+  }
+  html += '</div>';
+  return html;
+}
+function rollDice(){
+  var n = parseInt($('dice-count').value, 10);
+  var total = 0, html = '', rolls = [];
+  for(var i = 0; i < n; i++){
+    var v = 1 + Math.floor(Math.random() * 6);
+    rolls.push(v);
+    total += v;
+    html += diceFace(v);
+  }
+  $('dice-results').innerHTML = html;
+  showResult('dice-total', '<strong>You rolled: ' + rolls.join(', ') + '</strong><br>Total: ' + total);
+}
+
+/* ---- 14. Random Name Generator ---- */
+var FIRST_NAMES = ['Aria', 'Liam', 'Maya', 'Noah', 'Zara', 'Felix', 'Ivy', 'Owen', 'Luna', 'Ezra', 'Nina', 'Kai', 'Ruby', 'Leo', 'Mila', 'Hugo', 'Ella', 'Max', 'Nora', 'Jude', 'Isla', 'Arlo', 'Freya', 'Milo'];
+var ADJ = ['Cosmic', 'Silent', 'Brave', 'Lucky', 'Wild', 'Gentle', 'Swift', 'Happy', 'Bold', 'Misty', 'Golden', 'Clever', 'Sunny', 'Rapid', 'Calm', 'Bright', 'Velvet', 'Turbo'];
+var NOUNS = ['Fox', 'Panda', 'Tiger', 'Wolf', 'Eagle', 'Dragon', 'Otter', 'Falcon', 'Bear', 'Hawk', 'Lynx', 'Raven', 'Whale', 'Comet', 'Rider', 'Wizard', 'Ninja', 'Pixel'];
+var currentName = '';
+function pick(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
+function genName(){
+  var mode = $('name-mode').value;
+  var name;
+  if(mode === 'username'){
+    name = pick(ADJ) + pick(NOUNS) + Math.floor(Math.random() * 100);
+  } else {
+    name = pick(FIRST_NAMES) + ' ' + pick(FIRST_NAMES);
+  }
+  currentName = name;
+  showResult('name-result', '<strong>' + name + '</strong>');
+  $('name-copy-btn').hidden = false;
+}
+function copyName(){
+  if(!currentName){ return; }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(currentName).then(function(){
+      showResult('name-result', '<strong>' + currentName + '</strong><br><span class="muted">Copied to clipboard!</span>');
+    }, function(){ copyTextFallback(currentName); });
+  } else {
+    copyTextFallback(currentName);
+  }
+}
+
+/* ---- 15. Rock Paper Scissors ---- */
+var rpsWins = 0, rpsLosses = 0, rpsDraws = 0;
+function playRPS(choice){
+  var opts = ['rock', 'paper', 'scissors'];
+  var comp = opts[Math.floor(Math.random() * 3)];
+  var result;
+  if(choice === comp){ result = 'draw'; rpsDraws++; }
+  else if((choice === 'rock' && comp === 'scissors') || (choice === 'paper' && comp === 'rock') || (choice === 'scissors' && comp === 'paper')){ result = 'win'; rpsWins++; }
+  else { result = 'lose'; rpsLosses++; }
+  var label = { rock: 'Rock', paper: 'Paper', scissors: 'Scissors' };
+  var msg = result === 'win' ? 'You win!' : (result === 'lose' ? 'Computer wins!' : "It's a draw!");
+  showResult('rps-result', '<strong>You chose ' + label[choice] + ', computer chose ' + label[comp] + ' — ' + msg + '</strong>');
+  $('rps-score').innerHTML = 'Wins: ' + rpsWins + ' &nbsp;|&nbsp; Losses: ' + rpsLosses + ' &nbsp;|&nbsp; Draws: ' + rpsDraws;
+}
+function resetRPS(){
+  rpsWins = 0; rpsLosses = 0; rpsDraws = 0;
+  showResult('rps-result', 'Make your move!');
+  $('rps-score').innerHTML = 'Wins: 0 &nbsp;|&nbsp; Losses: 0 &nbsp;|&nbsp; Draws: 0';
+}
+
+/* ---- 16. Random Joke Generator ---- */
+var JOKES = [
+  "Why don't scientists trust atoms? Because they make up everything!",
+  "Why did the scarecrow win an award? Because he was outstanding in his field!",
+  "I told my computer I needed a break, and now it won't stop sending me KitKat ads.",
+  "Why don't skeletons fight each other? They don't have the guts.",
+  "What do you call cheese that isn't yours? Nacho cheese!",
+  "Why did the bicycle fall over? It was two-tired!",
+  "What did the ocean say to the beach? Nothing, it just waved.",
+  "Why did the math book look sad? It had too many problems.",
+  "What do you call a fish without eyes? A fsh!",
+  "Why did the coffee file a police report? It got mugged!",
+  "How does a penguin build its house? Igloos it together!",
+  "What did the zero say to the eight? Nice belt!",
+  "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+  "What do you call a sleeping bull? A bulldozer!",
+  "Why don't eggs tell jokes? They'd crack each other up!",
+  "What did the wall say to the other wall? I'll meet you at the corner!",
+  "Why did the tomato turn red? Because it saw the salad dressing!",
+  "What do you call a bear with no teeth? A gummy bear!",
+  "Why did the student eat his homework? Because the teacher said it was a piece of cake!",
+  "How do you make a tissue dance? Put a little boogie in it!",
+  "What did one hat say to the other? You stay here, I'll go on ahead!",
+  "Why did the picture go to jail? Because it was framed!",
+  "What do you call a can opener that doesn't work? A can't opener!",
+  "Why did the cookie go to the doctor? Because it felt crumby!"
+];
+var lastJoke = -1;
+function showJoke(){
+  var i;
+  do { i = Math.floor(Math.random() * JOKES.length); } while(i === lastJoke && JOKES.length > 1);
+  lastJoke = i;
+  showResult('joke-result', JOKES[i]);
+}
+
+/* ---- Tool info, "Try next" suggestions & Today's Pick ---- */
+var TOOL_INFO = {
+  age: { name: 'Age Calculator', desc: 'Find your exact age in years, months and days.' },
+  bmi: { name: 'BMI Calculator', desc: 'Check your body mass index and category.' },
+  percent: { name: 'Percentage Calculator', desc: 'Percent of a number, percent change and more.' },
+  loan: { name: 'Loan Calculator', desc: 'Monthly payments, total interest and total cost.' },
+  tip: { name: 'Tip Calculator', desc: 'Split the bill and tip fairly between friends.' },
+  unit: { name: 'Unit Converter', desc: 'Convert length, weight and temperature units.' },
+  word: { name: 'Word Counter', desc: 'Count words, characters, sentences and reading time.' },
+  password: { name: 'Password Generator', desc: 'Create strong, random passwords instantly.' },
+  qr: { name: 'QR Code Generator', desc: 'Turn any text or link into a QR code.' },
+  stopwatch: { name: 'Stopwatch', desc: 'Time anything with laps and pause.' },
+  love: { name: 'Love Calculator', desc: 'Check the fun match score between two names.' },
+  coin: { name: 'Coin Flip', desc: 'Flip a virtual coin — heads or tails?' },
+  dice: { name: 'Dice Roller', desc: 'Roll one, two or three dice at once.' },
+  name: { name: 'Random Name Generator', desc: 'Fun usernames and baby-style names.' },
+  rps: { name: 'Rock Paper Scissors', desc: 'Play against the computer and keep score.' },
+  joke: { name: 'Random Joke Generator', desc: 'Clean jokes to brighten your day.' },
+  facts: { name: 'Fun Fact Generator', desc: 'Discover surprising true facts about the world.' }
+};
+var TOOL_LIST = ['age', 'bmi', 'percent', 'loan', 'tip', 'unit', 'word', 'password', 'qr', 'stopwatch', 'love', 'coin', 'dice', 'name', 'rps', 'joke', 'facts'];
+var SUGGESTIONS = {
+  age: ['love', 'facts', 'bmi'],
+  bmi: ['age', 'tip', 'facts'],
+  percent: ['loan', 'tip', 'dice'],
+  loan: ['percent', 'tip', 'coin'],
+  tip: ['loan', 'percent', 'rps'],
+  unit: ['word', 'age', 'dice'],
+  word: ['password', 'qr', 'joke'],
+  password: ['qr', 'word', 'name'],
+  qr: ['password', 'word', 'facts'],
+  stopwatch: ['dice', 'coin', 'rps'],
+  love: ['facts', 'joke', 'age'],
+  coin: ['dice', 'rps', 'love'],
+  dice: ['coin', 'rps', 'stopwatch'],
+  name: ['joke', 'love', 'password'],
+  rps: ['dice', 'coin', 'joke'],
+  joke: ['facts', 'love', 'name'],
+  facts: ['joke', 'love', 'coin']
+};
+/* ---- Share buttons (plain share links, no SDKs) ---- */
+function pageUrlFor(id){
+  var base = location.origin + location.pathname;
+  return id === 'home' ? base : base + '#' + id;
+}
+function shareRowHTML(id, url){
+  var text = id === 'home' ? 'ToolNest — free online tools, no sign-up' : TOOL_INFO[id].name + ' — free on ToolNest';
+  var u = encodeURIComponent(url);
+  var t = encodeURIComponent(text);
+  return '<span class="share-label">Share:</span>' +
+    '<a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=' + u + '" target="_blank" rel="noopener">Facebook</a>' +
+    '<a class="share-btn" href="https://wa.me/?text=' + t + '%20' + u + '" target="_blank" rel="noopener">WhatsApp</a>' +
+    '<a class="share-btn" href="https://x.com/intent/tweet?text=' + t + '&url=' + u + '" target="_blank" rel="noopener">X</a>' +
+    '<button type="button" class="share-btn" onclick="copyShareLink(\'' + id + '\', this)">Copy Link</button>';
+}
+function copyShareLink(id, btn){
+  var url = pageUrlFor(id);
+  function done(){
+    if(btn){
+      var old = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(function(){ btn.textContent = old; }, 2000);
+    }
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done, function(){ copyTextFallback(url); done(); });
+  } else {
+    copyTextFallback(url);
+    done();
+  }
+}
+(function addSuggestions(){
+  Object.keys(SUGGESTIONS).forEach(function(id){
+    var panel = $('tool-' + id);
+    if(!panel){ return; }
+    var wrap = document.createElement('div');
+    wrap.className = 'suggest';
+    var html = '<h3>You might also like</h3><div class="suggest-row">';
+    SUGGESTIONS[id].forEach(function(sid){
+      html += '<button type="button" class="suggest-btn" onclick="openTool(\'' + sid + '\')">' + TOOL_INFO[sid].name + '</button>';
+    });
+    html += '</div>';
+    wrap.innerHTML = html;
+    panel.appendChild(wrap);
+    var share = document.createElement('div');
+    share.className = 'share';
+    share.innerHTML = shareRowHTML(id, pageUrlFor(id));
+    panel.appendChild(share);
+  });
+})();
+(function addHomeShare(){
+  var el = $('home-share');
+  if(el){ el.innerHTML = shareRowHTML('home', pageUrlFor('home')); }
+})();
+(function todaysPick(){
+  var now = new Date();
+  var start = new Date(now.getFullYear(), 0, 0);
+  var dayOfYear = Math.floor((now - start) / 86400000);
+  var pick = TOOL_LIST[dayOfYear % TOOL_LIST.length];
+  $('pick-name').textContent = TOOL_INFO[pick].name;
+  $('pick-desc').textContent = TOOL_INFO[pick].desc;
+  var card = $('todays-pick');
+  card.onclick = function(){ openTool(pick); };
+  card.onkeydown = function(e){ if(e.key === 'Enter'){ openTool(pick); } };
+})();
+
+/* ---- 17. Fun Fact Generator ---- */
+var FACTS = [
+  "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are still good to eat.",
+  "Water covers about 71% of the Earth's surface.",
+  "The Earth is not a perfect sphere — it is slightly wider at the equator than at the poles.",
+  "Light from the Sun takes about eight minutes to reach Earth.",
+  "Sound travels faster through water than through air.",
+  "There is no sound in space, because there is no air to carry sound waves.",
+  "The Moon is slowly drifting away from Earth.",
+  "A day on Venus is longer than a year on Venus.",
+  "Saturn would float in water, because the planet is less dense than water.",
+  "Jupiter is the largest planet in our solar system.",
+  "The Sun is a star.",
+  "Glass is made mostly from sand.",
+  "Bananas are berries, but strawberries are not — botanically speaking.",
+  "Octopuses have three hearts.",
+  "Honeybees can recognize human faces.",
+  "Sharks existed on Earth before trees did.",
+  "A snail can sleep for up to three years.",
+  "A group of flamingos is called a flamboyance.",
+  "Koalas sleep for most of the day.",
+  "A butterfly tastes with its feet.",
+  "Wombat poop is cube-shaped.",
+  "Penguins cannot fly, but they are excellent swimmers.",
+  "The heart of a blue whale is about the size of a small car.",
+  "Sea otters hold hands while they sleep so they do not drift apart.",
+  "Dogs have a sense of smell far stronger than that of humans.",
+  "Humans share about 60% of their DNA with bananas.",
+  "The strongest muscle in the human body, relative to its size, is the jaw muscle.",
+  "Goosebumps are a leftover reflex from our animal ancestors.",
+  "Your brain uses about 20% of your body's energy.",
+  "The Great Wall of China is held together in places by sticky rice mortar.",
+  "The first oranges were not orange — they were green.",
+  "Potatoes were the first vegetable grown in space.",
+  "The Eiffel Tower grows taller in summer because its iron expands in the heat.",
+  "The dot over the letters i and j has a name: it is called a tittle.",
+  "Oxford University is older than the Aztec Empire.",
+  "Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid.",
+  "Antarctica is the largest desert in the world.",
+  "There are more stars in the universe than grains of sand on all of Earth's beaches."
+];
+var lastFact = -1;
+function showFact(){
+  var i;
+  do { i = Math.floor(Math.random() * FACTS.length); } while(i === lastFact && FACTS.length > 1);
+  lastFact = i;
+  showResult('fact-result', FACTS[i]);
+}
+</script>
+</body>
+</html>
