@@ -53,6 +53,8 @@ footer nav a{margin-right:18px;color:var(--muted);font-weight:600;font-size:14px
   <p>ToolNest respects your privacy. This page explains what the site does — and does not do — with your information.</p>
   <h2>No data is collected</h2>
   <p>ToolNest does not collect, store, or share any personal information. All tools run entirely in your browser: anything you type into a calculator or tool (for example your date of birth, text, or a generated password) stays on your device and is never sent to any server.</p>
+  <h2>Visit counting</h2>
+  <p>We count anonymous page visits to see how many people use ToolNest. The counter records only the page address and the time of the visit. It uses no cookies, stores nothing on your device, and collects no personal information.</p>
   <h2>No accounts</h2>
   <p>There are no accounts, no sign-up, and no login on ToolNest. We do not ask for your name, email address, or any other personal detail to use the tools.</p>
   <h2>Cookies</h2>
@@ -79,5 +81,9 @@ footer nav a{margin-right:18px;color:var(--muted);font-weight:600;font-size:14px
     <p class="copy">All tools run in your browser. No data is collected or stored. &copy; 2026 ToolNest.</p>
   </div>
 </footer>
+<!-- Anonymous visit counter: counts page visits only. No cookies, no personal data. -->
+<script>
+(function(){try{fetch('https://oohzwuxculzfomhdvojw.supabase.co/rest/v1/visits',{method:'POST',headers:{'apikey':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9vaHp3dXhjdWx6Zm9taGR2b2p3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUyNTgxNTYsImV4cCI6MjExMDgzNDE1Nn0.kVahzBzrrKK5zhSgipmqPC3fuSRh38rPf062NF4hBD8','Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9vaHp3dXhjdWx6Zm9taGR2b2p3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUyNTgxNTYsImV4cCI6MjExMDgzNDE1Nn0.kVahzBzrrKK5zhSgipmqPC3fuSRh38rPf062NF4hBD8','Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({page:location.pathname}),keepalive:true}).catch(function(){});}catch(e){}})();
+</script>
 </body>
 </html>
