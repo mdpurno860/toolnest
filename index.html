@@ -673,19 +673,39 @@ function qrDomainFrom(text){
 }
 
 function qrLoadFavicon(domain, done){
-  /* Try favicon services in order; the first one that loads wins. */
+  /* icon.horse serves real favicons with CORS headers; the Google favicon
+     service is tried through a CORS proxy as a fallback. Each attempt gets
+     4 seconds before falling through to the next one. */
   var sources = [
-    'https://api.faviconkit.com/' + domain + '/144',
-    'https://www.google.com/s2/favicons?domain=' + domain + '&sz=128',
-    'https://icons.duckduckgo.com/ip3/' + domain + '.ico'
+    'https://icon.horse/icon/' + domain,
+    'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://www.google.com/s2/favicons?domain=' + domain + '&sz=128')
   ];
   var i = 0;
   function tryNext(){
     if(i >= sources.length){ done(null); return; }
     var img = new Image();
+    var settled = false;
+    var timer = setTimeout(function(){
+      if(settled) return;
+      settled = true;
+      img.src = '';
+      i++; tryNext();
+    }, 4000);
     img.crossOrigin = 'anonymous';
-    img.onload = function(){ done(img); };
-    img.onerror = function(){ i++; tryNext(); };
+    img.onload = function(){
+      if(settled) return;
+      settled = true;
+      clearTimeout(timer);
+      /* Reject 1x1 placeholder pixels (some services return these). */
+      if(img.naturalWidth > 1 && img.naturalHeight > 1){ done(img); }
+      else { i++; tryNext(); }
+    };
+    img.onerror = function(){
+      if(settled) return;
+      settled = true;
+      clearTimeout(timer);
+      i++; tryNext();
+    };
     img.src = sources[i];
   }
   tryNext();
