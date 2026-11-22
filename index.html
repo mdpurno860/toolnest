@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ToolNest – Free Online Tools & Calculators</title>
-<meta name="description" content="ToolNest offers 18 free online tools and calculators — age, BMI, loan, tip, date, unit converter, password generator, QR codes and fun tools. Fast, private, no sign-up.">
+<meta name="description" content="ToolNest offers 38 free online tools and calculators — age, BMI, loan, tip, date, unit converter, password generator, QR codes and fun tools. Fast, private, no sign-up.">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"ToolNest","alternateName":"ToolNest — Free Online Tools","url":"https://toolnest.cc.cd/"}
 </script>
@@ -102,6 +102,12 @@ footer nav a{margin-right:18px;color:var(--muted);font-weight:600;font-size:14px
 .share-btn{display:inline-block;background:#fff;color:var(--accent-dark);border:1px solid #c7d2fe;padding:7px 13px;font-size:13px;font-weight:600;border-radius:999px;cursor:pointer;font-family:inherit}
 .share-btn:hover{background:var(--accent-light);text-decoration:none}
 a.share-btn:hover{text-decoration:none}
+.swatches{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.swatch{flex:1;min-width:86px;height:96px;border-radius:10px;cursor:pointer;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;border:1px solid var(--border)}
+.swatch span{background:rgba(255,255,255,.85);color:#0f172a;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px}
+.timer-mode{text-align:center;color:var(--muted);font-weight:600;margin:0 0 4px}
+.gpa-row{display:flex;gap:10px;margin-top:10px}
+.lorem-out{white-space:pre-wrap}
 @media(max-width:640px){.hero h1{font-size:30px}.row{flex-direction:column}.tool-panel{padding:20px}nav.main{display:none}}
 </style>
 </head>
@@ -126,6 +132,26 @@ a.share-btn:hover{text-decoration:none}
     <symbol id="icon-hand" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12V5.5a1.5 1.5 0 0 1 3 0V11m0-6.5v-1a1.5 1.5 0 0 1 3 0V11m0-5a1.5 1.5 0 0 1 3 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-6-3.3L3 13a1.6 1.6 0 0 1 2.6-1.8L8 13"/></g></symbol>
     <symbol id="icon-smile" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></g></symbol>
     <symbol id="icon-bulb" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.8.6 1.1 1.2 1.1 2.2h5c0-1 .3-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></g></symbol>
+    <symbol id="icon-currency" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3"/><path d="M20 17H7l3 3"/></g></symbol>
+    <symbol id="icon-hourglass" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12M6 22h12M7 2v4l5 5 5-5V2M7 22v-4l5-5 5 5v4"/></g></symbol>
+    <symbol id="icon-shuffle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></g></symbol>
+    <symbol id="icon-case" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M12 6v14M8 20h8"/></g></symbol>
+    <symbol id="icon-palette" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="10" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="7.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="16" cy="10" r="1.4" fill="currentColor" stroke="none"/><path d="M12 12.5c1.2 1.8 1.2 3.4 0 5"/></g></symbol>
+    <symbol id="icon-pomodoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 5c0-2 1-3 3-3 0 2-1 3-3 3z"/><path d="M12 5c0-2-1-3-3-3 0 2 1 3 3 3z"/></g></symbol>
+    <symbol id="icon-speed" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l4-5"/><line x1="4" y1="19" x2="20" y2="19"/></g></symbol>
+    <symbol id="icon-banknote" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></g></symbol>
+    <symbol id="icon-paragraph" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 11h16M4 16h10M4 21h13"/></g></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></symbol>
+    <symbol id="icon-columns" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16M6 18v-9M10 18v-9M14 18v-9M18 18v-9M3 9l9-6 9 6M4 18h16"/></g></symbol>
+    <symbol id="icon-person" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="6" r="3"/><path d="M5 21v-4a7 7 0 0 1 14 0v4"/><path d="M9 12h6"/></g></symbol>
+    <symbol id="icon-minus" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></g></symbol>
+    <symbol id="icon-clipboard" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8l2 2 4-4"/><path d="M9 15h6"/></g></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 17l4-6 4 3 6-8"/><path d="M15 6h5v5"/></g></symbol>
+    <symbol id="icon-tag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l9 9-8 8-9-9z"/><circle cx="8" cy="9" r="1.5"/></g></symbol>
+    <symbol id="icon-gradcap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v5"/></g></symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></g></symbol>
+    <symbol id="icon-fuel" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="11" height="18" rx="2"/><path d="M15 8h3l2 3v6a2 2 0 0 1-4 0v-4"/><path d="M8 8h3M8 12h3"/></g></symbol>
+    <symbol id="icon-drop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol>
   </defs>
 </svg>
 
@@ -145,7 +171,7 @@ a.share-btn:hover{text-decoration:none}
 <div id="home-view">
   <section class="hero">
     <h1>Free online tools — fast, private, no sign-up</h1>
-    <p>18 handy tools and calculators that run entirely in your browser. Nothing is uploaded, nothing is stored.</p>
+    <p>38 handy tools and calculators that run entirely in your browser. Nothing is uploaded, nothing is stored.</p>
     <div class="search"><input type="text" id="tool-search" placeholder="Search tools..." oninput="filterTools()"></div>
     <div class="share share-home" id="home-share"></div>
   </section>
@@ -181,6 +207,29 @@ a.share-btn:hover{text-decoration:none}
     <article class="card" tabindex="0" role="button" onclick="openTool('rps')" onkeydown="if(event.key==='Enter')openTool('rps')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-hand"/></svg></div><h3>Rock Paper Scissors</h3><p>Play against the computer and keep score.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('joke')" onkeydown="if(event.key==='Enter')openTool('joke')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-smile"/></svg></div><h3>Random Joke Generator</h3><p>Clean jokes to brighten your day.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('facts')" onkeydown="if(event.key==='Enter')openTool('facts')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-bulb"/></svg></div><h3>Fun Fact Generator</h3><p>Discover surprising true facts about the world.</p></article>
+  </div>
+  <h2 class="section-title">More tools</h2>
+  <div class="grid" id="grid-more">
+    <article class="card" tabindex="0" role="button" onclick="openTool('currency')" onkeydown="if(event.key==='Enter')openTool('currency')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-currency"/></svg></div><h3>Currency Converter</h3><p>Convert money with live exchange rates.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('countdown')" onkeydown="if(event.key==='Enter')openTool('countdown')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-hourglass"/></svg></div><h3>Countdown Timer</h3><p>Count down from any time you set.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('random')" onkeydown="if(event.key==='Enter')openTool('random')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-shuffle"/></svg></div><h3>Random Number Generator</h3><p>Random numbers in any range you choose.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('case')" onkeydown="if(event.key==='Enter')openTool('case')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-case"/></svg></div><h3>Text Case Converter</h3><p>UPPER CASE, lower case, Title Case and more.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('palette')" onkeydown="if(event.key==='Enter')openTool('palette')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-palette"/></svg></div><h3>Color Palette Generator</h3><p>Five harmonious colors for your next design.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('pomodoro')" onkeydown="if(event.key==='Enter')openTool('pomodoro')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-pomodoro"/></svg></div><h3>Pomodoro Timer</h3><p>25-minute focus sessions with short breaks.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('speed')" onkeydown="if(event.key==='Enter')openTool('speed')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-speed"/></svg></div><h3>Speed / Distance / Time Calculator</h3><p>Find speed, distance or time from the other two.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('salary')" onkeydown="if(event.key==='Enter')openTool('salary')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-banknote"/></svg></div><h3>Salary &amp; Hourly Converter</h3><p>Annual salary, hourly, weekly and monthly pay.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('lorem')" onkeydown="if(event.key==='Enter')openTool('lorem')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-paragraph"/></svg></div><h3>Lorem Ipsum Generator</h3><p>Placeholder text for designs and layouts.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('sleep')" onkeydown="if(event.key==='Enter')openTool('sleep')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-moon"/></svg></div><h3>Sleep Calculator</h3><p>Best bedtimes and wake times by sleep cycle.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('roman')" onkeydown="if(event.key==='Enter')openTool('roman')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-columns"/></svg></div><h3>Roman Numeral Converter</h3><p>Numbers to Roman numerals and back.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('bodyfat')" onkeydown="if(event.key==='Enter')openTool('bodyfat')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-person"/></svg></div><h3>Body Fat Calculator</h3><p>Estimate body fat with the US Navy method.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('negnum')" onkeydown="if(event.key==='Enter')openTool('negnum')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-minus"/></svg></div><h3>Negative Number Calculator</h3><p>Maths with negative numbers, rules explained.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('negmark')" onkeydown="if(event.key==='Enter')openTool('negmark')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-clipboard"/></svg></div><h3>Negative Marking Calculator</h3><p>Exam scores with negative marking applied.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('compound')" onkeydown="if(event.key==='Enter')openTool('compound')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-chart"/></svg></div><h3>Compound Interest Calculator</h3><p>Watch savings grow with compound interest.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('discount')" onkeydown="if(event.key==='Enter')openTool('discount')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-tag"/></svg></div><h3>Discount Calculator</h3><p>Sale prices and how much you save.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('gpa')" onkeydown="if(event.key==='Enter')openTool('gpa')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-gradcap"/></svg></div><h3>GPA Calculator</h3><p>Your GPA on a 4.0 scale from course grades.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('timezone')" onkeydown="if(event.key==='Enter')openTool('timezone')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-globe"/></svg></div><h3>Time Zone Converter</h3><p>See the time in another city, DST included.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('fuel')" onkeydown="if(event.key==='Enter')openTool('fuel')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-fuel"/></svg></div><h3>Fuel Cost Calculator</h3><p>Trip fuel use and cost in litres or gallons.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('water')" onkeydown="if(event.key==='Enter')openTool('water')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-drop"/></svg></div><h3>Water Intake Calculator</h3><p>Your daily water target by weight and activity.</p></article>
   </div>
 </div>
 
@@ -442,6 +491,289 @@ a.share-btn:hover{text-decoration:none}
     <button class="btn" onclick="showFact()">Show me a fact</button>
     <div class="result" id="fact-result" hidden></div>
   </section>
+  <section class="tool-panel" id="tool-currency" hidden>
+    <h2>Currency Converter</h2>
+    <p class="panel-desc">Convert money between currencies using live exchange rates. Rates are fetched from a public rate service — no personal data is sent.</p>
+    <label for="curr-amount">Amount</label>
+    <input type="number" id="curr-amount" min="0" placeholder="e.g. 100">
+    <div class="row">
+      <div><label for="curr-from">From</label><select id="curr-from"><option value="USD" selected>USD — US Dollar</option><option value="EUR">EUR — Euro</option><option value="GBP">GBP — British Pound</option><option value="BDT">BDT — Bangladeshi Taka</option><option value="INR">INR — Indian Rupee</option><option value="JPY">JPY — Japanese Yen</option><option value="AUD">AUD — Australian Dollar</option><option value="CAD">CAD — Canadian Dollar</option></select></div>
+      <div><label for="curr-to">To</label><select id="curr-to"><option value="USD">USD — US Dollar</option><option value="EUR" selected>EUR — Euro</option><option value="GBP">GBP — British Pound</option><option value="BDT">BDT — Bangladeshi Taka</option><option value="INR">INR — Indian Rupee</option><option value="JPY">JPY — Japanese Yen</option><option value="AUD">AUD — Australian Dollar</option><option value="CAD">CAD — Canadian Dollar</option></select></div>
+    </div>
+    <button class="btn" onclick="convertCurrency()">Convert</button>
+    <button class="btn btn-secondary" onclick="currSwap()">Swap currencies</button>
+    <div class="result" id="curr-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-countdown" hidden>
+    <h2>Countdown Timer</h2>
+    <p class="panel-desc">Set a time and count down to zero. Visual only — no sound.</p>
+    <div class="sw-display" id="cd-display">00:00</div>
+    <div class="row">
+      <div><label for="cd-h">Hours</label><input type="number" id="cd-h" min="0" max="99" value="0"></div>
+      <div><label for="cd-m">Minutes</label><input type="number" id="cd-m" min="0" max="59" value="5"></div>
+      <div><label for="cd-s">Seconds</label><input type="number" id="cd-s" min="0" max="59" value="0"></div>
+    </div>
+    <div class="rps-buttons">
+      <button class="btn" onclick="cdStart()">Start</button>
+      <button class="btn btn-secondary" onclick="cdPause()">Pause</button>
+      <button class="btn btn-secondary" onclick="cdReset()">Reset</button>
+    </div>
+    <div class="result" id="cd-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-random" hidden>
+    <h2>Random Number Generator</h2>
+    <p class="panel-desc">Pick random numbers in any range, with or without repeats.</p>
+    <div class="row">
+      <div><label for="rand-min">Minimum</label><input type="number" id="rand-min" value="1"></div>
+      <div><label for="rand-max">Maximum</label><input type="number" id="rand-max" value="100"></div>
+    </div>
+    <label for="rand-count">How many numbers</label>
+    <input type="number" id="rand-count" min="1" max="100" value="1">
+    <div class="checks"><label><input type="checkbox" id="rand-unique"> No duplicates (each number only once)</label></div>
+    <button class="btn" onclick="genRandom()">Generate</button>
+    <div class="result" id="rand-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-case" hidden>
+    <h2>Text Case Converter</h2>
+    <p class="panel-desc">Change text to UPPER CASE, lower case, Title Case or Sentence case. Conversion happens as you type.</p>
+    <label for="case-input">Your text</label>
+    <textarea id="case-input" rows="4" placeholder="Type or paste your text here..." oninput="convertCase()"></textarea>
+    <div class="rps-buttons">
+      <button class="btn" id="case-btn-upper" onclick="setCaseMode('upper')">UPPER CASE</button>
+      <button class="btn btn-secondary" id="case-btn-lower" onclick="setCaseMode('lower')">lower case</button>
+      <button class="btn btn-secondary" id="case-btn-title" onclick="setCaseMode('title')">Title Case</button>
+      <button class="btn btn-secondary" id="case-btn-sentence" onclick="setCaseMode('sentence')">Sentence case</button>
+    </div>
+    <div class="result" id="case-output">Your converted text will appear here.</div>
+    <button class="btn btn-secondary" onclick="copyCase()">Copy converted text</button>
+  </section>
+
+  <section class="tool-panel" id="tool-palette" hidden>
+    <h2>Color Palette Generator</h2>
+    <p class="panel-desc">Generate five harmonious colors for your next design. Click any color to copy its hex code.</p>
+    <button class="btn" onclick="genPalette()">Generate palette</button>
+    <div class="swatches" id="palette-row"></div>
+    <p class="muted" id="palette-note" hidden>Click a color to copy its hex code.</p>
+  </section>
+
+  <section class="tool-panel" id="tool-pomodoro" hidden>
+    <h2>Pomodoro Timer</h2>
+    <p class="panel-desc">Focus for 25 minutes, then take a 5-minute break. After every 4 focus sessions you get a longer 15-minute break.</p>
+    <p class="timer-mode" id="pom-mode">Focus time</p>
+    <div class="sw-display" id="pom-display">25:00</div>
+    <div class="rps-buttons">
+      <button class="btn" onclick="pomStart()">Start</button>
+      <button class="btn btn-secondary" onclick="pomPause()">Pause</button>
+      <button class="btn btn-secondary" onclick="pomReset()">Reset</button>
+    </div>
+    <p class="muted" id="pom-cycles" style="text-align:center">Completed focus sessions: 0</p>
+    <div class="result" id="pom-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-speed" hidden>
+    <h2>Speed / Distance / Time Calculator</h2>
+    <p class="panel-desc">Enter any two values and leave the third blank — the calculator will find it.</p>
+    <label for="spd-speed">Speed (km/h)</label>
+    <input type="number" id="spd-speed" min="0" placeholder="Leave blank to find speed">
+    <label for="spd-distance">Distance (km)</label>
+    <input type="number" id="spd-distance" min="0" placeholder="Leave blank to find distance">
+    <label for="spd-time">Time (hours)</label>
+    <input type="number" id="spd-time" min="0" placeholder="Leave blank to find time">
+    <button class="btn" onclick="calcSpeed()">Calculate</button>
+    <div class="result" id="spd-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-salary" hidden>
+    <h2>Salary &amp; Hourly Converter</h2>
+    <p class="panel-desc">Convert between annual salary and hourly pay. Based on 52 weeks a year.</p>
+    <label for="sal-mode">I know my</label>
+    <select id="sal-mode">
+      <option value="annual">Annual salary</option>
+      <option value="hourly">Hourly rate</option>
+    </select>
+    <label for="sal-amount">Amount ($)</label>
+    <input type="number" id="sal-amount" min="0" placeholder="e.g. 52000">
+    <label for="sal-hours">Hours worked per week</label>
+    <input type="number" id="sal-hours" min="1" max="168" value="40">
+    <button class="btn" onclick="calcSalary()">Convert</button>
+    <div class="result" id="sal-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-lorem" hidden>
+    <h2>Lorem Ipsum Generator</h2>
+    <p class="panel-desc">Generate placeholder text for your designs and layouts.</p>
+    <div class="row">
+      <div><label for="lorem-kind">Generate</label><select id="lorem-kind"><option value="paragraphs">Paragraphs</option><option value="words">Words</option><option value="sentences">Sentences</option></select></div>
+      <div><label for="lorem-count">How many</label><input type="number" id="lorem-count" min="1" max="1000" value="3"></div>
+    </div>
+    <button class="btn" onclick="genLorem()">Generate text</button>
+    <button class="btn btn-secondary" onclick="copyLorem()">Copy text</button>
+    <div class="result lorem-out" id="lorem-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-sleep" hidden>
+    <h2>Sleep Calculator</h2>
+    <p class="panel-desc">Sleep works in 90-minute cycles. Waking up between cycles feels much better than waking up in the middle of one. Times below allow about 15 minutes to fall asleep.</p>
+    <label for="sleep-wake">I want to wake up at</label>
+    <input type="time" id="sleep-wake" value="07:00">
+    <button class="btn" onclick="calcBedtimes()">Find my bedtimes</button>
+    <div class="result" id="sleep-bed-result" hidden></div>
+    <hr style="border:none;border-top:1px solid var(--border);margin:24px 0">
+    <h3 style="margin-bottom:0">Sleeping now?</h3>
+    <p class="panel-desc">See the best times to wake up if you go to sleep right now.</p>
+    <button class="btn" onclick="calcWakeTimes()">I want to sleep now</button>
+    <div class="result" id="sleep-wake-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-roman" hidden>
+    <h2>Roman Numeral Converter</h2>
+    <p class="panel-desc">Convert between numbers (1–3999) and Roman numerals, in both directions.</p>
+    <label for="roman-num">Number → Roman numeral</label>
+    <input type="number" id="roman-num" min="1" max="3999" placeholder="e.g. 1999">
+    <button class="btn" onclick="convertToRoman()">Convert to Roman</button>
+    <div class="result" id="roman-num-result" hidden></div>
+    <hr style="border:none;border-top:1px solid var(--border);margin:24px 0">
+    <label for="roman-str">Roman numeral → Number</label>
+    <input type="text" id="roman-str" placeholder="e.g. MCMXCIX">
+    <button class="btn" onclick="convertFromRoman()">Convert to number</button>
+    <div class="result" id="roman-str-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-bodyfat" hidden>
+    <h2>Body Fat Calculator</h2>
+    <p class="panel-desc">Estimates body fat percentage using the US Navy method, from simple tape measurements. An estimate only — not a medical diagnosis.</p>
+    <label for="bf-gender">Gender</label>
+    <select id="bf-gender" onchange="toggleBfHip()">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <label for="bf-height">Height (cm)</label>
+    <input type="number" id="bf-height" min="1" placeholder="e.g. 175">
+    <label for="bf-neck">Neck (cm)</label>
+    <input type="number" id="bf-neck" min="1" placeholder="e.g. 38">
+    <label for="bf-waist">Waist (cm)</label>
+    <input type="number" id="bf-waist" min="1" placeholder="e.g. 85">
+    <div id="bf-hip-wrap" hidden>
+      <label for="bf-hip">Hip (cm)</label>
+      <input type="number" id="bf-hip" min="1" placeholder="e.g. 95">
+    </div>
+    <button class="btn" onclick="calcBodyFat()">Calculate body fat</button>
+    <div class="result" id="bf-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-negnum" hidden>
+    <h2>Negative Number Calculator</h2>
+    <p class="panel-desc">Add, subtract, multiply and divide negative numbers — with a short explanation of the sign rule each time.</p>
+    <div class="row">
+      <div><label for="neg-a">First number</label><input type="number" id="neg-a" placeholder="e.g. -5"></div>
+      <div><label for="neg-op">Operation</label><select id="neg-op"><option value="+">+ Add</option><option value="-">− Subtract</option><option value="x">× Multiply</option><option value="/">÷ Divide</option></select></div>
+      <div><label for="neg-b">Second number</label><input type="number" id="neg-b" placeholder="e.g. 3"></div>
+    </div>
+    <button class="btn" onclick="calcNegNum()">Calculate</button>
+    <div class="result" id="neg-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-negmark" hidden>
+    <h2>Negative Marking Calculator</h2>
+    <p class="panel-desc">Work out your score in an exam with negative marking — common in admission tests. Enter your answers and the marks scheme.</p>
+    <div class="row">
+      <div><label for="nm-total">Total questions</label><input type="number" id="nm-total" min="1" placeholder="e.g. 100"></div>
+      <div><label for="nm-correct">Correct answers</label><input type="number" id="nm-correct" min="0" placeholder="e.g. 70"></div>
+    </div>
+    <div class="row">
+      <div><label for="nm-wrong">Wrong answers</label><input type="number" id="nm-wrong" min="0" placeholder="e.g. 20"></div>
+      <div><label for="nm-pos">Marks per correct answer</label><input type="number" id="nm-pos" min="0" step="0.25" value="1"></div>
+    </div>
+    <label for="nm-neg">Negative marks per wrong answer</label>
+    <input type="number" id="nm-neg" min="0" step="0.05" value="0.25">
+    <button class="btn" onclick="calcNegMark()">Calculate score</button>
+    <div class="result" id="nm-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-compound" hidden>
+    <h2>Compound Interest Calculator</h2>
+    <p class="panel-desc">See how your savings grow when interest earns interest.</p>
+    <label for="ci-principal">Starting amount ($)</label>
+    <input type="number" id="ci-principal" min="0" placeholder="e.g. 1000">
+    <div class="row">
+      <div><label for="ci-rate">Annual interest rate (%)</label><input type="number" id="ci-rate" min="0" placeholder="e.g. 5"></div>
+      <div><label for="ci-years">Years</label><input type="number" id="ci-years" min="0" placeholder="e.g. 10"></div>
+    </div>
+    <label for="ci-freq">Compounded</label>
+    <select id="ci-freq"><option value="1">Yearly</option><option value="2">Every 6 months</option><option value="4">Quarterly</option><option value="12">Monthly</option></select>
+    <button class="btn" onclick="calcCompound()">Calculate</button>
+    <div class="result" id="ci-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-discount" hidden>
+    <h2>Discount Calculator</h2>
+    <p class="panel-desc">Find the sale price and how much you save.</p>
+    <div class="row">
+      <div><label for="disc-price">Original price ($)</label><input type="number" id="disc-price" min="0" placeholder="e.g. 200"></div>
+      <div><label for="disc-pct">Discount (%)</label><input type="number" id="disc-pct" min="0" max="100" placeholder="e.g. 25"></div>
+    </div>
+    <button class="btn" onclick="calcDiscount()">Calculate</button>
+    <div class="result" id="disc-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-gpa" hidden>
+    <h2>GPA Calculator</h2>
+    <p class="panel-desc">Add your courses with their grades and credit hours to find your GPA on a 4.0 scale. Up to 8 courses.</p>
+    <div id="gpa-rows"></div>
+    <button class="btn btn-secondary" onclick="gpaAddRow()">Add a course</button>
+    <br>
+    <button class="btn" onclick="calcGPA()">Calculate GPA</button>
+    <div class="result" id="gpa-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-timezone" hidden>
+    <h2>Time Zone Converter</h2>
+    <p class="panel-desc">Pick a date and time in one city and see what time it is in another. Daylight saving time is handled automatically.</p>
+    <div class="row">
+      <div><label for="tz-date">Date</label><input type="date" id="tz-date"></div>
+      <div><label for="tz-time">Time</label><input type="time" id="tz-time" value="12:00"></div>
+    </div>
+    <div class="row">
+      <div><label for="tz-from">From</label><select id="tz-from"><option value="Asia/Dhaka" selected>Dhaka</option><option value="Europe/London">London</option><option value="America/New_York">New York</option><option value="Asia/Tokyo">Tokyo</option><option value="Australia/Sydney">Sydney</option><option value="Asia/Dubai">Dubai</option><option value="Asia/Kolkata">Kolkata</option><option value="America/Toronto">Toronto</option></select></div>
+      <div><label for="tz-to">To</label><select id="tz-to"><option value="Asia/Dhaka">Dhaka</option><option value="Europe/London" selected>London</option><option value="America/New_York">New York</option><option value="Asia/Tokyo">Tokyo</option><option value="Australia/Sydney">Sydney</option><option value="Asia/Dubai">Dubai</option><option value="Asia/Kolkata">Kolkata</option><option value="America/Toronto">Toronto</option></select></div>
+    </div>
+    <button class="btn" onclick="convertTimeZoneUI()">Convert time</button>
+    <div class="result" id="tz-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-fuel" hidden>
+    <h2>Fuel Cost Calculator</h2>
+    <p class="panel-desc">Work out how much fuel a trip needs and what it will cost.</p>
+    <label for="fuel-unit">Units</label>
+    <select id="fuel-unit" onchange="fuelUnitToggle()">
+      <option value="kml">Kilometres &amp; litres (km/L)</option>
+      <option value="mpg">Miles &amp; gallons (MPG)</option>
+    </select>
+    <label for="fuel-distance" id="fuel-distance-label">Distance (km)</label>
+    <input type="number" id="fuel-distance" min="0" placeholder="e.g. 100">
+    <label for="fuel-eff" id="fuel-eff-label">Fuel efficiency (km/L)</label>
+    <input type="number" id="fuel-eff" min="0" placeholder="e.g. 15">
+    <label for="fuel-price" id="fuel-price-label">Fuel price (per litre)</label>
+    <input type="number" id="fuel-price" min="0" placeholder="e.g. 1.20">
+    <button class="btn" onclick="calcFuel()">Calculate cost</button>
+    <div class="result" id="fuel-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-water" hidden>
+    <h2>Water Intake Calculator</h2>
+    <p class="panel-desc">A rough daily water target based on your weight and activity. A general guide only — listen to your body and your doctor.</p>
+    <div class="row">
+      <div><label for="water-weight">Body weight</label><input type="number" id="water-weight" min="1" placeholder="e.g. 70"></div>
+      <div><label for="water-unit">Unit</label><select id="water-unit"><option value="kg">Kilograms (kg)</option><option value="lb">Pounds (lb)</option></select></div>
+    </div>
+    <label for="water-activity">Activity level</label>
+    <select id="water-activity"><option value="low">Low — mostly sitting</option><option value="moderate" selected>Moderate — some exercise</option><option value="high">High — very active or hot climate</option></select>
+    <button class="btn" onclick="calcWater()">Calculate</button>
+    <div class="result" id="water-result" hidden></div>
+  </section>
 </div>
 </main>
 
@@ -473,6 +805,8 @@ function openTool(id){
   if(panel){ panel.hidden = false; }
   if(id === 'unit'){ buildUnitOptions(); }
   if(id === 'date'){ dateInit(); }
+  if(id === 'gpa'){ gpaInit(); }
+  if(id === 'timezone'){ tzInit(); }
   window.scrollTo(0, 0);
   try{ history.replaceState(null, '', '#' + id); }catch(e){}
 }
@@ -1024,28 +1358,68 @@ var TOOL_INFO = {
   name: { name: 'Random Name Generator', desc: 'Fun usernames and baby-style names.' },
   rps: { name: 'Rock Paper Scissors', desc: 'Play against the computer and keep score.' },
   joke: { name: 'Random Joke Generator', desc: 'Clean jokes to brighten your day.' },
-  facts: { name: 'Fun Fact Generator', desc: 'Discover surprising true facts about the world.' }
+  facts: { name: 'Fun Fact Generator', desc: 'Discover surprising true facts about the world.' },
+  currency: { name: 'Currency Converter', desc: 'Convert money with live exchange rates.' },
+  countdown: { name: 'Countdown Timer', desc: 'Count down from any time you set.' },
+  random: { name: 'Random Number Generator', desc: 'Random numbers in any range you choose.' },
+  case: { name: 'Text Case Converter', desc: 'UPPER CASE, lower case, Title Case and more.' },
+  palette: { name: 'Color Palette Generator', desc: 'Five harmonious colors for your next design.' },
+  pomodoro: { name: 'Pomodoro Timer', desc: '25-minute focus sessions with short breaks.' },
+  speed: { name: 'Speed / Distance / Time Calculator', desc: 'Find speed, distance or time from the other two.' },
+  salary: { name: 'Salary & Hourly Converter', desc: 'Annual salary, hourly, weekly and monthly pay.' },
+  lorem: { name: 'Lorem Ipsum Generator', desc: 'Placeholder text for designs and layouts.' },
+  sleep: { name: 'Sleep Calculator', desc: 'Best bedtimes and wake times by sleep cycle.' },
+  roman: { name: 'Roman Numeral Converter', desc: 'Numbers to Roman numerals and back.' },
+  bodyfat: { name: 'Body Fat Calculator', desc: 'Estimate body fat with the US Navy method.' },
+  negnum: { name: 'Negative Number Calculator', desc: 'Maths with negative numbers, rules explained.' },
+  negmark: { name: 'Negative Marking Calculator', desc: 'Exam scores with negative marking applied.' },
+  compound: { name: 'Compound Interest Calculator', desc: 'Watch savings grow with compound interest.' },
+  discount: { name: 'Discount Calculator', desc: 'Sale prices and how much you save.' },
+  gpa: { name: 'GPA Calculator', desc: 'Your GPA on a 4.0 scale from course grades.' },
+  timezone: { name: 'Time Zone Converter', desc: 'See the time in another city, DST included.' },
+  fuel: { name: 'Fuel Cost Calculator', desc: 'Trip fuel use and cost in litres or gallons.' },
+  water: { name: 'Water Intake Calculator', desc: 'Your daily water target by weight and activity.' }
 };
-var TOOL_LIST = ['age', 'date', 'bmi', 'percent', 'loan', 'tip', 'unit', 'word', 'password', 'qr', 'stopwatch', 'love', 'coin', 'dice', 'name', 'rps', 'joke', 'facts'];
+var TOOL_LIST = ['age', 'date', 'bmi', 'percent', 'loan', 'tip', 'unit', 'word', 'password', 'qr', 'stopwatch', 'love', 'coin', 'dice', 'name', 'rps', 'joke', 'facts', 'currency', 'countdown', 'random', 'case', 'palette', 'pomodoro', 'speed', 'salary', 'lorem', 'sleep', 'roman', 'bodyfat', 'negnum', 'negmark', 'compound', 'discount', 'gpa', 'timezone', 'fuel', 'water'];
 var SUGGESTIONS = {
-  age: ['love', 'facts', 'bmi'],
-  date: ['age', 'stopwatch', 'facts'],
-  bmi: ['age', 'tip', 'facts'],
-  percent: ['loan', 'tip', 'dice'],
-  loan: ['percent', 'tip', 'coin'],
-  tip: ['loan', 'percent', 'rps'],
-  unit: ['word', 'age', 'dice'],
-  word: ['password', 'qr', 'joke'],
-  password: ['qr', 'word', 'name'],
+  age: ['date', 'sleep', 'bmi'],
+  date: ['age', 'countdown', 'timezone'],
+  bmi: ['bodyfat', 'water', 'age'],
+  percent: ['discount', 'loan', 'compound'],
+  loan: ['compound', 'percent', 'salary'],
+  tip: ['discount', 'percent', 'salary'],
+  unit: ['currency', 'speed', 'fuel'],
+  word: ['case', 'lorem', 'password'],
+  password: ['qr', 'random', 'name'],
   qr: ['password', 'word', 'facts'],
-  stopwatch: ['dice', 'coin', 'rps'],
+  stopwatch: ['countdown', 'pomodoro', 'dice'],
   love: ['facts', 'joke', 'age'],
-  coin: ['dice', 'rps', 'love'],
-  dice: ['coin', 'rps', 'stopwatch'],
-  name: ['joke', 'love', 'password'],
+  coin: ['dice', 'random', 'rps'],
+  dice: ['coin', 'random', 'rps'],
+  name: ['joke', 'palette', 'password'],
   rps: ['dice', 'coin', 'joke'],
   joke: ['facts', 'love', 'name'],
-  facts: ['joke', 'love', 'coin']
+  facts: ['joke', 'sleep', 'coin'],
+  currency: ['unit', 'salary', 'percent'],
+  countdown: ['stopwatch', 'pomodoro', 'date'],
+  random: ['dice', 'coin', 'password'],
+  case: ['word', 'lorem', 'password'],
+  palette: ['qr', 'name', 'joke'],
+  pomodoro: ['countdown', 'stopwatch', 'sleep'],
+  speed: ['unit', 'fuel', 'date'],
+  salary: ['loan', 'percent', 'compound'],
+  lorem: ['word', 'case', 'joke'],
+  sleep: ['pomodoro', 'bmi', 'water'],
+  roman: ['random', 'negnum', 'facts'],
+  bodyfat: ['bmi', 'water', 'sleep'],
+  negnum: ['percent', 'negmark', 'roman'],
+  negmark: ['percent', 'gpa', 'negnum'],
+  compound: ['loan', 'discount', 'salary'],
+  discount: ['percent', 'tip', 'compound'],
+  gpa: ['negmark', 'percent', 'facts'],
+  timezone: ['date', 'countdown', 'currency'],
+  fuel: ['speed', 'unit', 'percent'],
+  water: ['bmi', 'bodyfat', 'sleep']
 };
 /* ---- Share buttons (plain share links, no SDKs) ---- */
 function pageUrlFor(id){
@@ -1204,6 +1578,708 @@ function calcDateAdd(){
   var ms = dateUTC(base) + ($('date-dir').value === 'sub' ? -n : n) * 86400000;
   var dir = $('date-dir').value === 'sub' ? 'minus' : 'plus';
   showResult('date-add-result', '<strong>' + dateFmtUTC(ms) + '</strong><br><span class="muted">' + dateFmtUTC(dateUTC(base)) + ' ' + dir + ' ' + n + (n === 1 ? ' day' : ' days') + '</span>');
+}
+
+/* ---- 19. Currency Converter ---- */
+var CURR_FALLBACK = { USD: 1, EUR: 0.92, GBP: 0.79, BDT: 121, INR: 88, JPY: 155, AUD: 1.53, CAD: 1.39 };
+var currRates = null, currLive = false;
+function currencyConvert(amount, from, to, rates){
+  if(!rates[from] || !rates[to]){ return null; }
+  return amount / rates[from] * rates[to];
+}
+function convertCurrency(){
+  var amount = parseFloat($('curr-amount').value);
+  if(isNaN(amount) || amount < 0){ showResult('curr-result', 'Please enter an amount (0 or more).'); return; }
+  var from = $('curr-from').value, to = $('curr-to').value;
+  function show(rates, live){
+    var out = currencyConvert(amount, from, to, rates);
+    if(out === null){ showResult('curr-result', 'That currency pair is not available. Please try another.'); return; }
+    var note = live ? '<br><span class="muted">Live rate from open.er-api.com</span>' : '<br><span class="muted">Live rates are unavailable right now — using approximate rates, which may be outdated.</span>';
+    showResult('curr-result', '<strong>' + amount.toLocaleString('en-US') + ' ' + from + ' = ' + out.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' ' + to + '</strong>' + note);
+  }
+  if(currRates){ show(currRates, currLive); return; }
+  showResult('curr-result', 'Fetching live rates…');
+  fetch('https://open.er-api.com/v6/latest/USD').then(function(r){ return r.json(); }).then(function(d){
+    if(d && d.result === 'success' && d.rates){ currRates = d.rates; currLive = true; show(currRates, true); }
+    else { currRates = CURR_FALLBACK; currLive = false; show(currRates, false); }
+  }).catch(function(){ currRates = CURR_FALLBACK; currLive = false; show(currRates, false); });
+}
+function currSwap(){
+  var f = $('curr-from').value;
+  $('curr-from').value = $('curr-to').value;
+  $('curr-to').value = f;
+}
+
+/* ---- 20. Countdown Timer ---- */
+function fmtClock(sec){
+  sec = Math.max(0, Math.floor(sec));
+  var h = Math.floor(sec / 3600), m = Math.floor((sec % 3600) / 60), s = sec % 60;
+  var mm = (m < 10 ? '0' : '') + m, ss = (s < 10 ? '0' : '') + s;
+  return h > 0 ? h + ':' + mm + ':' + ss : mm + ':' + ss;
+}
+var cdTimer = null, cdEndAt = 0, cdRemaining = 0, cdRunning = false;
+function cdSetDisplay(sec){ $('cd-display').textContent = fmtClock(sec); }
+function cdStop(){ if(cdTimer){ clearInterval(cdTimer); cdTimer = null; } cdRunning = false; }
+function cdTick(){
+  var left = Math.max(0, Math.round((cdEndAt - Date.now()) / 1000));
+  cdSetDisplay(left);
+  if(left <= 0){
+    cdStop();
+    cdRemaining = 0;
+    showResult('cd-result', '<strong>Time\'s up!</strong> Your countdown has finished.');
+  }
+}
+function cdStart(){
+  if(cdRunning){ return; }
+  if(cdRemaining <= 0){
+    var h = parseInt($('cd-h').value, 10) || 0, m = parseInt($('cd-m').value, 10) || 0, s = parseInt($('cd-s').value, 10) || 0;
+    if(h < 0 || m < 0 || s < 0){ showResult('cd-result', 'Please enter zero or positive numbers.'); return; }
+    cdRemaining = h * 3600 + m * 60 + s;
+    if(cdRemaining <= 0){ showResult('cd-result', 'Please set a time greater than zero.'); return; }
+    if(cdRemaining > 359999){ showResult('cd-result', 'Please set a time under 100 hours.'); return; }
+  }
+  cdEndAt = Date.now() + cdRemaining * 1000;
+  cdRunning = true;
+  cdTimer = setInterval(cdTick, 250);
+  $('cd-result').hidden = true;
+}
+function cdPause(){
+  if(cdTimer){ clearInterval(cdTimer); cdTimer = null; }
+  if(cdRunning){ cdRemaining = Math.max(0, Math.round((cdEndAt - Date.now()) / 1000)); cdRunning = false; }
+}
+function cdReset(){ cdStop(); cdRemaining = 0; cdSetDisplay(0); $('cd-result').hidden = true; }
+
+/* ---- 21. Random Number Generator ---- */
+function randInt(min, max){ return Math.floor(Math.random() * (max - min + 1)) + min; }
+function genRandomNumbers(min, max, count, unique){
+  if(unique && count > (max - min + 1)){
+    return { error: 'Cannot pick ' + count + ' unique numbers between ' + min + ' and ' + max + ' — the range only has ' + (max - min + 1) + ' numbers.' };
+  }
+  var out = [], i;
+  if(unique){
+    var pool = [];
+    for(i = min; i <= max; i++){ pool.push(i); }
+    for(i = 0; i < count; i++){ out.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]); }
+  } else {
+    for(i = 0; i < count; i++){ out.push(randInt(min, max)); }
+  }
+  return { nums: out };
+}
+function genRandom(){
+  var min = parseInt($('rand-min').value, 10), max = parseInt($('rand-max').value, 10);
+  var count = parseInt($('rand-count').value, 10);
+  if(isNaN(min) || isNaN(max)){ showResult('rand-result', 'Please enter a minimum and a maximum.'); return; }
+  if(isNaN(count) || count < 1){ showResult('rand-result', 'Please enter how many numbers you want (1 or more).'); return; }
+  if(count > 100){ showResult('rand-result', 'Please ask for at most 100 numbers at a time.'); return; }
+  var note = '';
+  if(min > max){ var t = min; min = max; max = t; note = '<br><span class="muted">Note: minimum and maximum were swapped.</span>'; }
+  var res = genRandomNumbers(min, max, count, $('rand-unique').checked);
+  if(res.error){ showResult('rand-result', res.error); return; }
+  showResult('rand-result', '<strong>' + res.nums.join(', ') + '</strong>' + note);
+}
+
+/* ---- 22. Text Case Converter ---- */
+var caseMode = 'upper';
+function convertCaseText(text, mode){
+  if(mode === 'upper'){ return text.toUpperCase(); }
+  if(mode === 'lower'){ return text.toLowerCase(); }
+  if(mode === 'title'){ return text.toLowerCase().replace(/\b[a-z]/g, function(c){ return c.toUpperCase(); }); }
+  return text.toLowerCase().replace(/(^\s*[a-z]|[.!?]\s+[a-z])/g, function(c){ return c.toUpperCase(); });
+}
+function setCaseMode(mode){
+  caseMode = mode;
+  ['upper', 'lower', 'title', 'sentence'].forEach(function(m){
+    var b = $('case-btn-' + m);
+    if(b){ b.className = (m === mode) ? 'btn' : 'btn btn-secondary'; }
+  });
+  convertCase();
+}
+function convertCase(){
+  var text = $('case-input').value;
+  var out = convertCaseText(text, caseMode);
+  $('case-output').textContent = out ? out : 'Your converted text will appear here.';
+}
+function copyCase(btn){
+  var text = $('case-output').textContent;
+  if(!text || text === 'Your converted text will appear here.'){ return; }
+  function done(){
+    if(btn){
+      var old = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(function(){ btn.textContent = old; }, 2000);
+    }
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done, function(){ copyTextFallback(text); done(); });
+  } else {
+    copyTextFallback(text);
+    done();
+  }
+}
+
+/* ---- 23. Color Palette Generator ---- */
+function hslToHex(h, s, l){
+  h = ((h % 360) + 360) % 360; s /= 100; l /= 100;
+  var c = (1 - Math.abs(2 * l - 1)) * s;
+  var x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+  var m = l - c / 2, r = 0, g = 0, b = 0;
+  if(h < 60){ r = c; g = x; }
+  else if(h < 120){ r = x; g = c; }
+  else if(h < 180){ g = c; b = x; }
+  else if(h < 240){ g = x; b = c; }
+  else if(h < 300){ r = x; b = c; }
+  else { r = c; b = x; }
+  function hx(v){ var n = Math.round((v + m) * 255); return (n < 16 ? '0' : '') + n.toString(16); }
+  return '#' + hx(r) + hx(g) + hx(b);
+}
+function genPaletteColors(){
+  var base = Math.floor(Math.random() * 360);
+  var hues = [base - 30, base - 15, base, base + 15, base + 30];
+  var lights = [45, 55, 62, 55, 45];
+  var out = [];
+  for(var i = 0; i < 5; i++){ out.push(hslToHex(hues[i], 62, lights[i])); }
+  return out;
+}
+function genPalette(){
+  var colors = genPaletteColors();
+  var row = $('palette-row');
+  var html = '';
+  colors.forEach(function(hex){
+    html += '<div class="swatch" style="background:' + hex + '" onclick="copyPaletteHex(\'' + hex + '\', this)"><span>' + hex + '</span></div>';
+  });
+  row.innerHTML = html;
+  $('palette-note').hidden = false;
+}
+function copyPaletteHex(hex, el){
+  var label = el ? el.querySelector('span') : null;
+  function done(){
+    if(label){
+      var old = label.textContent;
+      label.textContent = 'Copied!';
+      setTimeout(function(){ label.textContent = old; }, 1500);
+    }
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(hex).then(done, function(){ copyTextFallback(hex); done(); });
+  } else {
+    copyTextFallback(hex);
+    done();
+  }
+}
+
+/* ---- 24. Pomodoro Timer ---- */
+var POM_FOCUS = 25 * 60, POM_BREAK = 5 * 60, POM_LONG = 15 * 60;
+var pomTimer = null, pomEndAt = 0, pomRemaining = POM_FOCUS, pomRunning = false, pomPhase = 'focus', pomDone = 0;
+function pomodoroNext(phase, done){
+  if(phase === 'focus'){
+    var d = done + 1;
+    if(d % 4 === 0){ return { phase: 'long', seconds: POM_LONG, done: d }; }
+    return { phase: 'break', seconds: POM_BREAK, done: d };
+  }
+  return { phase: 'focus', seconds: POM_FOCUS, done: done };
+}
+function pomModeLabel(){
+  if(pomPhase === 'focus'){ return 'Focus time'; }
+  if(pomPhase === 'break'){ return 'Short break'; }
+  return 'Long break — well done!';
+}
+function pomSetDisplay(){
+  $('pom-display').textContent = fmtClock(pomRemaining);
+  $('pom-mode').textContent = pomModeLabel();
+  $('pom-cycles').textContent = 'Completed focus sessions: ' + pomDone;
+}
+function pomStop(){ if(pomTimer){ clearInterval(pomTimer); pomTimer = null; } pomRunning = false; }
+function pomTick(){
+  pomRemaining = Math.max(0, Math.round((pomEndAt - Date.now()) / 1000));
+  pomSetDisplay();
+  if(pomRemaining <= 0){
+    pomStop();
+    var next = pomodoroNext(pomPhase, pomDone);
+    var msg = pomPhase === 'focus'
+      ? 'Focus session done! Take a ' + (next.phase === 'long' ? '15-minute long break.' : '5-minute break.')
+      : 'Break over — ready for another focus session?';
+    pomPhase = next.phase;
+    pomDone = next.done;
+    pomRemaining = next.seconds;
+    pomSetDisplay();
+    showResult('pom-result', '<strong>' + msg + '</strong><br><span class="muted">Press Start when you are ready.</span>');
+  }
+}
+function pomStart(){
+  if(pomRunning){ return; }
+  pomEndAt = Date.now() + pomRemaining * 1000;
+  pomRunning = true;
+  pomTimer = setInterval(pomTick, 250);
+  $('pom-result').hidden = true;
+}
+function pomPause(){
+  if(pomTimer){ clearInterval(pomTimer); pomTimer = null; }
+  if(pomRunning){ pomRemaining = Math.max(0, Math.round((pomEndAt - Date.now()) / 1000)); pomRunning = false; }
+}
+function pomReset(){
+  pomStop();
+  pomPhase = 'focus'; pomDone = 0; pomRemaining = POM_FOCUS;
+  pomSetDisplay();
+  $('pom-result').hidden = true;
+}
+
+/* ---- 25. Speed / Distance / Time Calculator ---- */
+function solveSpeed(speed, distance, time){
+  var hasS = speed !== null && speed !== undefined && isFinite(speed);
+  var hasD = distance !== null && distance !== undefined && isFinite(distance);
+  var hasT = time !== null && time !== undefined && isFinite(time);
+  var n = (hasS ? 1 : 0) + (hasD ? 1 : 0) + (hasT ? 1 : 0);
+  if(n !== 2){ return { error: 'Enter exactly two of the three values — speed, distance or time — and leave the one you want to find blank.' }; }
+  if(hasD && distance < 0){ return { error: 'Distance cannot be negative.' }; }
+  if(hasS && hasD){
+    if(speed <= 0){ return { error: 'Speed must be greater than zero to find the time.' }; }
+    return { speed: speed, distance: distance, time: distance / speed, solved: 'time' };
+  }
+  if(hasS && hasT){
+    if(time < 0){ return { error: 'Time cannot be negative.' }; }
+    return { speed: speed, distance: speed * time, time: time, solved: 'distance' };
+  }
+  if(time <= 0){ return { error: 'Time must be greater than zero to find the speed.' }; }
+  return { speed: distance / time, distance: distance, time: time, solved: 'speed' };
+}
+function fmtHours(h){
+  if(h < 1){ return Math.round(h * 60) + ' min'; }
+  var whole = Math.floor(h), mins = Math.round((h - whole) * 60);
+  if(mins === 60){ whole += 1; mins = 0; }
+  return whole + ' h' + (mins ? ' ' + mins + ' min' : '');
+}
+function calcSpeed(){
+  function num(id){
+    var v = $('' + id).value.trim();
+    if(v === ''){ return null; }
+    var n = parseFloat(v);
+    return isNaN(n) ? NaN : n;
+  }
+  var s = num('spd-speed'), d = num('spd-distance'), t = num('spd-time');
+  if((s !== null && isNaN(s)) || (d !== null && isNaN(d)) || (t !== null && isNaN(t))){
+    showResult('spd-result', 'Please enter numbers only.'); return;
+  }
+  var res = solveSpeed(s, d, t);
+  if(res.error){ showResult('spd-result', res.error); return; }
+  var line = res.solved === 'speed' ? '<strong>Speed: ' + res.speed.toFixed(2) + ' km/h</strong>'
+    : res.solved === 'distance' ? '<strong>Distance: ' + res.distance.toFixed(2) + ' km</strong>'
+    : '<strong>Time: ' + fmtHours(res.time) + ' (' + res.time.toFixed(2) + ' hours)</strong>';
+  showResult('spd-result', line + '<br><span class="muted">Speed ' + res.speed.toFixed(2) + ' km/h &nbsp;·&nbsp; Distance ' + res.distance.toFixed(2) + ' km &nbsp;·&nbsp; Time ' + fmtHours(res.time) + '</span>');
+}
+
+/* ---- 26. Salary & Hourly Converter ---- */
+function salaryFromAnnual(annual, hoursPerWeek){
+  var weekly = annual / 52, hourly = weekly / hoursPerWeek, monthly = annual / 12;
+  return { annual: annual, monthly: monthly, weekly: weekly, hourly: hourly };
+}
+function salaryFromHourly(hourly, hoursPerWeek){
+  var weekly = hourly * hoursPerWeek, annual = weekly * 52, monthly = annual / 12;
+  return { annual: annual, monthly: monthly, weekly: weekly, hourly: hourly };
+}
+function calcSalary(){
+  var amount = parseFloat($('sal-amount').value);
+  var hours = parseFloat($('sal-hours').value);
+  if(isNaN(amount) || amount < 0){ showResult('sal-result', 'Please enter an amount (0 or more).'); return; }
+  if(isNaN(hours) || hours <= 0){ showResult('sal-result', 'Please enter hours per week greater than zero.'); return; }
+  var res = $('sal-mode').value === 'annual' ? salaryFromAnnual(amount, hours) : salaryFromHourly(amount, hours);
+  showResult('sal-result', '<strong>Hourly: ' + fmtMoney(res.hourly) + ' &nbsp;·&nbsp; Weekly: ' + fmtMoney(res.weekly) + '</strong><br>Monthly: ' + fmtMoney(res.monthly) + ' &nbsp;·&nbsp; Annual: ' + fmtMoney(res.annual) + '<br><span class="muted">Based on ' + hours + ' hours a week, 52 weeks a year.</span>');
+}
+
+/* ---- 27. Lorem Ipsum Generator ---- */
+var LOREM_WORDS = ['lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit', 'sed', 'do', 'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore', 'magna', 'aliqua', 'enim', 'ad', 'minim', 'veniam', 'quis', 'nostrud', 'exercitation', 'ullamco', 'laboris', 'nisi', 'aliquip', 'ex', 'ea', 'commodo', 'consequat', 'duis', 'aute', 'irure', 'in', 'reprehenderit', 'voluptate', 'velit', 'esse', 'cillum', 'fugiat', 'nulla', 'pariatur', 'excepteur', 'sint', 'occaecat', 'cupidatat', 'non', 'proident', 'sunt', 'culpa', 'qui', 'officia', 'deserunt', 'mollit', 'anim', 'id', 'est', 'laborum'];
+function loremSentence(first){
+  var n = 8 + Math.floor(Math.random() * 9);
+  var words = [];
+  if(first){ words = ['Lorem', 'ipsum', 'dolor', 'sit', 'amet']; n -= 5; }
+  for(var i = 0; i < n; i++){ words.push(LOREM_WORDS[Math.floor(Math.random() * LOREM_WORDS.length)]); }
+  var s = words.join(' ');
+  return s.charAt(0).toUpperCase() + s.slice(1) + '.';
+}
+function loremParagraph(first){
+  var n = 3 + Math.floor(Math.random() * 3);
+  var out = [];
+  for(var i = 0; i < n; i++){ out.push(loremSentence(first && i === 0)); }
+  return out.join(' ');
+}
+function genLoremText(kind, count){
+  var i, out;
+  if(kind === 'paragraphs'){
+    out = [];
+    for(i = 0; i < count; i++){ out.push(loremParagraph(i === 0)); }
+    return out.join('\n\n');
+  }
+  if(kind === 'sentences'){
+    out = [];
+    for(i = 0; i < count; i++){ out.push(loremSentence(i === 0)); }
+    return out.join(' ');
+  }
+  var w = ['Lorem', 'ipsum', 'dolor', 'sit', 'amet'];
+  while(w.length < count){ w.push(LOREM_WORDS[Math.floor(Math.random() * LOREM_WORDS.length)]); }
+  return w.slice(0, count).join(' ') + '.';
+}
+function genLorem(){
+  var kind = $('lorem-kind').value;
+  var count = parseInt($('lorem-count').value, 10);
+  var max = kind === 'words' ? 1000 : kind === 'sentences' ? 50 : 20;
+  if(isNaN(count) || count < 1){ showResult('lorem-result', 'Please enter how many (1 or more).'); return; }
+  if(count > max){ showResult('lorem-result', 'Please ask for at most ' + max + ' ' + kind + ' at a time.'); return; }
+  showResult('lorem-result', genLoremText(kind, count));
+}
+function copyLorem(){
+  var el = $('lorem-result');
+  if(el.hidden || !el.textContent){ return; }
+  var text = el.textContent;
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).catch(function(){ copyTextFallback(text); });
+  } else {
+    copyTextFallback(text);
+  }
+}
+
+/* ---- 28. Sleep Calculator ---- */
+function fmt12(min){
+  min = ((min % 1440) + 1440) % 1440;
+  var h = Math.floor(min / 60), m = min % 60;
+  var ap = h >= 12 ? 'PM' : 'AM';
+  var h12 = h % 12; if(h12 === 0){ h12 = 12; }
+  return h12 + ':' + (m < 10 ? '0' : '') + m + ' ' + ap;
+}
+function sleepBedtimes(wakeMin){
+  var out = [];
+  [6, 5, 4].forEach(function(c){
+    out.push({ cycles: c, hours: c * 1.5, time: fmt12(wakeMin - 15 - c * 90) });
+  });
+  return out;
+}
+function sleepWakeTimes(nowMin){
+  var out = [];
+  [4, 5, 6].forEach(function(c){
+    out.push({ cycles: c, hours: c * 1.5, time: fmt12(nowMin + 15 + c * 90) });
+  });
+  return out;
+}
+function calcBedtimes(){
+  var v = $('sleep-wake').value;
+  if(!v){ showResult('sleep-bed-result', 'Please choose a wake-up time.'); return; }
+  var p = v.split(':');
+  var wakeMin = parseInt(p[0], 10) * 60 + parseInt(p[1], 10);
+  var list = sleepBedtimes(wakeMin);
+  var html = '<strong>To wake up at ' + fmt12(wakeMin) + ', go to bed at:</strong><br>';
+  list.forEach(function(b){
+    html += b.time + ' — ' + b.hours + ' hours of sleep (' + b.cycles + ' cycles)<br>';
+  });
+  html += '<span class="muted">The earliest time gives the most sleep.</span>';
+  showResult('sleep-bed-result', html);
+}
+function calcWakeTimes(){
+  var now = new Date();
+  var nowMin = now.getHours() * 60 + now.getMinutes();
+  var list = sleepWakeTimes(nowMin);
+  var html = '<strong>If you sleep now, set your alarm for:</strong><br>';
+  list.forEach(function(b){
+    html += b.time + ' — ' + b.hours + ' hours of sleep (' + b.cycles + ' cycles)<br>';
+  });
+  html += '<span class="muted">Waking between cycles helps you feel fresh.</span>';
+  showResult('sleep-wake-result', html);
+}
+
+/* ---- 29. Roman Numeral Converter ---- */
+var ROMAN_TABLE = [[1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'], [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'], [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+function toRoman(n){
+  if(!isFinite(n) || n < 1 || n > 3999 || Math.floor(n) !== n){ return null; }
+  var out = '';
+  for(var i = 0; i < ROMAN_TABLE.length; i++){
+    while(n >= ROMAN_TABLE[i][0]){ out += ROMAN_TABLE[i][1]; n -= ROMAN_TABLE[i][0]; }
+  }
+  return out;
+}
+var ROMAN_VAL = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+function fromRoman(s){
+  if(!s){ return null; }
+  s = s.toUpperCase().replace(/\s+/g, '');
+  if(!/^[IVXLCDM]+$/.test(s)){ return null; }
+  var total = 0;
+  for(var i = 0; i < s.length; i++){
+    var v = ROMAN_VAL[s[i]], next = ROMAN_VAL[s[i + 1]] || 0;
+    total += v < next ? -v : v;
+  }
+  if(toRoman(total) !== s){ return null; }
+  return total;
+}
+function convertToRoman(){
+  var n = parseInt($('roman-num').value, 10);
+  if(isNaN(n) || n < 1 || n > 3999){ showResult('roman-num-result', 'Please enter a whole number between 1 and 3999.'); return; }
+  showResult('roman-num-result', '<strong>' + n + ' = ' + toRoman(n) + '</strong>');
+}
+function convertFromRoman(){
+  var s = $('roman-str').value;
+  var n = fromRoman(s);
+  if(n === null){ showResult('roman-str-result', 'That is not a valid Roman numeral. Use only the letters I, V, X, L, C, D and M (for example MCMXCIX).'); return; }
+  showResult('roman-str-result', '<strong>' + s.toUpperCase().replace(/\s+/g, '') + ' = ' + n + '</strong>');
+}
+
+/* ---- 30. Body Fat Calculator (US Navy method) ---- */
+function navyBodyFat(gender, height, neck, waist, hip){
+  if(gender === 'male'){
+    if(waist <= neck){ return { error: 'Waist must be larger than neck for this calculation.' }; }
+    var d = 1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height);
+    return { pct: 495 / d - 450 };
+  }
+  if(waist + hip <= neck){ return { error: 'Waist plus hip must be larger than neck for this calculation.' }; }
+  var d2 = 1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height);
+  return { pct: 495 / d2 - 450 };
+}
+function bodyFatCategory(gender, pct){
+  if(gender === 'male'){
+    if(pct < 6){ return 'Essential fat'; }
+    if(pct <= 13){ return 'Athletes'; }
+    if(pct <= 17){ return 'Fit'; }
+    if(pct <= 24){ return 'Average'; }
+    return 'Above average';
+  }
+  if(pct < 14){ return 'Essential fat'; }
+  if(pct <= 20){ return 'Athletes'; }
+  if(pct <= 24){ return 'Fit'; }
+  if(pct <= 31){ return 'Average'; }
+  return 'Above average';
+}
+function toggleBfHip(){ $('bf-hip-wrap').hidden = $('bf-gender').value !== 'female'; }
+function calcBodyFat(){
+  var gender = $('bf-gender').value;
+  var height = parseFloat($('bf-height').value);
+  var neck = parseFloat($('bf-neck').value);
+  var waist = parseFloat($('bf-waist').value);
+  var hip = parseFloat($('bf-hip').value);
+  if(isNaN(height) || height <= 0 || isNaN(neck) || neck <= 0 || isNaN(waist) || waist <= 0){
+    showResult('bf-result', 'Please enter your height, neck and waist (numbers greater than zero).'); return;
+  }
+  if(gender === 'female' && (isNaN(hip) || hip <= 0)){
+    showResult('bf-result', 'Please also enter your hip measurement.'); return;
+  }
+  var res = navyBodyFat(gender, height, neck, waist, hip);
+  if(res.error){ showResult('bf-result', res.error); return; }
+  var pct = res.pct;
+  if(pct < 0){ showResult('bf-result', 'Those measurements do not give a sensible result. Please check them and try again.'); return; }
+  showResult('bf-result', '<strong>Body fat: about ' + pct.toFixed(1) + '%</strong><br><span class="muted">Category: ' + bodyFatCategory(gender, pct) + ' (US Navy estimate).</span>');
+}
+
+/* ---- 31. Negative Number Calculator ---- */
+function negRule(a, op, b){
+  if(op === 'x' || op === '/'){
+    var same = (a < 0) === (b < 0);
+    var verb = op === 'x' ? 'multiplying' : 'dividing';
+    return same
+      ? 'Rule: ' + verb + ' two numbers with the SAME sign gives a positive answer.'
+      : 'Rule: ' + verb + ' two numbers with DIFFERENT signs gives a negative answer.';
+  }
+  if(op === '+'){
+    if(a < 0 && b < 0){ return 'Rule: adding two negative numbers — add their sizes and keep the minus sign.'; }
+    if(a < 0 || b < 0){ return 'Rule: adding numbers with different signs — subtract the smaller size from the larger size and keep the sign of the larger one.'; }
+    return 'Rule: both numbers are positive, so the answer is positive.';
+  }
+  return 'Rule: subtracting a number is the same as adding its opposite: ' + a + ' - (' + b + ') = ' + a + ' + (' + (-b) + ').';
+}
+function negCalc(a, op, b){
+  var r;
+  if(op === '+'){ r = a + b; }
+  else if(op === '-'){ r = a - b; }
+  else if(op === 'x'){ r = a * b; }
+  else {
+    if(b === 0){ return { error: 'You cannot divide by zero.' }; }
+    r = a / b;
+  }
+  return { result: r, rule: negRule(a, op, b) };
+}
+function calcNegNum(){
+  var a = parseFloat($('neg-a').value), b = parseFloat($('neg-b').value);
+  var op = $('neg-op').value;
+  if(isNaN(a) || isNaN(b)){ showResult('neg-result', 'Please enter both numbers.'); return; }
+  var res = negCalc(a, op, b);
+  if(res.error){ showResult('neg-result', res.error); return; }
+  var opSym = op === 'x' ? '×' : op === '/' ? '÷' : op;
+  var shown = Math.abs(res.result % 1) < 0.000001 ? String(Math.round(res.result)) : res.result.toFixed(4).replace(/0+$/, '').replace(/\.$/, '');
+  showResult('neg-result', '<strong>' + a + ' ' + opSym + ' ' + b + ' = ' + shown + '</strong><br><span class="muted">' + res.rule + '</span>');
+}
+
+/* ---- 32. Negative Marking Calculator ---- */
+function negMarkScore(totalQ, correct, wrong, posMark, negMark){
+  if(correct + wrong > totalQ){
+    return { error: 'Correct + wrong answers (' + (correct + wrong) + ') cannot be more than the total questions (' + totalQ + ').' };
+  }
+  var attempted = correct + wrong;
+  var score = correct * posMark - wrong * negMark;
+  var maxScore = totalQ * posMark;
+  var pct = maxScore > 0 ? score / maxScore * 100 : 0;
+  return { score: score, maxScore: maxScore, pct: pct, attempted: attempted, unattempted: totalQ - attempted };
+}
+function calcNegMark(){
+  var totalQ = parseInt($('nm-total').value, 10);
+  var correct = parseInt($('nm-correct').value, 10);
+  var wrong = parseInt($('nm-wrong').value, 10);
+  var posMark = parseFloat($('nm-pos').value);
+  var negMark = parseFloat($('nm-neg').value);
+  if(isNaN(totalQ) || totalQ < 1){ showResult('nm-result', 'Please enter the total number of questions (1 or more).'); return; }
+  if(isNaN(correct) || correct < 0 || isNaN(wrong) || wrong < 0){ showResult('nm-result', 'Please enter correct and wrong answers (0 or more).'); return; }
+  if(isNaN(posMark) || posMark < 0 || isNaN(negMark) || negMark < 0){ showResult('nm-result', 'Please enter the marks per answer (0 or more).'); return; }
+  var res = negMarkScore(totalQ, correct, wrong, posMark, negMark);
+  if(res.error){ showResult('nm-result', res.error); return; }
+  var note = res.score < 0 ? '<br><span class="muted">Your net score is below zero — wrong answers cost more than correct answers earned.</span>' : '';
+  showResult('nm-result', '<strong>Score: ' + res.score + ' out of ' + res.maxScore + ' (' + res.pct.toFixed(1) + '%)</strong><br><span class="muted">Attempted: ' + res.attempted + ' &nbsp;·&nbsp; Unattempted: ' + res.unattempted + ' &nbsp;·&nbsp; Gained: ' + (correct * posMark) + ' &nbsp;·&nbsp; Lost to negative marking: ' + (wrong * negMark) + '</span>' + note);
+}
+
+/* ---- 33. Compound Interest Calculator ---- */
+function compoundAmount(P, rPct, years, n){
+  var r = rPct / 100;
+  return P * Math.pow(1 + r / n, n * years);
+}
+function calcCompound(){
+  var P = parseFloat($('ci-principal').value);
+  var rate = parseFloat($('ci-rate').value);
+  var years = parseFloat($('ci-years').value);
+  var n = parseInt($('ci-freq').value, 10);
+  if(isNaN(P) || P < 0){ showResult('ci-result', 'Please enter a starting amount (0 or more).'); return; }
+  if(isNaN(rate) || rate < 0){ showResult('ci-result', 'Please enter an interest rate (0 or more).'); return; }
+  if(isNaN(years) || years < 0){ showResult('ci-result', 'Please enter the number of years (0 or more).'); return; }
+  var finalAmt = compoundAmount(P, rate, years, n);
+  var earned = finalAmt - P;
+  showResult('ci-result', '<strong>Final amount: ' + fmtMoney(finalAmt) + '</strong><br>Interest earned: ' + fmtMoney(earned) + '<br><span class="muted">' + fmtMoney(P) + ' at ' + rate + '% for ' + years + ' years.</span>');
+}
+
+/* ---- 34. Discount Calculator ---- */
+function discountCalc(price, pct){
+  var saved = price * pct / 100;
+  return { final: price - saved, saved: saved };
+}
+function calcDiscount(){
+  var price = parseFloat($('disc-price').value);
+  var pct = parseFloat($('disc-pct').value);
+  if(isNaN(price) || price < 0){ showResult('disc-result', 'Please enter the original price (0 or more).'); return; }
+  if(isNaN(pct) || pct < 0 || pct > 100){ showResult('disc-result', 'Please enter a discount between 0% and 100%.'); return; }
+  var res = discountCalc(price, pct);
+  showResult('disc-result', '<strong>Sale price: ' + fmtMoney(res.final) + '</strong><br>You save: ' + fmtMoney(res.saved) + ' (' + pct + '% off)');
+}
+
+/* ---- 35. GPA Calculator ---- */
+var GPA_POINTS = { 'A': 4.0, 'A-': 3.7, 'B+': 3.3, 'B': 3.0, 'B-': 2.7, 'C+': 2.3, 'C': 2.0, 'C-': 1.7, 'D+': 1.3, 'D': 1.0, 'F': 0 };
+function gpaCalc(courses){
+  var pts = 0, cr = 0;
+  for(var i = 0; i < courses.length; i++){
+    var g = GPA_POINTS[courses[i].grade];
+    if(g === undefined || !(courses[i].credits > 0)){ continue; }
+    pts += g * courses[i].credits; cr += courses[i].credits;
+  }
+  if(cr === 0){ return null; }
+  return { gpa: pts / cr, credits: cr };
+}
+function gpaGradeOptions(){
+  var grades = ['A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'F'];
+  var html = '';
+  grades.forEach(function(g){ html += '<option value="' + g + '">' + g + ' (' + GPA_POINTS[g].toFixed(1) + ')</option>'; });
+  return html;
+}
+function gpaAddRow(){
+  var wrap = $('gpa-rows');
+  if(wrap.querySelectorAll('.gpa-row').length >= 8){ return; }
+  var row = document.createElement('div');
+  row.className = 'row gpa-row';
+  row.innerHTML = '<select class="gpa-grade" aria-label="Grade">' + gpaGradeOptions() + '</select>' +
+    '<input type="number" class="gpa-credits" min="0" step="0.5" placeholder="Credit hours" aria-label="Credit hours">';
+  wrap.appendChild(row);
+}
+function gpaInit(){
+  if($('gpa-rows').querySelectorAll('.gpa-row').length === 0){
+    gpaAddRow(); gpaAddRow(); gpaAddRow();
+  }
+}
+function calcGPA(){
+  var rows = document.querySelectorAll('#gpa-rows .gpa-row');
+  var courses = [];
+  rows.forEach(function(row){
+    var grade = row.querySelector('.gpa-grade').value;
+    var credits = parseFloat(row.querySelector('.gpa-credits').value);
+    courses.push({ grade: grade, credits: credits });
+  });
+  var res = gpaCalc(courses);
+  if(res === null){ showResult('gpa-result', 'Please enter credit hours (greater than zero) for at least one course.'); return; }
+  showResult('gpa-result', '<strong>GPA: ' + res.gpa.toFixed(2) + ' / 4.0</strong><br><span class="muted">Based on ' + res.credits + ' credit hours.</span>');
+}
+
+/* ---- 36. Time Zone Converter ---- */
+var TZ_LIST = [['Asia/Dhaka', 'Dhaka'], ['Europe/London', 'London'], ['America/New_York', 'New York'], ['Asia/Tokyo', 'Tokyo'], ['Australia/Sydney', 'Sydney'], ['Asia/Dubai', 'Dubai'], ['Asia/Kolkata', 'Kolkata'], ['America/Toronto', 'Toronto']];
+function tzName(tz){
+  for(var i = 0; i < TZ_LIST.length; i++){ if(TZ_LIST[i][0] === tz){ return TZ_LIST[i][1]; } }
+  return tz;
+}
+function tzParts(tz, date){
+  var parts = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour12: false, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).formatToParts(date);
+  var o = {};
+  parts.forEach(function(p){ o[p.type] = p.value; });
+  return o;
+}
+function tzOffsetMs(tz, date){
+  var p = tzParts(tz, date);
+  var asUTC = Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute, +p.second);
+  return asUTC - date.getTime();
+}
+function convertTZ(dateStr, timeStr, fromTZ, toTZ){
+  var d = dateStr.split('-'), t = timeStr.split(':');
+  var wallUTC = Date.UTC(+d[0], +d[1] - 1, +d[2], +t[0], +t[1]);
+  var instant = wallUTC - tzOffsetMs(fromTZ, new Date(wallUTC));
+  instant = wallUTC - tzOffsetMs(fromTZ, new Date(instant));
+  return new Date(instant);
+}
+function tzInit(){
+  if(!$('tz-date').value){
+    var t = new Date();
+    $('tz-date').value = t.getFullYear() + '-' + ('0' + (t.getMonth() + 1)).slice(-2) + '-' + ('0' + t.getDate()).slice(-2);
+  }
+}
+function convertTimeZoneUI(){
+  var dateStr = $('tz-date').value, timeStr = $('tz-time').value;
+  var fromTZ = $('tz-from').value, toTZ = $('tz-to').value;
+  if(!dateStr){ showResult('tz-result', 'Please choose a date.'); return; }
+  if(!timeStr){ showResult('tz-result', 'Please choose a time.'); return; }
+  if(fromTZ === toTZ){ showResult('tz-result', 'Both zones are the same — pick two different cities.'); return; }
+  var instant = convertTZ(dateStr, timeStr, fromTZ, toTZ);
+  var fmt = new Intl.DateTimeFormat('en-US', { timeZone: toTZ, weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  var fromFmt = new Intl.DateTimeFormat('en-US', { timeZone: fromTZ, weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  showResult('tz-result', '<strong>' + fmt.format(instant) + ' in ' + tzName(toTZ) + '</strong><br><span class="muted">' + fromFmt.format(instant) + ' in ' + tzName(fromTZ) + '</span>');
+}
+
+/* ---- 37. Fuel Cost Calculator ---- */
+function fuelCostCalc(distance, efficiency, price, unit){
+  var fuel = distance / efficiency;
+  return { fuel: fuel, fuelUnit: unit === 'mpg' ? 'gallons' : 'litres', cost: fuel * price };
+}
+function fuelUnitToggle(){
+  var mpg = $('fuel-unit').value === 'mpg';
+  $('fuel-distance-label').textContent = mpg ? 'Distance (miles)' : 'Distance (km)';
+  $('fuel-eff-label').textContent = mpg ? 'Fuel efficiency (MPG)' : 'Fuel efficiency (km/L)';
+  $('fuel-price-label').textContent = mpg ? 'Fuel price (per gallon)' : 'Fuel price (per litre)';
+}
+function calcFuel(){
+  var distance = parseFloat($('fuel-distance').value);
+  var eff = parseFloat($('fuel-eff').value);
+  var price = parseFloat($('fuel-price').value);
+  if(isNaN(distance) || distance < 0){ showResult('fuel-result', 'Please enter a distance (0 or more).'); return; }
+  if(isNaN(eff) || eff <= 0){ showResult('fuel-result', 'Please enter fuel efficiency greater than zero.'); return; }
+  if(isNaN(price) || price < 0){ showResult('fuel-result', 'Please enter a fuel price (0 or more).'); return; }
+  var res = fuelCostCalc(distance, eff, price, $('fuel-unit').value);
+  showResult('fuel-result', '<strong>Trip cost: ' + fmtMoney(res.cost) + '</strong><br>Fuel needed: ' + res.fuel.toFixed(2) + ' ' + res.fuelUnit);
+}
+
+/* ---- 38. Water Intake Calculator ---- */
+function waterIntake(weightKg, activity){
+  var mlPerKg = activity === 'low' ? 30 : activity === 'high' ? 40 : 35;
+  var litres = weightKg * mlPerKg / 1000;
+  return { litres: litres, glasses: litres / 0.25 };
+}
+function calcWater(){
+  var weight = parseFloat($('water-weight').value);
+  if(isNaN(weight) || weight <= 0){ showResult('water-result', 'Please enter your weight (greater than zero).'); return; }
+  var kg = $('water-unit').value === 'lb' ? weight * 0.453592 : weight;
+  var res = waterIntake(kg, $('water-activity').value);
+  showResult('water-result', '<strong>About ' + res.litres.toFixed(1) + ' litres a day</strong><br><span class="muted">That is roughly ' + Math.round(res.glasses) + ' glasses (250 ml each).</span>');
 }
 </script>
 <!-- Anonymous visit counter: counts page visits only. No cookies, no personal data. -->
