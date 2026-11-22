@@ -223,7 +223,7 @@ a.share-btn:hover{text-decoration:none}
     <article class="card" tabindex="0" role="button" onclick="openTool('gpa')" onkeydown="if(event.key==='Enter')openTool('gpa')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-gradcap"/></svg></div><h3>GPA Calculator</h3><p>Your GPA on a 4.0 scale from course grades.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('tip')" onkeydown="if(event.key==='Enter')openTool('tip')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-tip"/></svg></div><h3>Tip Calculator</h3><p>Split the bill and tip fairly between friends.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('negnum')" onkeydown="if(event.key==='Enter')openTool('negnum')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-minus"/></svg></div><h3>Negative Number Calculator</h3><p>Maths with negative numbers, rules explained.</p></article>
-    <article class="card" tabindex="0" role="button" onclick="openTool('negmark')" onkeydown="if(event.key==='Enter')openTool('negmark')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-clipboard"/></svg></div><h3>Negative Marking Calculator</h3><p>Exam scores with negative marking applied.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('negmark')" onkeydown="if(event.key==='Enter')openTool('negmark')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-clipboard"/></svg></div><h3>Negative Marking Calculator</h3><p>Exam scores with negative marking applied — see pass or fail.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('scicalc')" onkeydown="if(event.key==='Enter')openTool('scicalc')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-calc"/></svg></div><h3>Scientific Calculator</h3><p>A handy calculator with a keypad.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('compound')" onkeydown="if(event.key==='Enter')openTool('compound')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-chart"/></svg></div><h3>Compound Interest Calculator</h3><p>Watch savings grow with compound interest.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('discount')" onkeydown="if(event.key==='Enter')openTool('discount')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-tag"/></svg></div><h3>Discount Calculator</h3><p>Sale prices and how much you save.</p></article>
@@ -725,7 +725,7 @@ a.share-btn:hover{text-decoration:none}
 
   <section class="tool-panel" id="tool-negmark" hidden>
     <h2>Negative Marking Calculator</h2>
-    <p class="panel-desc">Work out your score in an exam with negative marking — common in admission tests. Enter your answers and the marks scheme.</p>
+    <p class="panel-desc">Work out your score in an exam with negative marking — common in admission tests — and see whether you pass. Enter your answers and the marks scheme.</p>
     <div class="row">
       <div><label for="nm-total">Total questions</label><input type="number" id="nm-total" min="1" placeholder="e.g. 100"></div>
       <div><label for="nm-correct">Correct answers</label><input type="number" id="nm-correct" min="0" placeholder="e.g. 70"></div>
@@ -736,6 +736,8 @@ a.share-btn:hover{text-decoration:none}
     </div>
     <label for="nm-neg">Negative marks per wrong answer</label>
     <input type="number" id="nm-neg" min="0" step="0.05" value="0.25">
+    <label for="nm-pass">Pass mark (%)</label>
+    <input type="number" id="nm-pass" min="0" max="100" step="1" value="33">
     <button class="btn" onclick="calcNegMark()">Calculate score</button>
     <div class="result" id="nm-result" hidden></div>
   </section>
@@ -1701,7 +1703,7 @@ var TOOL_INFO = {
   roman: { name: 'Roman Numeral Converter', desc: 'Numbers to Roman numerals and back.' },
   bodyfat: { name: 'Body Fat Calculator', desc: 'Estimate body fat with the US Navy method.' },
   negnum: { name: 'Negative Number Calculator', desc: 'Maths with negative numbers, rules explained.' },
-  negmark: { name: 'Negative Marking Calculator', desc: 'Exam scores with negative marking applied.' },
+  negmark: { name: 'Negative Marking Calculator', desc: 'Exam scores with negative marking applied — see pass or fail.' },
   compound: { name: 'Compound Interest Calculator', desc: 'Watch savings grow with compound interest.' },
   discount: { name: 'Discount Calculator', desc: 'Sale prices and how much you save.' },
   gpa: { name: 'GPA Calculator', desc: 'Your GPA on a 4.0 scale from course grades.' },
@@ -2487,13 +2489,17 @@ function calcNegMark(){
   var wrong = parseInt($('nm-wrong').value, 10);
   var posMark = parseFloat($('nm-pos').value);
   var negMark = parseFloat($('nm-neg').value);
+  var passMark = parseFloat($('nm-pass').value);
   if(isNaN(totalQ) || totalQ < 1){ showResult('nm-result', 'Please enter the total number of questions (1 or more).'); return; }
   if(isNaN(correct) || correct < 0 || isNaN(wrong) || wrong < 0){ showResult('nm-result', 'Please enter correct and wrong answers (0 or more).'); return; }
   if(isNaN(posMark) || posMark < 0 || isNaN(negMark) || negMark < 0){ showResult('nm-result', 'Please enter the marks per answer (0 or more).'); return; }
+  if(isNaN(passMark) || passMark < 0 || passMark > 100){ showResult('nm-result', 'Please enter a pass mark between 0 and 100%.'); return; }
   var res = negMarkScore(totalQ, correct, wrong, posMark, negMark);
   if(res.error){ showResult('nm-result', res.error); return; }
+  var passed = res.pct >= passMark;
+  var badge = passed ? '<span style="display:inline-block;background:#dcfce7;color:#166534;font-weight:700;padding:4px 12px;border-radius:999px;margin-left:8px;">✓ PASS</span>' : '<span style="display:inline-block;background:#fee2e2;color:#991b1b;font-weight:700;padding:4px 12px;border-radius:999px;margin-left:8px;">✗ FAIL</span>';
   var note = res.score < 0 ? '<br><span class="muted">Your net score is below zero — wrong answers cost more than correct answers earned.</span>' : '';
-  showResult('nm-result', '<strong>Score: ' + res.score + ' out of ' + res.maxScore + ' (' + res.pct.toFixed(1) + '%)</strong><br><span class="muted">Attempted: ' + res.attempted + ' &nbsp;·&nbsp; Unattempted: ' + res.unattempted + ' &nbsp;·&nbsp; Gained: ' + (correct * posMark) + ' &nbsp;·&nbsp; Lost to negative marking: ' + (wrong * negMark) + '</span>' + note);
+  showResult('nm-result', '<strong>Score: ' + res.score + ' out of ' + res.maxScore + ' (' + res.pct.toFixed(1) + '%)</strong>' + badge + '<br><span class="muted">Pass mark: ' + passMark + '% &nbsp;·&nbsp; Attempted: ' + res.attempted + ' &nbsp;·&nbsp; Unattempted: ' + res.unattempted + ' &nbsp;·&nbsp; Gained: ' + (correct * posMark) + ' &nbsp;·&nbsp; Lost to negative marking: ' + (wrong * negMark) + '</span>' + note);
 }
 
 /* ---- 33. Compound Interest Calculator ---- */
