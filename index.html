@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ToolNest – Free Online Tools & Calculators</title>
-<meta name="description" content="ToolNest offers 38 free online tools and calculators — age, BMI, loan, tip, date, unit converter, password generator, QR codes and fun tools. Fast, private, no sign-up.">
+<meta name="description" content="ToolNest offers 58 free online tools and calculators — age, BMI, loan, tip, date, unit converter, password generator, QR codes and fun tools. Fast, private, no sign-up.">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"ToolNest","alternateName":"ToolNest — Free Online Tools","url":"https://toolnest.cc.cd/"}
 </script>
@@ -107,6 +107,13 @@ a.share-btn:hover{text-decoration:none}
 .swatch span{background:rgba(255,255,255,.85);color:#0f172a;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px}
 .timer-mode{text-align:center;color:var(--muted);font-weight:600;margin:0 0 4px}
 .gpa-row{display:flex;gap:10px;margin-top:10px}
+.keypad{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:360px;margin-top:6px}
+.keypad button{padding:14px 0;font-size:1.1rem;font-weight:600;border:1px solid var(--border);border-radius:10px;background:#fff;cursor:pointer;font-family:inherit}
+.keypad button:hover{background:var(--accent-light)}
+.keypad button.op{background:var(--accent-light);color:var(--accent-dark)}
+.keypad button.eq{background:var(--accent);color:#fff}
+.sci-display{background:#0f172a;color:#fff;font-size:1.7rem;text-align:right;padding:16px 18px;border-radius:12px;margin-bottom:12px;min-height:60px;word-break:break-all;font-variant-numeric:tabular-nums}
+.grade-row{display:flex;gap:10px;margin-top:10px}
 .lorem-out{white-space:pre-wrap}
 @media(max-width:640px){.hero h1{font-size:30px}.row{flex-direction:column}.tool-panel{padding:20px}nav.main{display:none}}
 </style>
@@ -152,6 +159,26 @@ a.share-btn:hover{text-decoration:none}
     <symbol id="icon-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></g></symbol>
     <symbol id="icon-fuel" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="11" height="18" rx="2"/><path d="M15 8h3l2 3v6a2 2 0 0 1-4 0v-4"/><path d="M8 8h3M8 12h3"/></g></symbol>
     <symbol id="icon-drop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol>
+    <symbol id="icon-home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></g></symbol>
+    <symbol id="icon-coins" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></g></symbol>
+    <symbol id="icon-trend" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18"/><path d="M6 19v-5"/><path d="M11 19V9"/><path d="M16 19V6"/><path d="M21 19V3"/></g></symbol>
+    <symbol id="icon-flag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h13l-3 4 3 4H5"/></g></symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></g></symbol>
+    <symbol id="icon-arrowup" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16V8M8 12l4-4 4 4"/></g></symbol>
+    <symbol id="icon-receipt" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-2-1.5L14 22l-2-1.5L10 22l-2-1.5L6 22V2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="12" y2="15"/></g></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.5-5.5 6.5-5.5s5.7 2 6.5 5.5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16.5 14.6c2.6.3 4.6 2 5.3 5.4"/></g></symbol>
+    <symbol id="icon-flame" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2s6 5.8 6 11a6 6 0 0 1-12 0c0-2.5 1.5-4.5 3-6 .3 1.6 1.2 2.6 2.5 3C11.6 7.5 11.8 4.5 12 2z"/></symbol>
+    <symbol id="icon-scale" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M8 21h8"/><path d="M5 7l-2.5 6a2.8 2.8 0 0 0 5 0L5 7z"/><path d="M19 7l-2.5 6a2.8 2.8 0 0 0 5 0L19 7z"/><path d="M5 7h14"/></g></symbol>
+    <symbol id="icon-calcheck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/><path d="M8.5 16l2.5 2.5 4.5-4.5"/></g></symbol>
+    <symbol id="icon-flower" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2.5"/><circle cx="12" cy="5.5" r="2.5"/><circle cx="18" cy="10" r="2.5"/><circle cx="15.5" cy="17" r="2.5"/><circle cx="8.5" cy="17" r="2.5"/><circle cx="6" cy="10" r="2.5"/></g></symbol>
+    <symbol id="icon-pulse" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-7 4 14 3-7h6"/></g></symbol>
+    <symbol id="icon-divide" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="7.5" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="16.5" r="1" fill="currentColor" stroke="none"/><line x1="7" y1="12" x2="17" y2="12"/></g></symbol>
+    <symbol id="icon-calc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 14.5h.01M12 14.5h.01M15.5 14.5h.01M8.5 18h.01M12 18h.01M15.5 18h.01"/></g></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></g></symbol>
+    <symbol id="icon-hash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="9" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="15" y2="20"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/></g></symbol>
+    <symbol id="icon-award" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/><path d="M10 9l1.5 1.5L14.5 7"/></g></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5z"/><path d="M4 19a2 2 0 0 1 2-2h13"/></g></symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/></g></symbol>
   </defs>
 </svg>
 
@@ -171,7 +198,7 @@ a.share-btn:hover{text-decoration:none}
 <div id="home-view">
   <section class="hero">
     <h1>Free online tools — fast, private, no sign-up</h1>
-    <p>38 handy tools and calculators that run entirely in your browser. Nothing is uploaded, nothing is stored.</p>
+    <p>58 handy tools and calculators that run entirely in your browser. Nothing is uploaded, nothing is stored.</p>
     <div class="search"><input type="text" id="tool-search" placeholder="Search tools..." oninput="filterTools()"></div>
     <div class="share share-home" id="home-share"></div>
   </section>
@@ -186,11 +213,21 @@ a.share-btn:hover{text-decoration:none}
   <h2 class="section-title">Useful tools</h2>
   <div class="grid" id="grid-useful">
     <article class="card" tabindex="0" role="button" onclick="openTool('age')" onkeydown="if(event.key==='Enter')openTool('age')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-calendar"/></svg></div><h3>Age Calculator</h3><p>Find your exact age in years, months and days.</p></article>
-    <article class="card" tabindex="0" role="button" onclick="openTool('date')" onkeydown="if(event.key==='Enter')openTool('date')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-date"/></svg></div><h3>Date Calculator</h3><p>Find days between dates or add days to a date.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('bmi')" onkeydown="if(event.key==='Enter')openTool('bmi')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-heart"/></svg></div><h3>BMI Calculator</h3><p>Check your body mass index and category.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('percent')" onkeydown="if(event.key==='Enter')openTool('percent')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-percent"/></svg></div><h3>Percentage Calculator</h3><p>Percent of a number, percent change and more.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('mortgage')" onkeydown="if(event.key==='Enter')openTool('mortgage')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-home"/></svg></div><h3>Mortgage Calculator</h3><p>Monthly mortgage payments and total interest.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('loan')" onkeydown="if(event.key==='Enter')openTool('loan')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-bank"/></svg></div><h3>Loan Calculator</h3><p>Monthly payments, total interest and total cost.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('calorie')" onkeydown="if(event.key==='Enter')openTool('calorie')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-flame"/></svg></div><h3>Calorie Calculator</h3><p>Daily calories from BMR and activity.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('currency')" onkeydown="if(event.key==='Enter')openTool('currency')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-currency"/></svg></div><h3>Currency Converter</h3><p>Convert money with live exchange rates.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('date')" onkeydown="if(event.key==='Enter')openTool('date')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-date"/></svg></div><h3>Date Calculator</h3><p>Find days between dates or add days to a date.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('gpa')" onkeydown="if(event.key==='Enter')openTool('gpa')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-gradcap"/></svg></div><h3>GPA Calculator</h3><p>Your GPA on a 4.0 scale from course grades.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('tip')" onkeydown="if(event.key==='Enter')openTool('tip')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-tip"/></svg></div><h3>Tip Calculator</h3><p>Split the bill and tip fairly between friends.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('negnum')" onkeydown="if(event.key==='Enter')openTool('negnum')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-minus"/></svg></div><h3>Negative Number Calculator</h3><p>Maths with negative numbers, rules explained.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('negmark')" onkeydown="if(event.key==='Enter')openTool('negmark')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-clipboard"/></svg></div><h3>Negative Marking Calculator</h3><p>Exam scores with negative marking applied.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('scicalc')" onkeydown="if(event.key==='Enter')openTool('scicalc')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-calc"/></svg></div><h3>Scientific Calculator</h3><p>A handy calculator with a keypad.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('compound')" onkeydown="if(event.key==='Enter')openTool('compound')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-chart"/></svg></div><h3>Compound Interest Calculator</h3><p>Watch savings grow with compound interest.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('discount')" onkeydown="if(event.key==='Enter')openTool('discount')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-tag"/></svg></div><h3>Discount Calculator</h3><p>Sale prices and how much you save.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('salary')" onkeydown="if(event.key==='Enter')openTool('salary')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-banknote"/></svg></div><h3>Salary &amp; Hourly Converter</h3><p>Annual salary, hourly, weekly and monthly pay.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('unit')" onkeydown="if(event.key==='Enter')openTool('unit')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-ruler"/></svg></div><h3>Unit Converter</h3><p>Convert length, weight and temperature units.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('word')" onkeydown="if(event.key==='Enter')openTool('word')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-text"/></svg></div><h3>Word Counter</h3><p>Count words, characters, sentences and reading time.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('password')" onkeydown="if(event.key==='Enter')openTool('password')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-key"/></svg></div><h3>Password Generator</h3><p>Create strong, random passwords instantly.</p></article>
@@ -210,26 +247,36 @@ a.share-btn:hover{text-decoration:none}
   </div>
   <h2 class="section-title">More tools</h2>
   <div class="grid" id="grid-more">
-    <article class="card" tabindex="0" role="button" onclick="openTool('currency')" onkeydown="if(event.key==='Enter')openTool('currency')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-currency"/></svg></div><h3>Currency Converter</h3><p>Convert money with live exchange rates.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('countdown')" onkeydown="if(event.key==='Enter')openTool('countdown')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-hourglass"/></svg></div><h3>Countdown Timer</h3><p>Count down from any time you set.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('random')" onkeydown="if(event.key==='Enter')openTool('random')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-shuffle"/></svg></div><h3>Random Number Generator</h3><p>Random numbers in any range you choose.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('case')" onkeydown="if(event.key==='Enter')openTool('case')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-case"/></svg></div><h3>Text Case Converter</h3><p>UPPER CASE, lower case, Title Case and more.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('palette')" onkeydown="if(event.key==='Enter')openTool('palette')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-palette"/></svg></div><h3>Color Palette Generator</h3><p>Five harmonious colors for your next design.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('pomodoro')" onkeydown="if(event.key==='Enter')openTool('pomodoro')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-pomodoro"/></svg></div><h3>Pomodoro Timer</h3><p>25-minute focus sessions with short breaks.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('speed')" onkeydown="if(event.key==='Enter')openTool('speed')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-speed"/></svg></div><h3>Speed / Distance / Time Calculator</h3><p>Find speed, distance or time from the other two.</p></article>
-    <article class="card" tabindex="0" role="button" onclick="openTool('salary')" onkeydown="if(event.key==='Enter')openTool('salary')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-banknote"/></svg></div><h3>Salary &amp; Hourly Converter</h3><p>Annual salary, hourly, weekly and monthly pay.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('lorem')" onkeydown="if(event.key==='Enter')openTool('lorem')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-paragraph"/></svg></div><h3>Lorem Ipsum Generator</h3><p>Placeholder text for designs and layouts.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('sleep')" onkeydown="if(event.key==='Enter')openTool('sleep')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-moon"/></svg></div><h3>Sleep Calculator</h3><p>Best bedtimes and wake times by sleep cycle.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('roman')" onkeydown="if(event.key==='Enter')openTool('roman')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-columns"/></svg></div><h3>Roman Numeral Converter</h3><p>Numbers to Roman numerals and back.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('bodyfat')" onkeydown="if(event.key==='Enter')openTool('bodyfat')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-person"/></svg></div><h3>Body Fat Calculator</h3><p>Estimate body fat with the US Navy method.</p></article>
-    <article class="card" tabindex="0" role="button" onclick="openTool('negnum')" onkeydown="if(event.key==='Enter')openTool('negnum')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-minus"/></svg></div><h3>Negative Number Calculator</h3><p>Maths with negative numbers, rules explained.</p></article>
-    <article class="card" tabindex="0" role="button" onclick="openTool('negmark')" onkeydown="if(event.key==='Enter')openTool('negmark')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-clipboard"/></svg></div><h3>Negative Marking Calculator</h3><p>Exam scores with negative marking applied.</p></article>
-    <article class="card" tabindex="0" role="button" onclick="openTool('compound')" onkeydown="if(event.key==='Enter')openTool('compound')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-chart"/></svg></div><h3>Compound Interest Calculator</h3><p>Watch savings grow with compound interest.</p></article>
-    <article class="card" tabindex="0" role="button" onclick="openTool('discount')" onkeydown="if(event.key==='Enter')openTool('discount')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-tag"/></svg></div><h3>Discount Calculator</h3><p>Sale prices and how much you save.</p></article>
-    <article class="card" tabindex="0" role="button" onclick="openTool('gpa')" onkeydown="if(event.key==='Enter')openTool('gpa')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-gradcap"/></svg></div><h3>GPA Calculator</h3><p>Your GPA on a 4.0 scale from course grades.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('timezone')" onkeydown="if(event.key==='Enter')openTool('timezone')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-globe"/></svg></div><h3>Time Zone Converter</h3><p>See the time in another city, DST included.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('fuel')" onkeydown="if(event.key==='Enter')openTool('fuel')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-fuel"/></svg></div><h3>Fuel Cost Calculator</h3><p>Trip fuel use and cost in litres or gallons.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('water')" onkeydown="if(event.key==='Enter')openTool('water')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-drop"/></svg></div><h3>Water Intake Calculator</h3><p>Your daily water target by weight and activity.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('simpleinterest')" onkeydown="if(event.key==='Enter')openTool('simpleinterest')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-coins"/></svg></div><h3>Simple Interest Calculator</h3><p>Interest on savings and loans, simply.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('invest')" onkeydown="if(event.key==='Enter')openTool('invest')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-trend"/></svg></div><h3>Investment Calculator</h3><p>Grow your money with monthly investing.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('retire')" onkeydown="if(event.key==='Enter')openTool('retire')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-flag"/></svg></div><h3>Retirement Calculator</h3><p>See what your retirement savings could reach.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('savingsgoal')" onkeydown="if(event.key==='Enter')openTool('savingsgoal')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-target"/></svg></div><h3>Savings Goal Calculator</h3><p>How much to save each month for your goal.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('inflation')" onkeydown="if(event.key==='Enter')openTool('inflation')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-arrowup"/></svg></div><h3>Inflation Calculator</h3><p>What will your money be worth in the future?</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('vat')" onkeydown="if(event.key==='Enter')openTool('vat')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-receipt"/></svg></div><h3>VAT / Sales Tax Calculator</h3><p>Add or remove VAT and sales tax.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('splitbill')" onkeydown="if(event.key==='Enter')openTool('splitbill')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-users"/></svg></div><h3>Split Bill Calculator</h3><p>Split any bill fairly, tip included.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('idealweight')" onkeydown="if(event.key==='Enter')openTool('idealweight')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-scale"/></svg></div><h3>Ideal Weight Calculator</h3><p>Your healthy weight range by height.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('duedate')" onkeydown="if(event.key==='Enter')openTool('duedate')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-calcheck"/></svg></div><h3>Pregnancy Due Date Calculator</h3><p>Your baby's due date and current week.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('ovulation')" onkeydown="if(event.key==='Enter')openTool('ovulation')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-flower"/></svg></div><h3>Ovulation Calculator</h3><p>Fertile window and next period dates.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('heartrate')" onkeydown="if(event.key==='Enter')openTool('heartrate')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-pulse"/></svg></div><h3>Target Heart Rate Calculator</h3><p>Training heart rate zones that fit you.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('fraction')" onkeydown="if(event.key==='Enter')openTool('fraction')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-divide"/></svg></div><h3>Fraction Calculator</h3><p>Add, subtract, multiply and divide fractions.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('timecalc')" onkeydown="if(event.key==='Enter')openTool('timecalc')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-clock"/></svg></div><h3>Time Calculator</h3><p>Add and subtract hours and minutes.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('numwords')" onkeydown="if(event.key==='Enter')openTool('numwords')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-hash"/></svg></div><h3>Number to Words Converter</h3><p>Turn numbers into English words.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('grade')" onkeydown="if(event.key==='Enter')openTool('grade')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-award"/></svg></div><h3>Grade Calculator</h3><p>Weighted grades from assignments.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('cgpa')" onkeydown="if(event.key==='Enter')openTool('cgpa')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-book"/></svg></div><h3>CGPA to Percentage Converter</h3><p>Convert CGPA to a percentage.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('area')" onkeydown="if(event.key==='Enter')openTool('area')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-grid"/></svg></div><h3>Area Calculator</h3><p>Area of rectangles, circles and triangles.</p></article>
   </div>
 </div>
 
@@ -774,6 +821,287 @@ a.share-btn:hover{text-decoration:none}
     <button class="btn" onclick="calcWater()">Calculate</button>
     <div class="result" id="water-result" hidden></div>
   </section>
+
+  <section class="tool-panel" id="tool-mortgage" hidden>
+    <h2>Mortgage Calculator</h2>
+    <p class="panel-desc">Work out your monthly mortgage payment, and how much interest you will pay over the life of the loan.</p>
+    <label for="mg-amount">Loan amount ($)</label>
+    <input type="number" id="mg-amount" min="0" placeholder="e.g. 200000">
+    <div class="row">
+      <div><label for="mg-rate">Annual interest rate (%)</label><input type="number" id="mg-rate" min="0" placeholder="e.g. 5"></div>
+      <div><label for="mg-years">Loan term (years)</label><input type="number" id="mg-years" min="1" placeholder="e.g. 30"></div>
+    </div>
+    <button class="btn" onclick="calcMortgage()">Calculate payment</button>
+    <div class="result" id="mg-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-simpleinterest" hidden>
+    <h2>Simple Interest Calculator</h2>
+    <p class="panel-desc">Interest that is calculated only on the original amount — no compounding.</p>
+    <label for="si-principal">Principal amount ($)</label>
+    <input type="number" id="si-principal" min="0" placeholder="e.g. 1000">
+    <div class="row">
+      <div><label for="si-rate">Annual interest rate (%)</label><input type="number" id="si-rate" min="0" placeholder="e.g. 5"></div>
+      <div><label for="si-years">Time (years)</label><input type="number" id="si-years" min="0" placeholder="e.g. 2"></div>
+    </div>
+    <button class="btn" onclick="calcSimpleInterest()">Calculate interest</button>
+    <div class="result" id="si-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-invest" hidden>
+    <h2>Investment Calculator</h2>
+    <p class="panel-desc">See how an initial amount plus regular monthly contributions could grow. Returns are compounded monthly.</p>
+    <div class="row">
+      <div><label for="inv-initial">Initial amount ($)</label><input type="number" id="inv-initial" min="0" placeholder="e.g. 1000"></div>
+      <div><label for="inv-monthly">Monthly contribution ($)</label><input type="number" id="inv-monthly" min="0" placeholder="e.g. 100"></div>
+    </div>
+    <div class="row">
+      <div><label for="inv-return">Expected annual return (%)</label><input type="number" id="inv-return" min="0" placeholder="e.g. 7"></div>
+      <div><label for="inv-years">Years</label><input type="number" id="inv-years" min="0" placeholder="e.g. 10"></div>
+    </div>
+    <button class="btn" onclick="calcInvest()">Calculate growth</button>
+    <div class="result" id="inv-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-retire" hidden>
+    <h2>Retirement Calculator</h2>
+    <p class="panel-desc">Estimate what your savings could be worth when you retire, based on what you have now and what you save each month.</p>
+    <div class="row">
+      <div><label for="rt-age">Current age</label><input type="number" id="rt-age" min="0" max="120" placeholder="e.g. 30"></div>
+      <div><label for="rt-retire-age">Retirement age</label><input type="number" id="rt-retire-age" min="0" max="120" placeholder="e.g. 60"></div>
+    </div>
+    <div class="row">
+      <div><label for="rt-current">Current savings ($)</label><input type="number" id="rt-current" min="0" placeholder="e.g. 5000"></div>
+      <div><label for="rt-monthly">Monthly contribution ($)</label><input type="number" id="rt-monthly" min="0" placeholder="e.g. 200"></div>
+    </div>
+    <label for="rt-return">Expected annual return (%)</label>
+    <input type="number" id="rt-return" min="0" placeholder="e.g. 7">
+    <button class="btn" onclick="calcRetire()">Calculate</button>
+    <div class="result" id="rt-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-savingsgoal" hidden>
+    <h2>Savings Goal Calculator</h2>
+    <p class="panel-desc">How much do you need to save each month to reach your goal on time?</p>
+    <div class="row">
+      <div><label for="sg-goal">Goal amount ($)</label><input type="number" id="sg-goal" min="0" placeholder="e.g. 10000"></div>
+      <div><label for="sg-current">Already saved ($)</label><input type="number" id="sg-current" min="0" placeholder="e.g. 1000"></div>
+    </div>
+    <div class="row">
+      <div><label for="sg-months">Months to reach the goal</label><input type="number" id="sg-months" min="1" placeholder="e.g. 24"></div>
+      <div><label for="sg-return">Annual interest rate (%)</label><input type="number" id="sg-return" min="0" placeholder="e.g. 4"></div>
+    </div>
+    <button class="btn" onclick="calcSavingsGoal()">Calculate monthly saving</button>
+    <div class="result" id="sg-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-inflation" hidden>
+    <h2>Inflation Calculator</h2>
+    <p class="panel-desc">See what an amount of money will be worth in the future — and what it was worth in the past — at a given inflation rate.</p>
+    <label for="inf-amount">Amount ($)</label>
+    <input type="number" id="inf-amount" min="0" placeholder="e.g. 100">
+    <div class="row">
+      <div><label for="inf-rate">Annual inflation rate (%)</label><input type="number" id="inf-rate" min="0" placeholder="e.g. 3"></div>
+      <div><label for="inf-years">Years</label><input type="number" id="inf-years" min="0" placeholder="e.g. 10"></div>
+    </div>
+    <button class="btn" onclick="calcInflation()">Calculate</button>
+    <div class="result" id="inf-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-vat" hidden>
+    <h2>VAT / Sales Tax Calculator</h2>
+    <p class="panel-desc">Add tax to a price, or take tax out of a price that already includes it.</p>
+    <label for="vat-mode">Mode</label>
+    <select id="vat-mode"><option value="add">Add tax to the price</option><option value="remove">Remove tax from the price</option></select>
+    <div class="row">
+      <div><label for="vat-price">Price ($)</label><input type="number" id="vat-price" min="0" placeholder="e.g. 100"></div>
+      <div><label for="vat-rate">Tax rate (%)</label><input type="number" id="vat-rate" min="0" placeholder="e.g. 20"></div>
+    </div>
+    <button class="btn" onclick="calcVAT()">Calculate tax</button>
+    <div class="result" id="vat-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-splitbill" hidden>
+    <h2>Split Bill Calculator</h2>
+    <p class="panel-desc">Split a bill evenly between friends, with an optional tip.</p>
+    <div class="row">
+      <div><label for="sb-total">Total bill ($)</label><input type="number" id="sb-total" min="0" placeholder="e.g. 100"></div>
+      <div><label for="sb-people">Number of people</label><input type="number" id="sb-people" min="1" placeholder="e.g. 4"></div>
+    </div>
+    <label for="sb-tip">Tip (%) — optional</label>
+    <input type="number" id="sb-tip" min="0" placeholder="e.g. 10">
+    <button class="btn" onclick="calcSplitBill()">Split the bill</button>
+    <div class="result" id="sb-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-calorie" hidden>
+    <h2>Calorie Calculator</h2>
+    <p class="panel-desc">Estimate your daily calorie needs from your BMR (Mifflin-St Jeor formula) and activity level. A general guide only.</p>
+    <div class="row">
+      <div><label for="cal-age">Age (years)</label><input type="number" id="cal-age" min="1" max="120" placeholder="e.g. 30"></div>
+      <div><label for="cal-gender">Gender</label><select id="cal-gender"><option value="male">Male</option><option value="female">Female</option></select></div>
+    </div>
+    <div class="row">
+      <div><label for="cal-height">Height (cm)</label><input type="number" id="cal-height" min="1" placeholder="e.g. 180"></div>
+      <div><label for="cal-weight">Weight (kg)</label><input type="number" id="cal-weight" min="1" placeholder="e.g. 80"></div>
+    </div>
+    <label for="cal-activity">Activity level</label>
+    <select id="cal-activity"><option value="sedentary">Sedentary — little or no exercise</option><option value="light">Light — exercise 1–3 days a week</option><option value="moderate" selected>Moderate — exercise 3–5 days a week</option><option value="active">Active — exercise 6–7 days a week</option><option value="veryactive">Very active — hard exercise daily</option></select>
+    <button class="btn" onclick="calcCalorie()">Calculate calories</button>
+    <div class="result" id="cal-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-idealweight" hidden>
+    <h2>Ideal Weight Calculator</h2>
+    <p class="panel-desc">A healthy weight range for your height, using the Devine formula. A general guide only — bodies differ.</p>
+    <div class="row">
+      <div><label for="iw-height">Height (cm)</label><input type="number" id="iw-height" min="1" placeholder="e.g. 175"></div>
+      <div><label for="iw-gender">Gender</label><select id="iw-gender"><option value="male">Male</option><option value="female">Female</option></select></div>
+    </div>
+    <button class="btn" onclick="calcIdealWeight()">Calculate range</button>
+    <div class="result" id="iw-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-duedate" hidden>
+    <h2>Pregnancy Due Date Calculator</h2>
+    <p class="panel-desc">Estimate your due date from the first day of your last period (Naegele's rule — 280 days). For information only; your doctor's date is the one to trust.</p>
+    <label for="dd-lmp">First day of your last period</label>
+    <input type="date" id="dd-lmp">
+    <button class="btn" onclick="calcDueDate()">Calculate due date</button>
+    <div class="result" id="dd-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-ovulation" hidden>
+    <h2>Ovulation Calculator</h2>
+    <p class="panel-desc">Estimate your fertile window and next period from your last period and cycle length. An estimate only — cycles vary.</p>
+    <div class="row">
+      <div><label for="ov-lmp">First day of your last period</label><input type="date" id="ov-lmp"></div>
+      <div><label for="ov-cycle">Cycle length (days)</label><input type="number" id="ov-cycle" min="21" max="45" value="28"></div>
+    </div>
+    <button class="btn" onclick="calcOvulation()">Calculate</button>
+    <div class="result" id="ov-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-heartrate" hidden>
+    <h2>Target Heart Rate Calculator</h2>
+    <p class="panel-desc">Your training heart rate zones, using the Karvonen formula with your resting heart rate.</p>
+    <div class="row">
+      <div><label for="hr-age">Age (years)</label><input type="number" id="hr-age" min="1" max="120" placeholder="e.g. 30"></div>
+      <div><label for="hr-resting">Resting heart rate (bpm)</label><input type="number" id="hr-resting" min="30" max="120" placeholder="e.g. 60"></div>
+    </div>
+    <button class="btn" onclick="calcHeartRate()">Calculate zones</button>
+    <div class="result" id="hr-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-fraction" hidden>
+    <h2>Fraction Calculator</h2>
+    <p class="panel-desc">Add, subtract, multiply or divide two fractions. The answer is simplified for you.</p>
+    <div class="row">
+      <div><label for="fr-n1">First fraction — top number</label><input type="number" id="fr-n1" step="1" placeholder="e.g. 1"></div>
+      <div><label for="fr-d1">First fraction — bottom number</label><input type="number" id="fr-d1" step="1" placeholder="e.g. 2"></div>
+    </div>
+    <label for="fr-op">Operation</label>
+    <select id="fr-op"><option value="+">Add (+)</option><option value="-">Subtract (−)</option><option value="*">Multiply (×)</option><option value="/">Divide (÷)</option></select>
+    <div class="row">
+      <div><label for="fr-n2">Second fraction — top number</label><input type="number" id="fr-n2" step="1" placeholder="e.g. 1"></div>
+      <div><label for="fr-d2">Second fraction — bottom number</label><input type="number" id="fr-d2" step="1" placeholder="e.g. 3"></div>
+    </div>
+    <button class="btn" onclick="calcFraction()">Calculate</button>
+    <div class="result" id="fr-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-scicalc" hidden>
+    <h2>Scientific Calculator</h2>
+    <p class="panel-desc">A calculator with a keypad — add, subtract, multiply, divide, percent, square root, square and 1/x.</p>
+    <div class="sci-display" id="sci-display">0</div>
+    <div class="keypad">
+      <button type="button" class="op" onclick="sciClear()">C</button>
+      <button type="button" class="op" onclick="sciBack()">⌫</button>
+      <button type="button" class="op" onclick="sciApply('pct')">%</button>
+      <button type="button" class="op" onclick="sciOp('/')">÷</button>
+      <button type="button" onclick="sciInput('7')">7</button>
+      <button type="button" onclick="sciInput('8')">8</button>
+      <button type="button" onclick="sciInput('9')">9</button>
+      <button type="button" class="op" onclick="sciOp('*')">×</button>
+      <button type="button" onclick="sciInput('4')">4</button>
+      <button type="button" onclick="sciInput('5')">5</button>
+      <button type="button" onclick="sciInput('6')">6</button>
+      <button type="button" class="op" onclick="sciOp('-')">−</button>
+      <button type="button" onclick="sciInput('1')">1</button>
+      <button type="button" onclick="sciInput('2')">2</button>
+      <button type="button" onclick="sciInput('3')">3</button>
+      <button type="button" class="op" onclick="sciOp('+')">+</button>
+      <button type="button" class="op" onclick="sciPlusMinus()">±</button>
+      <button type="button" onclick="sciInput('0')">0</button>
+      <button type="button" onclick="sciInput('.')">.</button>
+      <button type="button" class="eq" onclick="sciEquals()">=</button>
+      <button type="button" class="op" onclick="sciApply('sqrt')">√</button>
+      <button type="button" class="op" onclick="sciApply('sq')">x²</button>
+      <button type="button" class="op" onclick="sciApply('inv')">1/x</button>
+    </div>
+  </section>
+
+  <section class="tool-panel" id="tool-timecalc" hidden>
+    <h2>Time Calculator</h2>
+    <p class="panel-desc">Add or subtract two lengths of time, in hours and minutes.</p>
+    <div class="row">
+      <div><label for="tc-h1">First time — hours</label><input type="number" id="tc-h1" min="0" step="1" placeholder="e.g. 2"></div>
+      <div><label for="tc-m1">First time — minutes</label><input type="number" id="tc-m1" min="0" step="1" placeholder="e.g. 45"></div>
+    </div>
+    <label for="tc-op">Operation</label>
+    <select id="tc-op"><option value="+">Add (+)</option><option value="-">Subtract (−)</option></select>
+    <div class="row">
+      <div><label for="tc-h2">Second time — hours</label><input type="number" id="tc-h2" min="0" step="1" placeholder="e.g. 1"></div>
+      <div><label for="tc-m2">Second time — minutes</label><input type="number" id="tc-m2" min="0" step="1" placeholder="e.g. 30"></div>
+    </div>
+    <button class="btn" onclick="calcTime()">Calculate</button>
+    <div class="result" id="tc-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-numwords" hidden>
+    <h2>Number to Words Converter</h2>
+    <p class="panel-desc">Turn a number into English words — handy for cheques, invoices and forms. Numbers from 0 to 999,999,999.</p>
+    <label for="nw-number">Number</label>
+    <input type="number" id="nw-number" min="0" max="999999999" step="1" placeholder="e.g. 12345">
+    <button class="btn" onclick="convertNumWords()">Convert to words</button>
+    <div class="result" id="nw-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-grade" hidden>
+    <h2>Grade Calculator</h2>
+    <p class="panel-desc">Add your assignments with their scores and weights to find your weighted average and letter grade. Up to 6 assignments.</p>
+    <div id="grade-rows"></div>
+    <button class="btn btn-secondary" onclick="gradeAddRow()">Add an assignment</button>
+    <br>
+    <button class="btn" onclick="calcGrade()">Calculate grade</button>
+    <div class="result" id="gr-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-cgpa" hidden>
+    <h2>CGPA to Percentage Converter</h2>
+    <p class="panel-desc">Convert your CGPA to a percentage on a 4.0, 5.0 or 10.0 scale.</p>
+    <div class="row">
+      <div><label for="cg-value">Your CGPA</label><input type="number" id="cg-value" min="0" step="0.01" placeholder="e.g. 3.5"></div>
+      <div><label for="cg-scale">Scale</label><select id="cg-scale"><option value="4">4.0</option><option value="5">5.0</option><option value="10">10.0</option></select></div>
+    </div>
+    <button class="btn" onclick="convertCGPA()">Convert</button>
+    <div class="result" id="cg-result" hidden></div>
+  </section>
+
+  <section class="tool-panel" id="tool-area" hidden>
+    <h2>Area Calculator</h2>
+    <p class="panel-desc">Find the area of a rectangle, circle or triangle.</p>
+    <label for="ar-shape">Shape</label>
+    <select id="ar-shape" onchange="areaShapeToggle()"><option value="rectangle">Rectangle</option><option value="circle">Circle</option><option value="triangle">Triangle</option></select>
+    <div class="row">
+      <div><label for="ar-a" id="ar-a-label">Length</label><input type="number" id="ar-a" min="0" placeholder="e.g. 5"></div>
+      <div id="ar-b-wrap"><label for="ar-b" id="ar-b-label">Width</label><input type="number" id="ar-b" min="0" placeholder="e.g. 3"></div>
+    </div>
+    <label for="ar-unit">Unit</label>
+    <select id="ar-unit"><option value="cm">Centimetres (cm)</option><option value="m">Metres (m)</option><option value="in">Inches (in)</option><option value="ft">Feet (ft)</option></select>
+    <button class="btn" onclick="calcArea()">Calculate area</button>
+    <div class="result" id="ar-result" hidden></div>
+  </section>
 </div>
 </main>
 
@@ -806,6 +1134,7 @@ function openTool(id){
   if(id === 'unit'){ buildUnitOptions(); }
   if(id === 'date'){ dateInit(); }
   if(id === 'gpa'){ gpaInit(); }
+  if(id === 'grade'){ gradeInit(); }
   if(id === 'timezone'){ tzInit(); }
   window.scrollTo(0, 0);
   try{ history.replaceState(null, '', '#' + id); }catch(e){}
@@ -1378,17 +1707,37 @@ var TOOL_INFO = {
   gpa: { name: 'GPA Calculator', desc: 'Your GPA on a 4.0 scale from course grades.' },
   timezone: { name: 'Time Zone Converter', desc: 'See the time in another city, DST included.' },
   fuel: { name: 'Fuel Cost Calculator', desc: 'Trip fuel use and cost in litres or gallons.' },
-  water: { name: 'Water Intake Calculator', desc: 'Your daily water target by weight and activity.' }
+  water: { name: 'Water Intake Calculator', desc: 'Your daily water target by weight and activity.' },
+  mortgage: { name: 'Mortgage Calculator', desc: 'Monthly mortgage payments and total interest.' },
+  simpleinterest: { name: 'Simple Interest Calculator', desc: 'Interest on savings and loans, simply.' },
+  invest: { name: 'Investment Calculator', desc: 'Grow your money with monthly investing.' },
+  retire: { name: 'Retirement Calculator', desc: 'See what your retirement savings could reach.' },
+  savingsgoal: { name: 'Savings Goal Calculator', desc: 'How much to save each month for your goal.' },
+  inflation: { name: 'Inflation Calculator', desc: 'What will your money be worth in the future?' },
+  vat: { name: 'VAT / Sales Tax Calculator', desc: 'Add or remove VAT and sales tax.' },
+  splitbill: { name: 'Split Bill Calculator', desc: 'Split any bill fairly, tip included.' },
+  calorie: { name: 'Calorie Calculator', desc: 'Daily calories from BMR and activity.' },
+  idealweight: { name: 'Ideal Weight Calculator', desc: 'Your healthy weight range by height.' },
+  duedate: { name: 'Pregnancy Due Date Calculator', desc: "Your baby's due date and current week." },
+  ovulation: { name: 'Ovulation Calculator', desc: 'Fertile window and next period dates.' },
+  heartrate: { name: 'Target Heart Rate Calculator', desc: 'Training heart rate zones that fit you.' },
+  fraction: { name: 'Fraction Calculator', desc: 'Add, subtract, multiply and divide fractions.' },
+  scicalc: { name: 'Scientific Calculator', desc: 'A handy calculator with a keypad.' },
+  timecalc: { name: 'Time Calculator', desc: 'Add and subtract hours and minutes.' },
+  numwords: { name: 'Number to Words Converter', desc: 'Turn numbers into English words.' },
+  grade: { name: 'Grade Calculator', desc: 'Weighted grades from assignments.' },
+  cgpa: { name: 'CGPA to Percentage Converter', desc: 'Convert CGPA to a percentage.' },
+  area: { name: 'Area Calculator', desc: 'Area of rectangles, circles and triangles.' }
 };
-var TOOL_LIST = ['age', 'date', 'bmi', 'percent', 'loan', 'tip', 'unit', 'word', 'password', 'qr', 'stopwatch', 'love', 'coin', 'dice', 'name', 'rps', 'joke', 'facts', 'currency', 'countdown', 'random', 'case', 'palette', 'pomodoro', 'speed', 'salary', 'lorem', 'sleep', 'roman', 'bodyfat', 'negnum', 'negmark', 'compound', 'discount', 'gpa', 'timezone', 'fuel', 'water'];
+var TOOL_LIST = ['age', 'date', 'bmi', 'percent', 'loan', 'tip', 'unit', 'word', 'password', 'qr', 'stopwatch', 'love', 'coin', 'dice', 'name', 'rps', 'joke', 'facts', 'currency', 'countdown', 'random', 'case', 'palette', 'pomodoro', 'speed', 'salary', 'lorem', 'sleep', 'roman', 'bodyfat', 'negnum', 'negmark', 'compound', 'discount', 'gpa', 'timezone', 'fuel', 'water', 'mortgage', 'simpleinterest', 'invest', 'retire', 'savingsgoal', 'inflation', 'vat', 'splitbill', 'calorie', 'idealweight', 'duedate', 'ovulation', 'heartrate', 'fraction', 'scicalc', 'timecalc', 'numwords', 'grade', 'cgpa', 'area'];
 var SUGGESTIONS = {
   age: ['date', 'sleep', 'bmi'],
-  date: ['age', 'countdown', 'timezone'],
-  bmi: ['bodyfat', 'water', 'age'],
-  percent: ['discount', 'loan', 'compound'],
-  loan: ['compound', 'percent', 'salary'],
-  tip: ['discount', 'percent', 'salary'],
-  unit: ['currency', 'speed', 'fuel'],
+  date: ['timecalc', 'age', 'timezone'],
+  bmi: ['calorie', 'bodyfat', 'idealweight'],
+  percent: ['discount', 'vat', 'fraction'],
+  loan: ['compound', 'mortgage', 'salary'],
+  tip: ['splitbill', 'percent', 'salary'],
+  unit: ['area', 'currency', 'speed'],
   word: ['case', 'lorem', 'password'],
   password: ['qr', 'random', 'name'],
   qr: ['password', 'word', 'facts'],
@@ -1407,19 +1756,39 @@ var SUGGESTIONS = {
   palette: ['qr', 'name', 'joke'],
   pomodoro: ['countdown', 'stopwatch', 'sleep'],
   speed: ['unit', 'fuel', 'date'],
-  salary: ['loan', 'percent', 'compound'],
+  salary: ['retire', 'invest', 'compound'],
   lorem: ['word', 'case', 'joke'],
   sleep: ['pomodoro', 'bmi', 'water'],
-  roman: ['random', 'negnum', 'facts'],
-  bodyfat: ['bmi', 'water', 'sleep'],
+  roman: ['numwords', 'negnum', 'scicalc'],
+  bodyfat: ['calorie', 'idealweight', 'heartrate'],
   negnum: ['percent', 'negmark', 'roman'],
-  negmark: ['percent', 'gpa', 'negnum'],
-  compound: ['loan', 'discount', 'salary'],
-  discount: ['percent', 'tip', 'compound'],
-  gpa: ['negmark', 'percent', 'facts'],
+  negmark: ['grade', 'gpa', 'negnum'],
+  compound: ['invest', 'loan', 'retire'],
+  discount: ['vat', 'percent', 'tip'],
+  gpa: ['cgpa', 'grade', 'negmark'],
   timezone: ['date', 'countdown', 'currency'],
   fuel: ['speed', 'unit', 'percent'],
-  water: ['bmi', 'bodyfat', 'sleep']
+  water: ['bmi', 'bodyfat', 'sleep'],
+  mortgage: ['loan', 'compound', 'simpleinterest'],
+  simpleinterest: ['compound', 'mortgage', 'invest'],
+  invest: ['compound', 'retire', 'savingsgoal'],
+  retire: ['invest', 'savingsgoal', 'salary'],
+  savingsgoal: ['invest', 'compound', 'retire'],
+  inflation: ['invest', 'compound', 'salary'],
+  vat: ['percent', 'discount', 'splitbill'],
+  splitbill: ['tip', 'vat', 'percent'],
+  calorie: ['bmi', 'bodyfat', 'idealweight'],
+  idealweight: ['bmi', 'bodyfat', 'calorie'],
+  duedate: ['age', 'ovulation', 'sleep'],
+  ovulation: ['duedate', 'age', 'sleep'],
+  heartrate: ['bmi', 'bodyfat', 'calorie'],
+  fraction: ['percent', 'negnum', 'scicalc'],
+  scicalc: ['fraction', 'percent', 'roman'],
+  timecalc: ['date', 'timezone', 'countdown'],
+  numwords: ['roman', 'word', 'random'],
+  grade: ['gpa', 'cgpa', 'negmark'],
+  cgpa: ['gpa', 'grade', 'percent'],
+  area: ['unit', 'fraction', 'speed']
 };
 /* ---- Share buttons (plain share links, no SDKs) ---- */
 function pageUrlFor(id){
@@ -2280,6 +2649,515 @@ function calcWater(){
   var kg = $('water-unit').value === 'lb' ? weight * 0.453592 : weight;
   var res = waterIntake(kg, $('water-activity').value);
   showResult('water-result', '<strong>About ' + res.litres.toFixed(1) + ' litres a day</strong><br><span class="muted">That is roughly ' + Math.round(res.glasses) + ' glasses (250 ml each).</span>');
+}
+
+/* ---- 39. Mortgage Calculator ---- */
+function mortgageCalc(P, ratePct, years){
+  var n = years * 12;
+  if(ratePct === 0){ return { monthly: P / n, totalInterest: 0, totalPaid: P }; }
+  var r = ratePct / 100 / 12;
+  var monthly = P * r / (1 - Math.pow(1 + r, -n));
+  return { monthly: monthly, totalInterest: monthly * n - P, totalPaid: monthly * n };
+}
+function calcMortgage(){
+  var P = parseFloat($('mg-amount').value);
+  var rate = parseFloat($('mg-rate').value);
+  var years = parseFloat($('mg-years').value);
+  if(isNaN(P) || P <= 0){ showResult('mg-result', 'Please enter a loan amount (greater than zero).'); return; }
+  if(isNaN(rate) || rate < 0){ showResult('mg-result', 'Please enter an interest rate (0 or more).'); return; }
+  if(isNaN(years) || years <= 0){ showResult('mg-result', 'Please enter a loan term in years (greater than zero).'); return; }
+  var res = mortgageCalc(P, rate, years);
+  showResult('mg-result', '<strong>Monthly payment: ' + fmtMoney(res.monthly) + '</strong><br>Total interest: ' + fmtMoney(res.totalInterest) + '<br>Total paid: ' + fmtMoney(res.totalPaid) + '<br><span class="muted">Over ' + years + ' years (' + (years * 12) + ' monthly payments).</span>');
+}
+
+/* ---- 40. Simple Interest Calculator ---- */
+function simpleInterestCalc(P, ratePct, years){
+  var interest = P * ratePct / 100 * years;
+  return { interest: interest, total: P + interest };
+}
+function calcSimpleInterest(){
+  var P = parseFloat($('si-principal').value);
+  var rate = parseFloat($('si-rate').value);
+  var years = parseFloat($('si-years').value);
+  if(isNaN(P) || P < 0){ showResult('si-result', 'Please enter a principal amount (0 or more).'); return; }
+  if(isNaN(rate) || rate < 0){ showResult('si-result', 'Please enter an interest rate (0 or more).'); return; }
+  if(isNaN(years) || years < 0){ showResult('si-result', 'Please enter the time in years (0 or more).'); return; }
+  var res = simpleInterestCalc(P, rate, years);
+  showResult('si-result', '<strong>Interest: ' + fmtMoney(res.interest) + '</strong><br>Total amount: ' + fmtMoney(res.total) + '<br><span class="muted">' + fmtMoney(P) + ' at ' + rate + '% for ' + years + ' years.</span>');
+}
+
+/* ---- 41. Investment Calculator ---- */
+function investCalc(initial, monthly, ratePct, years){
+  var rm = ratePct / 100 / 12, n = years * 12;
+  var future;
+  if(rm === 0){ future = initial + monthly * n; }
+  else { future = initial * Math.pow(1 + rm, n) + monthly * (Math.pow(1 + rm, n) - 1) / rm; }
+  var contributions = initial + monthly * n;
+  return { future: future, contributions: contributions, earned: future - contributions };
+}
+function calcInvest(){
+  var initial = parseFloat($('inv-initial').value);
+  var monthly = parseFloat($('inv-monthly').value);
+  var rate = parseFloat($('inv-return').value);
+  var years = parseFloat($('inv-years').value);
+  if(isNaN(initial) || initial < 0){ showResult('inv-result', 'Please enter an initial amount (0 or more).'); return; }
+  if(isNaN(monthly) || monthly < 0){ showResult('inv-result', 'Please enter a monthly contribution (0 or more).'); return; }
+  if(isNaN(rate) || rate < 0){ showResult('inv-result', 'Please enter an expected annual return (0 or more).'); return; }
+  if(isNaN(years) || years < 0){ showResult('inv-result', 'Please enter the number of years (0 or more).'); return; }
+  var res = investCalc(initial, monthly, rate, years);
+  showResult('inv-result', '<strong>Future value: ' + fmtMoney(res.future) + '</strong><br>Total contributions: ' + fmtMoney(res.contributions) + '<br>Interest earned: ' + fmtMoney(res.earned) + '<br><span class="muted">At ' + rate + '% a year, compounded monthly, for ' + years + ' years.</span>');
+}
+
+/* ---- 42. Retirement Calculator ---- */
+function retireCalc(currentAge, retireAge, current, monthly, ratePct){
+  var years = retireAge - currentAge;
+  if(years <= 0){ return null; }
+  var res = investCalc(current, monthly, ratePct, years);
+  res.years = years;
+  return res;
+}
+function calcRetire(){
+  var age = parseFloat($('rt-age').value);
+  var retireAge = parseFloat($('rt-retire-age').value);
+  var current = parseFloat($('rt-current').value);
+  var monthly = parseFloat($('rt-monthly').value);
+  var rate = parseFloat($('rt-return').value);
+  if(isNaN(age) || age < 0 || age > 120){ showResult('rt-result', 'Please enter your current age (0–120).'); return; }
+  if(isNaN(retireAge) || retireAge < 0 || retireAge > 120){ showResult('rt-result', 'Please enter your retirement age (0–120).'); return; }
+  if(retireAge <= age){ showResult('rt-result', 'Your retirement age must be higher than your current age.'); return; }
+  if(isNaN(current) || current < 0){ showResult('rt-result', 'Please enter your current savings (0 or more).'); return; }
+  if(isNaN(monthly) || monthly < 0){ showResult('rt-result', 'Please enter a monthly contribution (0 or more).'); return; }
+  if(isNaN(rate) || rate < 0){ showResult('rt-result', 'Please enter an expected annual return (0 or more).'); return; }
+  var res = retireCalc(age, retireAge, current, monthly, rate);
+  showResult('rt-result', '<strong>Projected savings at age ' + retireAge + ': ' + fmtMoney(res.future) + '</strong><br>Total contributions: ' + fmtMoney(res.contributions) + '<br>Interest earned: ' + fmtMoney(res.earned) + '<br><span class="muted">That is ' + res.years + ' years of saving, at ' + rate + '% a year.</span>');
+}
+
+/* ---- 43. Savings Goal Calculator ---- */
+function savingsGoalCalc(goal, current, months, ratePct){
+  var rm = ratePct / 100 / 12;
+  var grown = rm === 0 ? current : current * Math.pow(1 + rm, months);
+  var needed = goal - grown;
+  if(needed <= 0){ return { monthly: 0, totalMonthly: 0, interest: grown - current }; }
+  var monthly;
+  if(rm === 0){ monthly = needed / months; }
+  else { monthly = needed * rm / (Math.pow(1 + rm, months) - 1); }
+  return { monthly: monthly, totalMonthly: monthly * months, interest: goal - current - monthly * months };
+}
+function calcSavingsGoal(){
+  var goal = parseFloat($('sg-goal').value);
+  var current = parseFloat($('sg-current').value);
+  var months = parseFloat($('sg-months').value);
+  var rate = parseFloat($('sg-return').value);
+  if(isNaN(goal) || goal <= 0){ showResult('sg-result', 'Please enter a goal amount (greater than zero).'); return; }
+  if(isNaN(current) || current < 0){ showResult('sg-result', 'Please enter how much you have saved already (0 or more).'); return; }
+  if(isNaN(months) || months < 1){ showResult('sg-result', 'Please enter the number of months (at least 1).'); return; }
+  if(isNaN(rate) || rate < 0){ showResult('sg-result', 'Please enter an interest rate (0 or more).'); return; }
+  var res = savingsGoalCalc(goal, current, months, rate);
+  if(res.monthly === 0){
+    showResult('sg-result', '<strong>You have already reached your goal!</strong><br><span class="muted">Your current savings will grow to the goal on their own at ' + rate + '% a year.</span>');
+    return;
+  }
+  showResult('sg-result', '<strong>Save ' + fmtMoney(res.monthly) + ' a month</strong><br>Total you will add: ' + fmtMoney(res.totalMonthly) + '<br>Interest earned: ' + fmtMoney(res.interest) + '<br><span class="muted">To reach ' + fmtMoney(goal) + ' in ' + months + ' months, at ' + rate + '% a year.</span>');
+}
+
+/* ---- 44. Inflation Calculator ---- */
+function inflationCalc(amount, ratePct, years){
+  var factor = Math.pow(1 + ratePct / 100, years);
+  return { future: amount * factor, past: amount / factor };
+}
+function calcInflation(){
+  var amount = parseFloat($('inf-amount').value);
+  var rate = parseFloat($('inf-rate').value);
+  var years = parseFloat($('inf-years').value);
+  if(isNaN(amount) || amount < 0){ showResult('inf-result', 'Please enter an amount (0 or more).'); return; }
+  if(isNaN(rate) || rate < 0){ showResult('inf-result', 'Please enter an inflation rate (0 or more).'); return; }
+  if(isNaN(years) || years < 0){ showResult('inf-result', 'Please enter the number of years (0 or more).'); return; }
+  var res = inflationCalc(amount, rate, years);
+  showResult('inf-result', '<strong>In ' + years + ' years, you will need ' + fmtMoney(res.future) + ' to buy what ' + fmtMoney(amount) + ' buys today.</strong><br><span class="muted">' + years + ' years ago, the same things cost about ' + fmtMoney(res.past) + ' (at ' + rate + '% inflation a year).</span>');
+}
+
+/* ---- 45. VAT / Sales Tax Calculator ---- */
+function vatCalc(price, ratePct, mode){
+  var r = ratePct / 100;
+  if(mode === 'remove'){
+    var net = price / (1 + r);
+    return { tax: price - net, total: price, net: net };
+  }
+  var tax = price * r;
+  return { tax: tax, total: price + tax, net: price };
+}
+function calcVAT(){
+  var price = parseFloat($('vat-price').value);
+  var rate = parseFloat($('vat-rate').value);
+  var mode = $('vat-mode').value;
+  if(isNaN(price) || price < 0){ showResult('vat-result', 'Please enter a price (0 or more).'); return; }
+  if(isNaN(rate) || rate < 0){ showResult('vat-result', 'Please enter a tax rate (0 or more).'); return; }
+  var res = vatCalc(price, rate, mode);
+  if(mode === 'remove'){
+    showResult('vat-result', '<strong>Price without tax: ' + fmtMoney(res.net) + '</strong><br>Tax included: ' + fmtMoney(res.tax) + ' (' + rate + '%)<br><span class="muted">Total price (with tax): ' + fmtMoney(res.total) + '</span>');
+  } else {
+    showResult('vat-result', '<strong>Total price: ' + fmtMoney(res.total) + '</strong><br>Tax amount: ' + fmtMoney(res.tax) + ' (' + rate + '%)<br><span class="muted">Price before tax: ' + fmtMoney(res.net) + '</span>');
+  }
+}
+
+/* ---- 46. Split Bill Calculator ---- */
+function splitBillCalc(total, people, tipPct){
+  var tip = total * tipPct / 100;
+  var grand = total + tip;
+  return { perPerson: grand / people, tip: tip, grandTotal: grand };
+}
+function calcSplitBill(){
+  var total = parseFloat($('sb-total').value);
+  var people = parseFloat($('sb-people').value);
+  var tipVal = $('sb-tip').value;
+  var tip = tipVal === '' ? 0 : parseFloat(tipVal);
+  if(isNaN(total) || total < 0){ showResult('sb-result', 'Please enter the total bill (0 or more).'); return; }
+  if(isNaN(people) || people < 1 || Math.floor(people) !== people){ showResult('sb-result', 'Please enter the number of people (a whole number, at least 1).'); return; }
+  if(isNaN(tip) || tip < 0){ showResult('sb-result', 'Please enter a tip percentage (0 or more).'); return; }
+  var res = splitBillCalc(total, people, tip);
+  showResult('sb-result', '<strong>Each person pays: ' + fmtMoney(res.perPerson) + '</strong><br><span class="muted">Bill ' + fmtMoney(total) + ' + tip ' + fmtMoney(res.tip) + ' (' + tip + '%) = ' + fmtMoney(res.grandTotal) + ', split between ' + people + ' people.</span>');
+}
+
+/* ---- 47. Calorie Calculator ---- */
+var CAL_ACTIVITY = { sedentary: 1.2, light: 1.375, moderate: 1.55, active: 1.725, veryactive: 1.9 };
+function calorieCalc(age, gender, heightCm, weightKg, activity){
+  var bmr = 10 * weightKg + 6.25 * heightCm - 5 * age + (gender === 'female' ? -161 : 5);
+  var factor = CAL_ACTIVITY[activity] || 1.2;
+  return { bmr: bmr, tdee: bmr * factor };
+}
+function calcCalorie(){
+  var age = parseFloat($('cal-age').value);
+  var height = parseFloat($('cal-height').value);
+  var weight = parseFloat($('cal-weight').value);
+  if(isNaN(age) || age < 1 || age > 120){ showResult('cal-result', 'Please enter your age (1–120).'); return; }
+  if(isNaN(height) || height <= 0){ showResult('cal-result', 'Please enter your height in cm (greater than zero).'); return; }
+  if(isNaN(weight) || weight <= 0){ showResult('cal-result', 'Please enter your weight in kg (greater than zero).'); return; }
+  var res = calorieCalc(age, $('cal-gender').value, height, weight, $('cal-activity').value);
+  showResult('cal-result', '<strong>Daily calories to maintain your weight: about ' + Math.round(res.tdee).toLocaleString('en-US') + ' kcal</strong><br>Your BMR (calories at rest): about ' + Math.round(res.bmr).toLocaleString('en-US') + ' kcal a day.<br><span class="muted">To lose weight, most people aim for about 300–500 kcal below this; to gain, about 300–500 above. A general guide only.</span>');
+}
+
+/* ---- 48. Ideal Weight Calculator ---- */
+function idealWeightCalc(heightCm, gender){
+  var inches = heightCm / 2.54;
+  var base = gender === 'female' ? 45.5 : 50;
+  var ideal = base + 2.3 * (inches - 60);
+  return { low: ideal * 0.9, high: ideal * 1.1, ideal: ideal };
+}
+function calcIdealWeight(){
+  var height = parseFloat($('iw-height').value);
+  if(isNaN(height) || height <= 0){ showResult('iw-result', 'Please enter your height in cm (greater than zero).'); return; }
+  var res = idealWeightCalc(height, $('iw-gender').value);
+  showResult('iw-result', '<strong>Healthy weight range: ' + res.low.toFixed(1) + ' – ' + res.high.toFixed(1) + ' kg</strong><br><span class="muted">Ideal weight (Devine formula): about ' + res.ideal.toFixed(1) + ' kg, plus or minus 10%. A general guide only.</span>');
+}
+
+/* ---- 49. Pregnancy Due Date Calculator ---- */
+var MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+function parseISODate(s){
+  var p = s.split('-');
+  return Date.UTC(+p[0], +p[1] - 1, +p[2]);
+}
+function isoFromUTC(ms){
+  var d = new Date(ms);
+  return d.getUTCFullYear() + '-' + ('0' + (d.getUTCMonth() + 1)).slice(-2) + '-' + ('0' + d.getUTCDate()).slice(-2);
+}
+function fmtDateISO(iso){
+  var p = iso.split('-');
+  return (+p[2]) + ' ' + MONTH_NAMES[+p[1] - 1] + ' ' + p[0];
+}
+function pregnancyInfo(lmpStr, todayStr){
+  var lmp = parseISODate(lmpStr), today = parseISODate(todayStr);
+  var due = isoFromUTC(lmp + 280 * 86400000);
+  var diffDays = Math.floor((today - lmp) / 86400000);
+  if(diffDays < 0){ return { due: due, weeks: null, days: null }; }
+  return { due: due, weeks: Math.floor(diffDays / 7), days: diffDays % 7 };
+}
+function calcDueDate(){
+  var lmp = $('dd-lmp').value;
+  if(!lmp){ showResult('dd-result', 'Please choose the first day of your last period.'); return; }
+  var t = new Date();
+  var today = t.getFullYear() + '-' + ('0' + (t.getMonth() + 1)).slice(-2) + '-' + ('0' + t.getDate()).slice(-2);
+  var info = pregnancyInfo(lmp, today);
+  if(info.weeks === null){ showResult('dd-result', 'That date is in the future — please choose a past date.'); return; }
+  var extra;
+  if(info.weeks > 40){ extra = 'Your due date has passed — please check with your doctor.'; }
+  else { extra = 'You are about ' + info.weeks + ' weeks' + (info.days ? ' and ' + info.days + ' days' : '') + ' pregnant.'; }
+  showResult('dd-result', '<strong>Estimated due date: ' + fmtDateISO(info.due) + '</strong><br><span class="muted">' + extra + '</span>');
+}
+
+/* ---- 50. Ovulation Calculator ---- */
+function ovulationCalc(lmpStr, cycle){
+  var lmp = parseISODate(lmpStr);
+  var nextPeriod = lmp + cycle * 86400000;
+  var ovulation = nextPeriod - 14 * 86400000;
+  return {
+    ovulation: isoFromUTC(ovulation),
+    fertileStart: isoFromUTC(ovulation - 5 * 86400000),
+    fertileEnd: isoFromUTC(ovulation + 86400000),
+    nextPeriod: isoFromUTC(nextPeriod)
+  };
+}
+function calcOvulation(){
+  var lmp = $('ov-lmp').value;
+  var cycle = parseFloat($('ov-cycle').value);
+  if(!lmp){ showResult('ov-result', 'Please choose the first day of your last period.'); return; }
+  if(isNaN(cycle) || cycle < 21 || cycle > 45){ showResult('ov-result', 'Please enter a cycle length between 21 and 45 days.'); return; }
+  var res = ovulationCalc(lmp, cycle);
+  showResult('ov-result', '<strong>Estimated ovulation: ' + fmtDateISO(res.ovulation) + '</strong><br>Fertile window: ' + fmtDateISO(res.fertileStart) + ' to ' + fmtDateISO(res.fertileEnd) + '<br>Next period (estimated): ' + fmtDateISO(res.nextPeriod) + '<br><span class="muted">An estimate only — cycles vary from month to month.</span>');
+}
+
+/* ---- 51. Target Heart Rate Calculator ---- */
+function heartRateCalc(age, resting){
+  var max = 220 - age;
+  function zone(lo, hi){
+    return [Math.round((max - resting) * lo + resting), Math.round((max - resting) * hi + resting)];
+  }
+  return { max: max, light: zone(0.5, 0.6), moderate: zone(0.6, 0.7), vigorous: zone(0.7, 0.85) };
+}
+function calcHeartRate(){
+  var age = parseFloat($('hr-age').value);
+  var resting = parseFloat($('hr-resting').value);
+  if(isNaN(age) || age < 1 || age > 120){ showResult('hr-result', 'Please enter your age (1–120).'); return; }
+  if(isNaN(resting) || resting < 30 || resting > 120){ showResult('hr-result', 'Please enter a resting heart rate between 30 and 120 bpm.'); return; }
+  var res = heartRateCalc(age, resting);
+  if(res.max <= resting){ showResult('hr-result', 'Your resting heart rate should be below your maximum heart rate (' + res.max + ' bpm).'); return; }
+  showResult('hr-result', '<strong>Maximum heart rate: ' + res.max + ' bpm</strong><br>Light exercise: ' + res.light[0] + '–' + res.light[1] + ' bpm<br>Moderate exercise: ' + res.moderate[0] + '–' + res.moderate[1] + ' bpm<br>Vigorous exercise: ' + res.vigorous[0] + '–' + res.vigorous[1] + ' bpm<br><span class="muted">Karvonen formula, based on your resting heart rate of ' + resting + ' bpm.</span>');
+}
+
+/* ---- 52. Fraction Calculator ---- */
+function gcd(a, b){
+  a = Math.abs(a); b = Math.abs(b);
+  while(b){ var t = a % b; a = b; b = t; }
+  return a || 1;
+}
+function fractionCalc(n1, d1, n2, d2, op){
+  if(d1 === 0 || d2 === 0){ return null; }
+  var n, d;
+  if(op === '+'){ n = n1 * d2 + n2 * d1; d = d1 * d2; }
+  else if(op === '-'){ n = n1 * d2 - n2 * d1; d = d1 * d2; }
+  else if(op === '*'){ n = n1 * n2; d = d1 * d2; }
+  else { if(n2 === 0){ return null; } n = n1 * d2; d = d1 * n2; }
+  if(d < 0){ n = -n; d = -d; }
+  var g = gcd(n, d);
+  n = n / g; d = d / g;
+  return { num: n, den: d, decimal: n / d };
+}
+function calcFraction(){
+  var n1 = parseFloat($('fr-n1').value), d1 = parseFloat($('fr-d1').value);
+  var n2 = parseFloat($('fr-n2').value), d2 = parseFloat($('fr-d2').value);
+  var op = $('fr-op').value;
+  var nums = [n1, d1, n2, d2];
+  for(var i = 0; i < nums.length; i++){
+    if(isNaN(nums[i]) || Math.floor(nums[i]) !== nums[i]){ showResult('fr-result', 'Please enter whole numbers for both fractions.'); return; }
+  }
+  if(d1 === 0 || d2 === 0){ showResult('fr-result', 'A fraction cannot have zero on the bottom.'); return; }
+  var res = fractionCalc(n1, d1, n2, d2, op);
+  if(res === null){ showResult('fr-result', 'You cannot divide by zero.'); return; }
+  var fracText = res.den === 1 ? String(res.num) : res.num + '/' + res.den;
+  showResult('fr-result', '<strong>' + fracText + '</strong><br><span class="muted">As a decimal: ' + (Math.round(res.decimal * 10000) / 10000) + '</span>');
+}
+
+/* ---- 53. Scientific Calculator ---- */
+var sci = { display: '0', acc: null, op: null, fresh: true };
+function sciShow(){ $('sci-display').textContent = sci.display; }
+function sciFormat(x){
+  if(typeof x !== 'number' || !isFinite(x) || isNaN(x)){ return 'Error'; }
+  var r = Math.round(x * 1e10) / 1e10;
+  return String(r);
+}
+function sciCompute(a, b, op){
+  if(op === '+'){ return a + b; }
+  if(op === '-'){ return a - b; }
+  if(op === '*'){ return a * b; }
+  if(op === '/'){ return b === 0 ? NaN : a / b; }
+  return b;
+}
+function sciUnary(x, fn){
+  if(fn === 'sqrt'){ return x < 0 ? NaN : Math.sqrt(x); }
+  if(fn === 'sq'){ return x * x; }
+  if(fn === 'inv'){ return x === 0 ? NaN : 1 / x; }
+  if(fn === 'pct'){ return x / 100; }
+  return x;
+}
+function sciInput(d){
+  if(sci.display === 'Error'){ sciClear(); }
+  if(sci.fresh){ sci.display = (d === '.' ? '0.' : d); sci.fresh = false; }
+  else {
+    if(d === '.' && sci.display.indexOf('.') !== -1){ return; }
+    if(sci.display.length >= 15){ return; }
+    sci.display += d;
+  }
+  sciShow();
+}
+function sciOp(op){
+  if(sci.display === 'Error'){ return; }
+  var cur = parseFloat(sci.display);
+  if(sci.acc !== null && sci.op && !sci.fresh){
+    var res = sciCompute(sci.acc, cur, sci.op);
+    sci.acc = res; sci.display = sciFormat(res);
+  } else if(sci.acc === null){
+    sci.acc = cur;
+  }
+  sci.op = op; sci.fresh = true;
+  sciShow();
+}
+function sciEquals(){
+  if(sci.display === 'Error'){ return; }
+  if(sci.acc === null || !sci.op){ return; }
+  var res = sciCompute(sci.acc, parseFloat(sci.display), sci.op);
+  sci.display = sciFormat(res);
+  sci.acc = null; sci.op = null; sci.fresh = true;
+  sciShow();
+}
+function sciApply(fn){
+  if(sci.display === 'Error'){ return; }
+  var res = sciUnary(parseFloat(sci.display), fn);
+  sci.display = sciFormat(res);
+  sci.fresh = true;
+  sciShow();
+}
+function sciClear(){ sci.display = '0'; sci.acc = null; sci.op = null; sci.fresh = true; sciShow(); }
+function sciBack(){
+  if(sci.display === 'Error' || sci.fresh){ sci.display = '0'; sci.fresh = true; }
+  else { sci.display = sci.display.slice(0, -1) || '0'; }
+  sciShow();
+}
+function sciPlusMinus(){
+  if(sci.display === 'Error' || sci.display === '0'){ return; }
+  sci.display = sci.display.charAt(0) === '-' ? sci.display.slice(1) : '-' + sci.display;
+  sciShow();
+}
+
+/* ---- 54. Time Calculator ---- */
+function timeCalc(h1, m1, h2, m2, op){
+  var t1 = h1 * 60 + m1, t2 = h2 * 60 + m2;
+  var total = op === '-' ? t1 - t2 : t1 + t2;
+  var abs = Math.abs(total);
+  return { sign: total < 0 ? -1 : 1, hours: Math.floor(abs / 60), minutes: abs % 60, totalMinutes: total };
+}
+function calcTime(){
+  var h1 = parseFloat($('tc-h1').value), m1 = parseFloat($('tc-m1').value);
+  var h2 = parseFloat($('tc-h2').value), m2 = parseFloat($('tc-m2').value);
+  var nums = [h1, m1, h2, m2];
+  for(var i = 0; i < nums.length; i++){
+    if(isNaN(nums[i]) || nums[i] < 0 || Math.floor(nums[i]) !== nums[i]){ showResult('tc-result', 'Please enter whole, non-negative numbers for hours and minutes.'); return; }
+  }
+  var res = timeCalc(h1, m1, h2, m2, $('tc-op').value);
+  var sign = res.sign < 0 ? '−' : '';
+  showResult('tc-result', '<strong>' + sign + res.hours + ' hours ' + res.minutes + ' minutes</strong><br><span class="muted">That is ' + sign + Math.abs(res.totalMinutes) + ' minutes in total.</span>');
+}
+
+/* ---- 55. Number to Words Converter ---- */
+var NW_ONES = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+var NW_TENS = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+function nwUnder1000(n){
+  var out = '';
+  if(n >= 100){ out += NW_ONES[Math.floor(n / 100)] + ' hundred'; n = n % 100; if(n){ out += ' '; } }
+  if(n >= 20){ out += NW_TENS[Math.floor(n / 10)]; if(n % 10){ out += '-' + NW_ONES[n % 10]; } }
+  else if(n > 0){ out += NW_ONES[n]; }
+  return out;
+}
+function numToWords(n){
+  if(n === 0){ return 'zero'; }
+  var parts = [];
+  var m = Math.floor(n / 1000000);
+  if(m){ parts.push(nwUnder1000(m) + ' million'); }
+  var t = Math.floor(n / 1000) % 1000;
+  if(t){ parts.push(nwUnder1000(t) + ' thousand'); }
+  var r = n % 1000;
+  if(r){ parts.push(nwUnder1000(r)); }
+  return parts.join(' ');
+}
+function convertNumWords(){
+  var raw = $('nw-number').value;
+  var n = parseFloat(raw);
+  if(raw === '' || isNaN(n) || Math.floor(n) !== n || n < 0 || n > 999999999){ showResult('nw-result', 'Please enter a whole number between 0 and 999,999,999.'); return; }
+  var words = numToWords(n);
+  showResult('nw-result', '<strong>' + words.charAt(0).toUpperCase() + words.slice(1) + '</strong>');
+}
+
+/* ---- 56. Grade Calculator ---- */
+function letterGrade(avg){
+  if(avg >= 90){ return 'A'; }
+  if(avg >= 80){ return 'B'; }
+  if(avg >= 70){ return 'C'; }
+  if(avg >= 60){ return 'D'; }
+  return 'F';
+}
+function gradeCalc(items){
+  var sum = 0, wsum = 0;
+  for(var i = 0; i < items.length; i++){
+    var s = items[i].score, w = items[i].weight;
+    if(isNaN(s) || isNaN(w) || w <= 0){ continue; }
+    sum += s * w; wsum += w;
+  }
+  if(wsum === 0){ return null; }
+  var avg = sum / wsum;
+  return { avg: avg, letter: letterGrade(avg), totalWeight: wsum };
+}
+function gradeAddRow(){
+  var wrap = $('grade-rows');
+  if(wrap.querySelectorAll('.grade-row').length >= 6){ return; }
+  var row = document.createElement('div');
+  row.className = 'row grade-row';
+  row.innerHTML = '<input type="number" class="grade-score" min="0" max="100" step="0.5" placeholder="Score (0–100)" aria-label="Score">' +
+    '<input type="number" class="grade-weight" min="0" step="0.5" placeholder="Weight %" aria-label="Weight percent">';
+  wrap.appendChild(row);
+}
+function gradeInit(){
+  if($('grade-rows').querySelectorAll('.grade-row').length === 0){
+    gradeAddRow(); gradeAddRow();
+  }
+}
+function calcGrade(){
+  var rows = document.querySelectorAll('#grade-rows .grade-row');
+  var items = [];
+  rows.forEach(function(row){
+    var score = parseFloat(row.querySelector('.grade-score').value);
+    var weight = parseFloat(row.querySelector('.grade-weight').value);
+    items.push({ score: score, weight: weight });
+  });
+  var res = gradeCalc(items);
+  if(res === null){ showResult('gr-result', 'Please enter a score and a weight (greater than zero) for at least one assignment.'); return; }
+  var note = '';
+  if(Math.abs(res.totalWeight - 100) > 0.001){ note = '<br><span class="muted">Note: your weights add up to ' + res.totalWeight + '%, not 100%.</span>'; }
+  showResult('gr-result', '<strong>Weighted average: ' + (Math.round(res.avg * 100) / 100) + '% — grade ' + res.letter + '</strong>' + note);
+}
+
+/* ---- 57. CGPA to Percentage Converter ---- */
+function cgpaToPercent(cgpa, scale){
+  return cgpa / scale * 100;
+}
+function convertCGPA(){
+  var cgpa = parseFloat($('cg-value').value);
+  var scale = parseFloat($('cg-scale').value);
+  if(isNaN(cgpa) || cgpa < 0){ showResult('cg-result', 'Please enter your CGPA (0 or more).'); return; }
+  if(cgpa > scale){ showResult('cg-result', 'Your CGPA cannot be higher than the scale (' + scale + '.0).'); return; }
+  var pct = cgpaToPercent(cgpa, scale);
+  showResult('cg-result', '<strong>' + cgpa + ' CGPA on a ' + scale + '.0 scale = ' + (Math.round(pct * 100) / 100) + '%</strong>');
+}
+
+/* ---- 58. Area Calculator ---- */
+function areaCalc(shape, a, b){
+  if(shape === 'circle'){ return Math.PI * a * a; }
+  if(shape === 'triangle'){ return 0.5 * a * b; }
+  return a * b;
+}
+function areaShapeToggle(){
+  var shape = $('ar-shape').value;
+  $('ar-b-wrap').hidden = (shape === 'circle');
+  $('ar-a-label').textContent = shape === 'circle' ? 'Radius' : shape === 'triangle' ? 'Base' : 'Length';
+  $('ar-b-label').textContent = shape === 'triangle' ? 'Height' : 'Width';
+}
+function calcArea(){
+  var shape = $('ar-shape').value;
+  var a = parseFloat($('ar-a').value);
+  var b = parseFloat($('ar-b').value);
+  if(isNaN(a) || a <= 0){ showResult('ar-result', 'Please enter a length (greater than zero).'); return; }
+  if(shape !== 'circle' && (isNaN(b) || b <= 0)){ showResult('ar-result', 'Please enter a second length (greater than zero).'); return; }
+  var res = areaCalc(shape, a, b);
+  var unit = $('ar-unit').value;
+  var rounded = Math.round(res * 100) / 100;
+  showResult('ar-result', '<strong>Area: ' + rounded + ' ' + unit + '²</strong>');
 }
 </script>
 <!-- Anonymous visit counter: counts page visits only. No cookies, no personal data. -->
