@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ToolNest – Free Online Tools & Calculators</title>
-<meta name="description" content="ToolNest offers 58 free online tools and calculators — age, BMI, loan, tip, date, unit converter, password generator, QR codes and fun tools. Fast, private, no sign-up.">
+<meta name="description" content="ToolNest offers 59 free online tools and calculators — age, BMI, loan, tip, date, unit converter, password generator, QR codes and fun tools. Fast, private, no sign-up.">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"ToolNest","alternateName":"ToolNest — Free Online Tools","url":"https://toolnest.cc.cd/"}
 </script>
@@ -176,6 +176,7 @@ a.share-btn:hover{text-decoration:none}
     <symbol id="icon-calc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 14.5h.01M12 14.5h.01M15.5 14.5h.01M8.5 18h.01M12 18h.01M15.5 18h.01"/></g></symbol>
     <symbol id="icon-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></g></symbol>
     <symbol id="icon-hash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="9" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="15" y2="20"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/></g></symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6"/><path d="M16 6l6 6-6 6"/></g></symbol>
     <symbol id="icon-award" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/><path d="M10 9l1.5 1.5L14.5 7"/></g></symbol>
     <symbol id="icon-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5z"/><path d="M4 19a2 2 0 0 1 2-2h13"/></g></symbol>
     <symbol id="icon-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/></g></symbol>
@@ -198,7 +199,7 @@ a.share-btn:hover{text-decoration:none}
 <div id="home-view">
   <section class="hero">
     <h1>Free online tools — fast, private, no sign-up</h1>
-    <p>58 handy tools and calculators that run entirely in your browser. Nothing is uploaded, nothing is stored.</p>
+    <p>59 handy tools and calculators that run entirely in your browser. Nothing is uploaded, nothing is stored.</p>
     <div class="search"><input type="text" id="tool-search" placeholder="Search tools..." oninput="filterTools()"></div>
     <div class="share share-home" id="home-share"></div>
   </section>
@@ -277,6 +278,7 @@ a.share-btn:hover{text-decoration:none}
     <article class="card" tabindex="0" role="button" onclick="openTool('grade')" onkeydown="if(event.key==='Enter')openTool('grade')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-award"/></svg></div><h3>Grade Calculator</h3><p>Weighted grades from assignments.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('cgpa')" onkeydown="if(event.key==='Enter')openTool('cgpa')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-book"/></svg></div><h3>CGPA to Percentage Converter</h3><p>Convert CGPA to a percentage.</p></article>
     <article class="card" tabindex="0" role="button" onclick="openTool('area')" onkeydown="if(event.key==='Enter')openTool('area')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-grid"/></svg></div><h3>Area Calculator</h3><p>Area of rectangles, circles and triangles.</p></article>
+    <article class="card" tabindex="0" role="button" onclick="openTool('base64')" onkeydown="if(event.key==='Enter')openTool('base64')"><div class="card-icon"><svg width="26" height="26"><use href="#icon-code"/></svg></div><h3>Base64 Encoder &amp; Decoder</h3><p>Turn text into Base64 code — or decode it back.</p></article>
   </div>
 </div>
 
@@ -1104,6 +1106,21 @@ a.share-btn:hover{text-decoration:none}
     <button class="btn" onclick="calcArea()">Calculate area</button>
     <div class="result" id="ar-result" hidden></div>
   </section>
+
+  <section class="tool-panel" id="tool-base64" hidden>
+    <h2>Base64 Encoder &amp; Decoder</h2>
+    <p class="panel-desc">Turn any text into Base64 code — or decode Base64 back into readable text. Handy for sharing data safely, and it works with emoji and other languages too.</p>
+    <label for="b64-input">Your text or Base64 code</label>
+    <textarea id="b64-input" rows="4" placeholder="Type or paste your text here... e.g. Hello World!"></textarea>
+    <div class="rps-buttons">
+      <button class="btn" onclick="encodeBase64()">Encode to Base64</button>
+      <button class="btn btn-secondary" onclick="decodeBase64()">Decode from Base64</button>
+    </div>
+    <label for="b64-output">Result</label>
+    <textarea id="b64-output" rows="4" readonly placeholder="Your result will appear here..."></textarea>
+    <div class="result" id="b64-result" hidden></div>
+    <button class="btn btn-secondary" onclick="copyBase64()">Copy result</button>
+  </section>
 </div>
 </main>
 
@@ -1729,9 +1746,10 @@ var TOOL_INFO = {
   numwords: { name: 'Number to Words Converter', desc: 'Turn numbers into English words.' },
   grade: { name: 'Grade Calculator', desc: 'Weighted grades from assignments.' },
   cgpa: { name: 'CGPA to Percentage Converter', desc: 'Convert CGPA to a percentage.' },
-  area: { name: 'Area Calculator', desc: 'Area of rectangles, circles and triangles.' }
+  area: { name: 'Area Calculator', desc: 'Area of rectangles, circles and triangles.' },
+  base64: { name: 'Base64 Encoder & Decoder', desc: 'Turn text into Base64 code — or decode it back.' }
 };
-var TOOL_LIST = ['age', 'date', 'bmi', 'percent', 'loan', 'tip', 'unit', 'word', 'password', 'qr', 'stopwatch', 'love', 'coin', 'dice', 'name', 'rps', 'joke', 'facts', 'currency', 'countdown', 'random', 'case', 'palette', 'pomodoro', 'speed', 'salary', 'lorem', 'sleep', 'roman', 'bodyfat', 'negnum', 'negmark', 'compound', 'discount', 'gpa', 'timezone', 'fuel', 'water', 'mortgage', 'simpleinterest', 'invest', 'retire', 'savingsgoal', 'inflation', 'vat', 'splitbill', 'calorie', 'idealweight', 'duedate', 'ovulation', 'heartrate', 'fraction', 'scicalc', 'timecalc', 'numwords', 'grade', 'cgpa', 'area'];
+var TOOL_LIST = ['age', 'date', 'bmi', 'percent', 'loan', 'tip', 'unit', 'word', 'password', 'qr', 'stopwatch', 'love', 'coin', 'dice', 'name', 'rps', 'joke', 'facts', 'currency', 'countdown', 'random', 'case', 'palette', 'pomodoro', 'speed', 'salary', 'lorem', 'sleep', 'roman', 'bodyfat', 'negnum', 'negmark', 'compound', 'discount', 'gpa', 'timezone', 'fuel', 'water', 'mortgage', 'simpleinterest', 'invest', 'retire', 'savingsgoal', 'inflation', 'vat', 'splitbill', 'calorie', 'idealweight', 'duedate', 'ovulation', 'heartrate', 'fraction', 'scicalc', 'timecalc', 'numwords', 'grade', 'cgpa', 'area', 'base64'];
 var SUGGESTIONS = {
   age: ['date', 'sleep', 'bmi'],
   date: ['timecalc', 'age', 'timezone'],
@@ -1790,7 +1808,8 @@ var SUGGESTIONS = {
   numwords: ['roman', 'word', 'random'],
   grade: ['gpa', 'cgpa', 'negmark'],
   cgpa: ['gpa', 'grade', 'percent'],
-  area: ['unit', 'fraction', 'speed']
+  area: ['unit', 'fraction', 'speed'],
+  base64: ['word', 'case', 'password']
 };
 /* ---- Share buttons (plain share links, no SDKs) ---- */
 function pageUrlFor(id){
@@ -3164,6 +3183,57 @@ function calcArea(){
   var unit = $('ar-unit').value;
   var rounded = Math.round(res * 100) / 100;
   showResult('ar-result', '<strong>Area: ' + rounded + ' ' + unit + '²</strong>');
+}
+
+/* ---- 59. Base64 Encoder & Decoder ---- */
+function b64EncodeUnicode(str){
+  var bytes = new TextEncoder().encode(str);
+  var bin = '';
+  var CHUNK = 0x8000;
+  for(var i = 0; i < bytes.length; i += CHUNK){
+    bin += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK));
+  }
+  return btoa(bin);
+}
+function b64DecodeUnicode(b64){
+  var bin = atob(b64);
+  var bytes = new Uint8Array(bin.length);
+  for(var i = 0; i < bin.length; i++){ bytes[i] = bin.charCodeAt(i); }
+  return new TextDecoder().decode(bytes);
+}
+function b64IsValid(s){
+  return s.length > 0 && s.length % 4 === 0 && /^[A-Za-z0-9+/]*={0,2}$/.test(s);
+}
+function encodeBase64(){
+  var input = $('b64-input').value;
+  if(!input){ showResult('b64-result', 'Please type or paste some text to encode.'); return; }
+  var out = b64EncodeUnicode(input);
+  $('b64-output').value = out;
+  showResult('b64-result', '<strong>Encoded:</strong> ' + input.length + ' characters became ' + out.length + ' Base64 characters. Use the Copy button to copy the result.');
+}
+function decodeBase64(){
+  var input = $('b64-input').value.replace(/\s+/g, '');
+  if(!input){ showResult('b64-result', 'Please paste a Base64 string to decode.'); return; }
+  if(!b64IsValid(input)){ showResult('b64-result', 'That does not look like valid Base64. Base64 uses only the letters A–Z and a–z, the digits 0–9, + and /, and ends with up to two = signs.'); return; }
+  try{
+    var out = b64DecodeUnicode(input);
+    $('b64-output').value = out;
+    showResult('b64-result', '<strong>Decoded:</strong> ' + out.length + ' characters. Use the Copy button to copy the result.');
+  }catch(e){
+    showResult('b64-result', 'Could not decode that Base64 string. Please check it and try again.');
+  }
+}
+function copyBase64(){
+  var out = $('b64-output').value;
+  if(!out){ showResult('b64-result', 'Nothing to copy yet — encode or decode some text first.'); return; }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(out).then(function(){
+      showResult('b64-result', 'Result copied to clipboard!');
+    }, function(){ copyTextFallback(out); showResult('b64-result', 'Result copied to clipboard!'); });
+  } else {
+    copyTextFallback(out);
+    showResult('b64-result', 'Result copied to clipboard!');
+  }
 }
 </script>
 <!-- Anonymous visit counter: counts page visits only. No cookies, no personal data. -->
